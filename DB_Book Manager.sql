@@ -1,0 +1,30 @@
+--CRIA UM NOVO BANCO DE DADOS 
+create database DB_Livraria
+
+--SETANDO O BANCO DE DADOS PARA TRABALHAR
+use DB_Livraria
+
+--CRIANDO UMA TABELA 
+create table TBLAtendente
+(	
+	--PRIMARY KEY DEFINE QUE A TABELA TERÁ UM CÓDIGO (NUMERAÇÃO)
+	--PARA CADA LINHA E COLUNA. ASSIM SE TORNA FACIL O ACESSO 
+	--E TAMBEM É GARANTIDO A INTEGRIDADE DO DADO////IDENTITY
+	--DEFINE QUE ESSE CÓDIGO SERÁ AUTOMATICO E SEQUÊNCIAL (1,2,3...)
+	cd_Atedente int primary key identity,
+	--O TIPO VARCHAR ACEITA CARACTERS ALFANUMERICOS///NOT NULL
+	--DEFINE QUE O CAMPO É OBRIGATORIO - NÃO PODE SER NULO
+	ds_Login varchar(20) not null,
+	ds_Senha char(8) not null,
+	nm_Atendente varchar(60) not null
+)
+
+--INSERINDO DADOS NA TABELA ATENDENTE NOS CAMPOS DEFINIDOS
+insert into TBLAtendente
+(ds_Login,ds_Senha,nm_Atendente)
+values('David','am@156','David Lucas')
+
+--SELECIONANDO TODOS OS CAMPOS DA TABELA ATENDENTE
+--AO EXECUTAR É MOSTRADO A TABELA ATENDENTE COMO UM TODO
+select * from TBLAtendente
+where ds_Login = 'David' and ds_Senha = 'am@156'
