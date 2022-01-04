@@ -101,5 +101,35 @@
   <ItemGroup>
     <None Include="Resources\olho_aberto-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categorias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editoras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedidos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telefone.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,8 +38,8 @@ namespace Book_Manager
             this.BT_Livros = new System.Windows.Forms.Button();
             this.BT_Telefone = new System.Windows.Forms.Button();
             this.BT_Clientes = new System.Windows.Forms.Button();
-            this.BT_Funcionarios = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.BT_Funcionarios = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,21 +182,6 @@ namespace Book_Manager
             this.BT_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_Clientes.UseVisualStyleBackColor = true;
             // 
-            // BT_Funcionarios
-            // 
-            this.BT_Funcionarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_Funcionarios.FlatAppearance.BorderSize = 0;
-            this.BT_Funcionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Funcionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Funcionarios.ForeColor = System.Drawing.Color.White;
-            this.BT_Funcionarios.Location = new System.Drawing.Point(0, 68);
-            this.BT_Funcionarios.Name = "BT_Funcionarios";
-            this.BT_Funcionarios.Size = new System.Drawing.Size(200, 31);
-            this.BT_Funcionarios.TabIndex = 1;
-            this.BT_Funcionarios.Text = "Funcionários";
-            this.BT_Funcionarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Funcionarios.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
@@ -205,6 +190,24 @@ namespace Book_Manager
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 68);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // BT_Funcionarios
+            // 
+            this.BT_Funcionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BT_Funcionarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_Funcionarios.FlatAppearance.BorderSize = 0;
+            this.BT_Funcionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Funcionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Funcionarios.ForeColor = System.Drawing.Color.White;
+            this.BT_Funcionarios.Image = global::Book_Manager.Properties.Resources.funcionarios;
+            this.BT_Funcionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_Funcionarios.Location = new System.Drawing.Point(0, 68);
+            this.BT_Funcionarios.Name = "BT_Funcionarios";
+            this.BT_Funcionarios.Size = new System.Drawing.Size(200, 31);
+            this.BT_Funcionarios.TabIndex = 1;
+            this.BT_Funcionarios.Text = "Funcionários";
+            this.BT_Funcionarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_Funcionarios.UseVisualStyleBackColor = true;
             // 
             // T_Menu
             // 
