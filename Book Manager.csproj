@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="T_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,14 +70,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="T_Menu.resx">
       <DependentUpon>T_Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,8 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\book-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\padrao-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
@@ -102,34 +100,31 @@
     <None Include="Resources\olho_aberto-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\autores.png" />
+    <None Include="Resources\consumidor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\book-removebg-preview1.png" />
+    <None Include="Resources\escritor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\caixa.png" />
+    <None Include="Resources\carteira-de-identidade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telefone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pilha-de-livros.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\categorias.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cliente.png" />
+    <None Include="Resources\design-editorial.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\editoras.png" />
+    <None Include="Resources\fluxo-de-caixa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\funcionarios.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\livros.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pedidos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\telefone.png" />
+    <None Include="Resources\lista-de-controle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
