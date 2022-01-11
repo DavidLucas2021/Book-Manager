@@ -31,6 +31,8 @@ namespace Book_Manager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(T_Menu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.LB_Nome_Livraria = new System.Windows.Forms.Label();
             this.BT_Caixa = new System.Windows.Forms.Button();
             this.BT_Pedido = new System.Windows.Forms.Button();
             this.BT_Autores = new System.Windows.Forms.Button();
@@ -40,8 +42,7 @@ namespace Book_Manager
             this.BT_Telefone = new System.Windows.Forms.Button();
             this.BT_Clientes = new System.Windows.Forms.Button();
             this.BT_Funcionarios = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.LB_Nome_Livraria = new System.Windows.Forms.Label();
+            this.principal1 = new Book_Manager.Principal();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,28 @@ namespace Book_Manager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 557);
             this.panel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel1.Controls.Add(this.LB_Nome_Livraria);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 68);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // LB_Nome_Livraria
+            // 
+            this.LB_Nome_Livraria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LB_Nome_Livraria.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Nome_Livraria.ForeColor = System.Drawing.Color.White;
+            this.LB_Nome_Livraria.Location = new System.Drawing.Point(3, 0);
+            this.LB_Nome_Livraria.Name = "LB_Nome_Livraria";
+            this.LB_Nome_Livraria.Size = new System.Drawing.Size(197, 68);
+            this.LB_Nome_Livraria.TabIndex = 1;
+            this.LB_Nome_Livraria.Text = "Livraria Johnson";
+            this.LB_Nome_Livraria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BT_Caixa
             // 
@@ -237,33 +260,21 @@ namespace Book_Manager
             this.BT_Funcionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BT_Funcionarios.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // principal1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Controls.Add(this.LB_Nome_Livraria);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 68);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // LB_Nome_Livraria
-            // 
-            this.LB_Nome_Livraria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LB_Nome_Livraria.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Nome_Livraria.ForeColor = System.Drawing.Color.White;
-            this.LB_Nome_Livraria.Location = new System.Drawing.Point(3, 0);
-            this.LB_Nome_Livraria.Name = "LB_Nome_Livraria";
-            this.LB_Nome_Livraria.Size = new System.Drawing.Size(197, 68);
-            this.LB_Nome_Livraria.TabIndex = 1;
-            this.LB_Nome_Livraria.Text = "Livraria Johnson";
-            this.LB_Nome_Livraria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.principal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.principal1.ForeColor = System.Drawing.Color.Black;
+            this.principal1.Location = new System.Drawing.Point(195, 0);
+            this.principal1.Name = "principal1";
+            this.principal1.Size = new System.Drawing.Size(600, 600);
+            this.principal1.TabIndex = 1;
             // 
             // T_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 557);
+            this.Controls.Add(this.principal1);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -290,5 +301,6 @@ namespace Book_Manager
         private System.Windows.Forms.Button BT_Clientes;
         private System.Windows.Forms.Button BT_Funcionarios;
         private System.Windows.Forms.Label LB_Nome_Livraria;
+        private Principal principal1;
     }
 }

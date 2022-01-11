@@ -63,6 +63,16 @@ namespace Book_Manager.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bibliografia_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("bibliografia-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("book_removebg_preview", resourceCulture);
@@ -86,6 +96,26 @@ namespace Book_Manager.Properties {
         internal static System.Drawing.Bitmap categorias {
             get {
                 object obj = ResourceManager.GetObject("categorias", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cd1a51334959a73a683ef473c7a42336 {
+            get {
+                object obj = ResourceManager.GetObject("cd1a51334959a73a683ef473c7a42336", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cd1a51334959a73a683ef473c7a42336_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("cd1a51334959a73a683ef473c7a42336-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

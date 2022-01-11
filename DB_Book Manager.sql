@@ -28,3 +28,33 @@ values('David','am@156','David Lucas')
 --AO EXECUTAR É MOSTRADO A TABELA ATENDENTE COMO UM TODO
 select * from TBLAtendente
 where ds_Login = 'David' and ds_Senha = 'am@156'
+
+
+
+--CRIANDO A TABELA PARA CRIENTE
+create table TBLcliente 
+(
+	cd_Cliente int primary key identity,
+	nm_Cliente varchar(60) not null,
+	ds_Email varchar(60) not null,
+	no_CPF char(11) null,
+	no_CNPJ char(14) null,
+	nm_Logradouto varchar(60) not null,
+	no_Logradouro varchar(5) not null,
+	ds_Complemento varchar(20) null,
+	nm_Bairro varchar(20) not null,
+	nm_Cidade varchar(20) not null,
+	sg_UF char(2) not null,
+	no_CEP char(8) not null
+
+)
+select * from TBLcliente
+
+--CRIANDO TABELA DE TELEFONE 
+create table TBLtelefone
+(
+	cd_Cliente int ,
+	no_Telefone char(11)
+	primary key(cd_Cliente,no_Telefone)
+	foreign Key(cd_Cliente) references TBLcliente(cd_Cliente)
+)
