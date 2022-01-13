@@ -24,10 +24,15 @@ insert into TBLAtendente
 (ds_Login,ds_Senha,nm_Atendente)
 values('David','am@156','David Lucas')
 
+--DELETANDO UMA SEGUNDA LINHA QUE CRIEI 
+--COM O MESMO DADOS DA PRIMEIRA LINHA
+--delete FROM TBLAtendente
+-- WHERE cd_Atedente = '5';
+
 --SELECIONANDO TODOS OS CAMPOS DA TABELA ATENDENTE
 --AO EXECUTAR É MOSTRADO A TABELA ATENDENTE COMO UM TODO
 select * from TBLAtendente
-where ds_Login = 'David' and ds_Senha = 'am@156'
+--where ds_Login = 'David' and ds_Senha = 'am@156'
 
 
 
@@ -56,5 +61,10 @@ create table TBLtelefone
 	cd_Cliente int ,
 	no_Telefone char(11)
 	primary key(cd_Cliente,no_Telefone)
+	--TRECHO QUE INFORMA QUE O CD_CLIENTE DO TBCLIENTE TEM REFERÊNCIA COM O 
+	--CD_CLIENTE DO TBLTELEFONE
 	foreign Key(cd_Cliente) references TBLcliente(cd_Cliente)
 )
+
+select * from TBLcliente
+select * from TBLtelefone
