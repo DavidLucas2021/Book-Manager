@@ -29,6 +29,7 @@ namespace Book_Manager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Funcionarios));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +40,13 @@ namespace Book_Manager
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Btn_Cancelar = new System.Windows.Forms.Button();
+            this.Btn_Excluir = new System.Windows.Forms.Button();
+            this.Btn_Alterar = new System.Windows.Forms.Button();
+            this.Btn_SalvarNoDB = new System.Windows.Forms.Button();
+            this.Btn_Novo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -121,7 +126,7 @@ namespace Book_Manager
             this.textBox4.Location = new System.Drawing.Point(107, 183);
             this.textBox4.MaxLength = 60;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(291, 20);
+            this.textBox4.Size = new System.Drawing.Size(333, 20);
             this.textBox4.TabIndex = 9;
             // 
             // label6
@@ -140,26 +145,17 @@ namespace Book_Manager
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(30, 360);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(507, 186);
+            this.dataGridView1.Size = new System.Drawing.Size(416, 186);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(161, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 24);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Pesquisa:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(30, 302);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 52);
+            this.groupBox1.Size = new System.Drawing.Size(416, 52);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa por Funcionário ";
@@ -168,16 +164,75 @@ namespace Book_Manager
             // 
             this.textBox1.Location = new System.Drawing.Point(7, 19);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(494, 20);
+            this.textBox1.Size = new System.Drawing.Size(403, 26);
             this.textBox1.TabIndex = 14;
+            // 
+            // Btn_Cancelar
+            // 
+            this.Btn_Cancelar.Image = global::Book_Manager.Properties.Resources.excluir__1_;
+            this.Btn_Cancelar.Location = new System.Drawing.Point(462, 477);
+            this.Btn_Cancelar.Name = "Btn_Cancelar";
+            this.Btn_Cancelar.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Cancelar.TabIndex = 18;
+            this.Btn_Cancelar.Text = " Cancelar";
+            this.Btn_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Cancelar.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Excluir
+            // 
+            this.Btn_Excluir.Image = global::Book_Manager.Properties.Resources.excluir;
+            this.Btn_Excluir.Location = new System.Drawing.Point(462, 400);
+            this.Btn_Excluir.Name = "Btn_Excluir";
+            this.Btn_Excluir.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Excluir.TabIndex = 17;
+            this.Btn_Excluir.Text = " Remover";
+            this.Btn_Excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Excluir.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Alterar
+            // 
+            this.Btn_Alterar.Image = global::Book_Manager.Properties.Resources.botao_editar;
+            this.Btn_Alterar.Location = new System.Drawing.Point(462, 321);
+            this.Btn_Alterar.Name = "Btn_Alterar";
+            this.Btn_Alterar.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Alterar.TabIndex = 16;
+            this.Btn_Alterar.Text = " Alterar";
+            this.Btn_Alterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Alterar.UseVisualStyleBackColor = true;
+            // 
+            // Btn_SalvarNoDB
+            // 
+            this.Btn_SalvarNoDB.Image = global::Book_Manager.Properties.Resources.salve_;
+            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(462, 246);
+            this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
+            this.Btn_SalvarNoDB.Size = new System.Drawing.Size(106, 60);
+            this.Btn_SalvarNoDB.TabIndex = 15;
+            this.Btn_SalvarNoDB.Text = " Salvar";
+            this.Btn_SalvarNoDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_SalvarNoDB.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Novo
+            // 
+            this.Btn_Novo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Novo.Image")));
+            this.Btn_Novo.Location = new System.Drawing.Point(462, 170);
+            this.Btn_Novo.Name = "Btn_Novo";
+            this.Btn_Novo.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Novo.TabIndex = 14;
+            this.Btn_Novo.Text = " Novo";
+            this.Btn_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Novo.UseVisualStyleBackColor = true;
             // 
             // UC_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.Btn_Cancelar);
+            this.Controls.Add(this.Btn_Excluir);
+            this.Controls.Add(this.Btn_Alterar);
+            this.Controls.Add(this.Btn_SalvarNoDB);
+            this.Controls.Add(this.Btn_Novo);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox4);
@@ -210,8 +265,12 @@ namespace Book_Manager
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Btn_Novo;
+        private System.Windows.Forms.Button Btn_SalvarNoDB;
+        private System.Windows.Forms.Button Btn_Alterar;
+        private System.Windows.Forms.Button Btn_Excluir;
+        private System.Windows.Forms.Button Btn_Cancelar;
     }
 }

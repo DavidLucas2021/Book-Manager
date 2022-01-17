@@ -83,6 +83,16 @@ namespace Book_Manager.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botao_editar {
+            get {
+                object obj = ResourceManager.GetObject("botao-editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carteira_de_identidade {
             get {
                 object obj = ResourceManager.GetObject("carteira_de_identidade", resourceCulture);
@@ -153,6 +163,26 @@ namespace Book_Manager.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap excluir {
+            get {
+                object obj = ResourceManager.GetObject("excluir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excluir__1_ {
+            get {
+                object obj = ResourceManager.GetObject("excluir (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fluxo_de_caixa {
             get {
                 object obj = ResourceManager.GetObject("fluxo_de_caixa", resourceCulture);
@@ -166,6 +196,16 @@ namespace Book_Manager.Properties {
         internal static System.Drawing.Bitmap lista_de_controle {
             get {
                 object obj = ResourceManager.GetObject("lista_de_controle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap novo_documento {
+            get {
+                object obj = ResourceManager.GetObject("novo-documento", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +246,16 @@ namespace Book_Manager.Properties {
         internal static System.Drawing.Bitmap pilha_de_livros {
             get {
                 object obj = ResourceManager.GetObject("pilha_de_livros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salve_ {
+            get {
+                object obj = ResourceManager.GetObject("salve-", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

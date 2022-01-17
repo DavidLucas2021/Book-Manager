@@ -156,5 +156,20 @@
   <ItemGroup>
     <None Include="Resources\bibliografia-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novo-documento1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salve-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao-editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
