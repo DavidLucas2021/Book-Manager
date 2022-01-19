@@ -221,6 +221,7 @@ namespace Book_Manager
             this.Btn_SalvarNoDB.Text = " Salvar";
             this.Btn_SalvarNoDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_SalvarNoDB.UseVisualStyleBackColor = true;
+            this.Btn_SalvarNoDB.Click += new System.EventHandler(this.Btn_SalvarNoDB_Click);
             // 
             // Btn_Novo
             // 

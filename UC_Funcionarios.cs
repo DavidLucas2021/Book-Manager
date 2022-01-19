@@ -56,5 +56,43 @@ namespace Book_Manager
             Func_Desabilitar();
             Btn_Novo.Enabled = true;
         }
+
+        private void Btn_SalvarNoDB_Click(object sender, EventArgs e)
+        {
+            if(Txb_Nome.Text != String.Empty)
+            {
+                if(Tbx_Login.Text != String.Empty)
+                {
+                    if(Txb_Senha.Text != String.Empty)
+                    {
+                        if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
+                        {
+                            MessageBox.Show("DEU CERTO!!!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("O campo Senha não foi preenchido totalmente! Este campo deve conter o total de 8 caractes.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Txb_Senha.Clear();
+                            Txb_Senha.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O campo Senha é um campo obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Txb_Senha.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O campo Login é um campo obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Tbx_Login.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O campo Nome é um campo obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Txb_Nome.Focus();
+            }
+        }
     }
 }
