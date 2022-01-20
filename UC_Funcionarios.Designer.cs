@@ -47,6 +47,10 @@ namespace Book_Manager
             this.Btn_Alterar = new System.Windows.Forms.Button();
             this.Btn_SalvarNoDB = new System.Windows.Forms.Button();
             this.Btn_Novo = new System.Windows.Forms.Button();
+            this.Btn_visivel = new System.Windows.Forms.Button();
+            this.lb_texto_nome = new System.Windows.Forms.Label();
+            this.lb_texto_login = new System.Windows.Forms.Label();
+            this.lb_texto_senha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -113,8 +117,10 @@ namespace Book_Manager
             this.Txb_Senha.Location = new System.Drawing.Point(108, 201);
             this.Txb_Senha.MaxLength = 8;
             this.Txb_Senha.Name = "Txb_Senha";
-            this.Txb_Senha.Size = new System.Drawing.Size(164, 20);
+            this.Txb_Senha.Size = new System.Drawing.Size(312, 20);
             this.Txb_Senha.TabIndex = 7;
+            this.Txb_Senha.UseSystemPasswordChar = true;
+            this.Txb_Senha.Click += new System.EventHandler(this.Txb_Senha_Click);
             // 
             // Tbx_Login
             // 
@@ -122,8 +128,9 @@ namespace Book_Manager
             this.Tbx_Login.Location = new System.Drawing.Point(108, 157);
             this.Tbx_Login.MaxLength = 20;
             this.Tbx_Login.Name = "Tbx_Login";
-            this.Tbx_Login.Size = new System.Drawing.Size(164, 20);
+            this.Tbx_Login.Size = new System.Drawing.Size(332, 20);
             this.Tbx_Login.TabIndex = 8;
+            this.Tbx_Login.Click += new System.EventHandler(this.Tbx_Login_Click);
             // 
             // Txb_Nome
             // 
@@ -133,6 +140,7 @@ namespace Book_Manager
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(333, 20);
             this.Txb_Nome.TabIndex = 9;
+            this.Txb_Nome.Click += new System.EventHandler(this.Txb_Nome_Click);
             // 
             // Lb_Código
             // 
@@ -177,7 +185,7 @@ namespace Book_Manager
             // 
             this.Btn_Cancelar.Enabled = false;
             this.Btn_Cancelar.Image = global::Book_Manager.Properties.Resources.excluir__1_;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(462, 477);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(462, 440);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(106, 60);
             this.Btn_Cancelar.TabIndex = 18;
@@ -190,7 +198,7 @@ namespace Book_Manager
             // 
             this.Btn_Excluir.Enabled = false;
             this.Btn_Excluir.Image = global::Book_Manager.Properties.Resources.excluir;
-            this.Btn_Excluir.Location = new System.Drawing.Point(462, 400);
+            this.Btn_Excluir.Location = new System.Drawing.Point(462, 360);
             this.Btn_Excluir.Name = "Btn_Excluir";
             this.Btn_Excluir.Size = new System.Drawing.Size(106, 60);
             this.Btn_Excluir.TabIndex = 17;
@@ -202,7 +210,7 @@ namespace Book_Manager
             // 
             this.Btn_Alterar.Enabled = false;
             this.Btn_Alterar.Image = global::Book_Manager.Properties.Resources.botao_editar;
-            this.Btn_Alterar.Location = new System.Drawing.Point(462, 321);
+            this.Btn_Alterar.Location = new System.Drawing.Point(462, 276);
             this.Btn_Alterar.Name = "Btn_Alterar";
             this.Btn_Alterar.Size = new System.Drawing.Size(106, 60);
             this.Btn_Alterar.TabIndex = 16;
@@ -214,7 +222,7 @@ namespace Book_Manager
             // 
             this.Btn_SalvarNoDB.Enabled = false;
             this.Btn_SalvarNoDB.Image = global::Book_Manager.Properties.Resources.salve_;
-            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(462, 246);
+            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(462, 197);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
             this.Btn_SalvarNoDB.Size = new System.Drawing.Size(106, 60);
             this.Btn_SalvarNoDB.TabIndex = 15;
@@ -226,7 +234,7 @@ namespace Book_Manager
             // Btn_Novo
             // 
             this.Btn_Novo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Novo.Image")));
-            this.Btn_Novo.Location = new System.Drawing.Point(462, 170);
+            this.Btn_Novo.Location = new System.Drawing.Point(462, 117);
             this.Btn_Novo.Name = "Btn_Novo";
             this.Btn_Novo.Size = new System.Drawing.Size(106, 60);
             this.Btn_Novo.TabIndex = 14;
@@ -235,11 +243,59 @@ namespace Book_Manager
             this.Btn_Novo.UseVisualStyleBackColor = true;
             this.Btn_Novo.Click += new System.EventHandler(this.Btn_Novo_Click);
             // 
+            // Btn_visivel
+            // 
+            this.Btn_visivel.BackColor = System.Drawing.SystemColors.Window;
+            this.Btn_visivel.BackgroundImage = global::Book_Manager.Properties.Resources.olho_fechado_removebg_preview;
+            this.Btn_visivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_visivel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_visivel.FlatAppearance.BorderSize = 0;
+            this.Btn_visivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_visivel.Location = new System.Drawing.Point(416, 202);
+            this.Btn_visivel.Name = "Btn_visivel";
+            this.Btn_visivel.Size = new System.Drawing.Size(25, 18);
+            this.Btn_visivel.TabIndex = 19;
+            this.Btn_visivel.UseVisualStyleBackColor = false;
+            this.Btn_visivel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_visivel_MouseDown);
+            this.Btn_visivel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_visivel_MouseUp);
+            // 
+            // lb_texto_nome
+            // 
+            this.lb_texto_nome.AutoSize = true;
+            this.lb_texto_nome.BackColor = System.Drawing.SystemColors.Window;
+            this.lb_texto_nome.Location = new System.Drawing.Point(108, 120);
+            this.lb_texto_nome.Name = "lb_texto_nome";
+            this.lb_texto_nome.Size = new System.Drawing.Size(0, 13);
+            this.lb_texto_nome.TabIndex = 20;
+            // 
+            // lb_texto_login
+            // 
+            this.lb_texto_login.AutoSize = true;
+            this.lb_texto_login.BackColor = System.Drawing.SystemColors.Window;
+            this.lb_texto_login.Location = new System.Drawing.Point(108, 160);
+            this.lb_texto_login.Name = "lb_texto_login";
+            this.lb_texto_login.Size = new System.Drawing.Size(0, 13);
+            this.lb_texto_login.TabIndex = 21;
+            // 
+            // lb_texto_senha
+            // 
+            this.lb_texto_senha.AutoSize = true;
+            this.lb_texto_senha.BackColor = System.Drawing.SystemColors.Window;
+            this.lb_texto_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lb_texto_senha.Location = new System.Drawing.Point(108, 204);
+            this.lb_texto_senha.Name = "lb_texto_senha";
+            this.lb_texto_senha.Size = new System.Drawing.Size(0, 13);
+            this.lb_texto_senha.TabIndex = 22;
+            // 
             // UC_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.lb_texto_senha);
+            this.Controls.Add(this.lb_texto_login);
+            this.Controls.Add(this.lb_texto_nome);
+            this.Controls.Add(this.Btn_visivel);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Excluir);
             this.Controls.Add(this.Btn_Alterar);
@@ -285,5 +341,9 @@ namespace Book_Manager
         private System.Windows.Forms.Button Btn_Alterar;
         private System.Windows.Forms.Button Btn_Excluir;
         private System.Windows.Forms.Button Btn_Cancelar;
+        private System.Windows.Forms.Button Btn_visivel;
+        private System.Windows.Forms.Label lb_texto_nome;
+        private System.Windows.Forms.Label lb_texto_login;
+        private System.Windows.Forms.Label lb_texto_senha;
     }
 }

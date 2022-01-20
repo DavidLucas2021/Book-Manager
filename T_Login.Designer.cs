@@ -33,21 +33,21 @@ namespace Book_Manager
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BT_Visibilidade = new System.Windows.Forms.Button();
             this.BT_Logar = new System.Windows.Forms.Button();
             this.BT_Fechar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TB_Senha = new System.Windows.Forms.TextBox();
             this.TB_Login = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.BT_Visibilidade = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,6 +96,16 @@ namespace Book_Manager
             this.label1.Text = "Book Manager";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Book_Manager.Properties.Resources.book_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.BT_Visibilidade);
@@ -112,6 +122,20 @@ namespace Book_Manager
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(430, 550);
             this.panel2.TabIndex = 1;
+            // 
+            // BT_Visibilidade
+            // 
+            this.BT_Visibilidade.BackColor = System.Drawing.Color.White;
+            this.BT_Visibilidade.BackgroundImage = global::Book_Manager.Properties.Resources.olho_fechado_removebg_preview;
+            this.BT_Visibilidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BT_Visibilidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Visibilidade.Location = new System.Drawing.Point(298, 376);
+            this.BT_Visibilidade.Name = "BT_Visibilidade";
+            this.BT_Visibilidade.Size = new System.Drawing.Size(27, 20);
+            this.BT_Visibilidade.TabIndex = 13;
+            this.BT_Visibilidade.UseVisualStyleBackColor = false;
+            this.BT_Visibilidade.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Visibilidade_MouseDown);
+            this.BT_Visibilidade.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BT_Visibilidade_MouseUp);
             // 
             // BT_Logar
             // 
@@ -182,31 +206,6 @@ namespace Book_Manager
             this.TB_Login.Size = new System.Drawing.Size(195, 20);
             this.TB_Login.TabIndex = 7;
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(83)))), ((int)(((byte)(125)))));
-            this.label4.Location = new System.Drawing.Point(64, 332);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 26);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Login:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // BT_Visibilidade
-            // 
-            this.BT_Visibilidade.BackColor = System.Drawing.Color.White;
-            this.BT_Visibilidade.BackgroundImage = global::Book_Manager.Properties.Resources.olho_fechado_removebg_preview;
-            this.BT_Visibilidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BT_Visibilidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Visibilidade.Location = new System.Drawing.Point(298, 376);
-            this.BT_Visibilidade.Name = "BT_Visibilidade";
-            this.BT_Visibilidade.Size = new System.Drawing.Size(27, 20);
-            this.BT_Visibilidade.TabIndex = 13;
-            this.BT_Visibilidade.UseVisualStyleBackColor = false;
-            this.BT_Visibilidade.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Visibilidade_MouseDown);
-            this.BT_Visibilidade.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BT_Visibilidade_MouseUp);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Book_Manager.Properties.Resources.padrao_removebg_preview;
@@ -217,15 +216,16 @@ namespace Book_Manager
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // label4
             // 
-            this.pictureBox1.Image = global::Book_Manager.Properties.Resources.book_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(83)))), ((int)(((byte)(125)))));
+            this.label4.Location = new System.Drawing.Point(64, 332);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 26);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Login:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // T_Login
             // 
@@ -238,10 +238,10 @@ namespace Book_Manager
             this.Name = "T_Login";
             this.Text = "Book Manager";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
