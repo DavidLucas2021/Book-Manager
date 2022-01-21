@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
+        //SqlCommand command = new SqlCommand();
+        SqlDataReader dataReader;
+
         public UC_Funcionarios()
         {
             InitializeComponent();
@@ -46,6 +51,16 @@ namespace Book_Manager
             Btn_SalvarNoDB.Enabled = true;
             Btn_Cancelar.Enabled = true;
         }
+
+        private void Limpar_Campos()
+        {
+            Txb_Nome.Clear();
+            Tbx_Login.Clear();
+            Txb_Senha.Clear();
+            Txb_Nome.Focus();
+        }
+
+
         private void Txb_Nome_Click(object sender, EventArgs e)
         {
             lb_texto_nome.Visible = false;
@@ -59,12 +74,15 @@ namespace Book_Manager
             lb_texto_senha.Visible = false;
         }
 
+
+
         private void Btn_Novo_Click(object sender, EventArgs e)
         {
             Func_Habilitar();
             Txb_Nome.Focus();
             Btn_Novo.Enabled = false;
         }
+
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
@@ -128,7 +146,47 @@ namespace Book_Manager
             {
                 if(Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
-                    MessageBox.Show("DEU CERTO!!!!!!!!!!!");
+                    try
+                    {
+                        String nome = Txb_Nome.Text;
+                        string login = Tbx_Login.Text;
+                        string senha = Txb_Senha.Text;
+
+                        //COMANDO INSERT NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
+                        //(ds_Login,ds_Senha,nm_Atendente) DENTRO DO BANCO DE DADOS 
+                        //ADICIONADO OS VALORES(@login,@senha,@nome)//DETERMINO COM
+                        //COMMAND.PARAMETERS QUAL VARIAVEL RECEBE QUAL VALOR.
+                        string sql = "insert into TBLAtendente(ds_Login,ds_Senha,nm_Atendente)values(@login,@senha,@nome)";
+
+                        //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
+                        SqlCommand command = new SqlCommand(sql, connection);
+
+                        command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                        command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
+                        command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+
+                        connection.Open();
+                        //command.CommandText = sql;
+                        //command.Connection = connection;
+
+                        //EXECUTA O COMANDO SEM CONSULTA, POIS NÃO PRECISA RETORNA NADA
+                        //EXENCUTENDO INSERÇÃO NO BANCO DE DADOS 
+                        command.ExecuteNonQuery();
+                        Limpar_Campos();
+                    }
+                    catch(Exception erro)
+                    {
+                        MessageBox.Show(erro.Message);
+                        connection.Close();
+                        //Limpar_Campos();
+                    }
+                    finally
+                    {
+                        connection.Close();
+                        MessageBox.Show("Novo Funcionário cadastrado com sucesso!", "Inserção de Dados", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        Limpar_Campos();
+                        Txb_Nome.Focus();
+                    }
                 }
                 else
                 {
