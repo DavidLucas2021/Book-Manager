@@ -13,9 +13,14 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
-        //SqlCommand command = new SqlCommand();
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
+        //CLASSE QUE RECEBE DADOS DE UMA TABELA APÓS O COMANDO SELECT
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        //CLASSE QUE PODE REPRESENTAR UMA OU MAIS TABELAS DE DADOS
+        //QUE PERMANECEM ALOCADAS NA MEMÓRIA E PODEM SER MANIPULADAS
+        DataTable dataTable = new DataTable();
 
         public UC_Funcionarios()
         {
@@ -142,15 +147,15 @@ namespace Book_Manager
                         string sql = "insert into TBLAtendente(ds_Login,ds_Senha,nm_Atendente)values(@login,@senha,@nome)";
 
                         //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
-                        SqlCommand command = new SqlCommand(sql, connection);
+                        //SqlCommand command = new SqlCommand(sql, connection);
 
                         command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
                         command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
                         command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
 
                         connection.Open();
-                        //command.CommandText = sql;
-                        //command.Connection = connection;
+                        command.CommandText = sql;
+                        command.Connection = connection;
 
                         //EXECUTA O COMANDO SEM CONSULTA, POIS NÃO PRECISA RETORNA NADA
                         //EXENCUTENDO INSERÇÃO NO BANCO DE DADOS 
@@ -190,6 +195,44 @@ namespace Book_Manager
         {
             Btn_visivel.BackgroundImage = Properties.Resources.olho_fechado_removebg_preview;
             Txb_Senha.UseSystemPasswordChar = true;
+        }
+        
+        //EVENTO PARA CARREGAR OS DADOS DO BANCO DE DADOS 
+        //QUANDO SOLICITADO NO CAMPO DE PESQUISA 
+        private void Tbx_Pesq_funcionario_TextChanged(object sender, EventArgs e)
+        {
+            if(Tbx_Pesq_funcionario.Text != String.Empty)
+            {
+                try
+                {
+                    connection.Open();
+                    //COMANDO USANDO O LIKE PARA BUSCAR OQUE FOR DIGITADO EM TBX_PESQ_FUNCIONARIO
+                    //LIKE É O COMANDO NO BANCO DE DADOS PARA BUSCAS DE DADOS ESPECIFICOS
+                    command.CommandText = "select * from TBLAtendente where nm_Atendente like ('" + Tbx_Pesq_funcionario.Text + "%')";
+                    command.Connection = connection;
+
+                    //DATAADAPTER RECEBE OS DADOS CONFORME COMANDO(SELECT)
+                    dataAdapter.SelectCommand = command;
+                    //PREECHE A TABELA EM DATATABLE
+                    dataAdapter.Fill(dataTable);
+                    //O COMPONENTE DATAGRIDVIEW RECEBE A TABELA EM DATATABLE
+                    Caixa_do_DB.DataSource = dataTable;
+                    connection.Close();
+                }
+                catch(Exception erro)
+                { 
+                    MessageBox.Show(erro.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            else
+            {
+                dataTable.Clear();
+                Caixa_do_DB.DataSource = null;
+            }
         }
     }
 }

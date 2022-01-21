@@ -30,7 +30,7 @@ namespace Book_Manager
         //INFORMANDO O SERVIDOR DO BANCO DE DADOS, A
         //AUTENTICAÇÃO (SSPI = AUTENTICAÇÃO DO WINDOWS)
         //E NOME DO BANCO DE DADOS  
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         //COMMAND = CLASSE PARA ENVIAR ISNTRUÇÕES 
         //(SELECT, INSERT, UPDATE, DELETE E ETC...)
         //AO BANCO DE DADOS 

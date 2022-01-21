@@ -39,7 +39,7 @@ namespace Book_Manager
             this.Tbx_Login = new System.Windows.Forms.TextBox();
             this.Txb_Nome = new System.Windows.Forms.TextBox();
             this.Lb_Código = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Caixa_do_DB = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Tbx_Pesq_funcionario = new System.Windows.Forms.TextBox();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace Book_Manager
             this.lb_texto_nome = new System.Windows.Forms.Label();
             this.lb_texto_login = new System.Windows.Forms.Label();
             this.lb_texto_senha = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Caixa_do_DB)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,13 +150,13 @@ namespace Book_Manager
             this.Lb_Código.TabIndex = 10;
             this.Lb_Código.Visible = false;
             // 
-            // dataGridView1
+            // Caixa_do_DB
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 360);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(416, 186);
-            this.dataGridView1.TabIndex = 11;
+            this.Caixa_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Caixa_do_DB.Location = new System.Drawing.Point(30, 360);
+            this.Caixa_do_DB.Name = "Caixa_do_DB";
+            this.Caixa_do_DB.Size = new System.Drawing.Size(416, 186);
+            this.Caixa_do_DB.TabIndex = 11;
             // 
             // groupBox1
             // 
@@ -177,6 +177,7 @@ namespace Book_Manager
             this.Tbx_Pesq_funcionario.Name = "Tbx_Pesq_funcionario";
             this.Tbx_Pesq_funcionario.Size = new System.Drawing.Size(403, 26);
             this.Tbx_Pesq_funcionario.TabIndex = 14;
+            this.Tbx_Pesq_funcionario.TextChanged += new System.EventHandler(this.Tbx_Pesq_funcionario_TextChanged);
             // 
             // Btn_Cancelar
             // 
@@ -299,7 +300,7 @@ namespace Book_Manager
             this.Controls.Add(this.Btn_SalvarNoDB);
             this.Controls.Add(this.Btn_Novo);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Caixa_do_DB);
             this.Controls.Add(this.Lb_Código);
             this.Controls.Add(this.Txb_Nome);
             this.Controls.Add(this.Tbx_Login);
@@ -311,7 +312,7 @@ namespace Book_Manager
             this.Controls.Add(this.label2);
             this.Name = "UC_Funcionarios";
             this.Size = new System.Drawing.Size(600, 600);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Caixa_do_DB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -330,7 +331,7 @@ namespace Book_Manager
         private System.Windows.Forms.TextBox Tbx_Login;
         private System.Windows.Forms.TextBox Txb_Nome;
         private System.Windows.Forms.Label Lb_Código;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Caixa_do_DB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox Tbx_Pesq_funcionario;
         private System.Windows.Forms.Button Btn_Novo;
