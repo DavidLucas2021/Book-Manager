@@ -30,7 +30,7 @@ namespace Book_Manager
         //INFORMANDO O SERVIDOR DO BANCO DE DADOS, A
         //AUTENTICAÇÃO (SSPI = AUTENTICAÇÃO DO WINDOWS)
         //E NOME DO BANCO DE DADOS  
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
         //COMMAND = CLASSE PARA ENVIAR ISNTRUÇÕES 
         //(SELECT, INSERT, UPDATE, DELETE E ETC...)
         //AO BANCO DE DADOS 
@@ -76,10 +76,11 @@ namespace Book_Manager
                     //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
                     dataReader = command.ExecuteReader();
                     
+                    //IDENTIFICA SE O SQL CONTEM LINHAS COM O COMANDO ESPECIFICADO 
                     if(dataReader.HasRows)
                     {
                         //OCULTA A TELA DE LOGIN QUANDO O MENU ABRIR
-                        this.Hide();
+                         this.Hide();
                         T_Menu _Menu = new T_Menu();
                         _Menu.StartPosition = FormStartPosition.CenterScreen;
                         _Menu.ShowDialog();

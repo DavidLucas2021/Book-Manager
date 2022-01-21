@@ -13,7 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
         //SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
 
@@ -37,19 +37,18 @@ namespace Book_Manager
             Btn_SalvarNoDB.Enabled = false;
             Btn_Excluir.Enabled = false;
             Btn_Cancelar.Enabled = false;
+            Btn_visivel.Enabled = false; 
         }
 
         private void Func_Habilitar()
         {
             Txb_Nome.Enabled = true;
-            lb_texto_nome.Text = "Informe o nome do novo funcionário";
             Tbx_Login.Enabled = true;
-            lb_texto_login.Text = "Informe o login do novo funcionário";
             Txb_Senha.Enabled = true;
-            lb_texto_senha.Text = "Informe a senha do novo funsionário";
 
             Btn_SalvarNoDB.Enabled = true;
             Btn_Cancelar.Enabled = true;
+            Btn_visivel.Enabled = true;
         }
 
         private void Limpar_Campos()
@@ -59,22 +58,6 @@ namespace Book_Manager
             Txb_Senha.Clear();
             Txb_Nome.Focus();
         }
-
-
-        private void Txb_Nome_Click(object sender, EventArgs e)
-        {
-            lb_texto_nome.Visible = false;
-        }
-        private void Tbx_Login_Click(object sender, EventArgs e)
-        {
-            lb_texto_login.Visible = false;
-        }
-        private void Txb_Senha_Click(object sender, EventArgs e)
-        {
-            lb_texto_senha.Visible = false;
-        }
-
-
 
         private void Btn_Novo_Click(object sender, EventArgs e)
         {

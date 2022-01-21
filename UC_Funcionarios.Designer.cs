@@ -117,10 +117,9 @@ namespace Book_Manager
             this.Txb_Senha.Location = new System.Drawing.Point(108, 201);
             this.Txb_Senha.MaxLength = 8;
             this.Txb_Senha.Name = "Txb_Senha";
-            this.Txb_Senha.Size = new System.Drawing.Size(312, 20);
+            this.Txb_Senha.Size = new System.Drawing.Size(332, 20);
             this.Txb_Senha.TabIndex = 7;
             this.Txb_Senha.UseSystemPasswordChar = true;
-            this.Txb_Senha.Click += new System.EventHandler(this.Txb_Senha_Click);
             // 
             // Tbx_Login
             // 
@@ -130,7 +129,6 @@ namespace Book_Manager
             this.Tbx_Login.Name = "Tbx_Login";
             this.Tbx_Login.Size = new System.Drawing.Size(332, 20);
             this.Tbx_Login.TabIndex = 8;
-            this.Tbx_Login.Click += new System.EventHandler(this.Tbx_Login_Click);
             // 
             // Txb_Nome
             // 
@@ -140,7 +138,6 @@ namespace Book_Manager
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(333, 20);
             this.Txb_Nome.TabIndex = 9;
-            this.Txb_Nome.Click += new System.EventHandler(this.Txb_Nome_Click);
             // 
             // Lb_Código
             // 
@@ -251,7 +248,7 @@ namespace Book_Manager
             this.Btn_visivel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_visivel.FlatAppearance.BorderSize = 0;
             this.Btn_visivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_visivel.Location = new System.Drawing.Point(416, 202);
+            this.Btn_visivel.Location = new System.Drawing.Point(415, 202);
             this.Btn_visivel.Name = "Btn_visivel";
             this.Btn_visivel.Size = new System.Drawing.Size(25, 18);
             this.Btn_visivel.TabIndex = 19;

@@ -28,5 +28,10 @@ namespace Book_Manager
             principal1.Hide();
             uC_Funcionarios1.Show();
         }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            LB_DataeHora.Text = DateTime.Now.ToString("dd/MM/yyyy - HH:mm:ss");
+        }
     }
 }

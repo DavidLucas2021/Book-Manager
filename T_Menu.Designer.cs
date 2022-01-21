@@ -29,6 +29,7 @@ namespace Book_Manager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(T_Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.BT_Caixa = new System.Windows.Forms.Button();
@@ -42,6 +43,8 @@ namespace Book_Manager
             this.BT_Funcionarios = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.LB_Nome_Livraria = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.LB_DataeHora = new System.Windows.Forms.Label();
             this.uC_Funcionarios1 = new Book_Manager.UC_Funcionarios();
             this.principal1 = new Book_Manager.Principal();
             this.panel1.SuspendLayout();
@@ -51,6 +54,7 @@ namespace Book_Manager
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(83)))), ((int)(((byte)(125)))));
+            this.panel1.Controls.Add(this.LB_DataeHora);
             this.panel1.Controls.Add(this.BT_Caixa);
             this.panel1.Controls.Add(this.BT_Pedido);
             this.panel1.Controls.Add(this.BT_Autores);
@@ -262,6 +266,22 @@ namespace Book_Manager
             this.LB_Nome_Livraria.Text = "Livraria Johnson";
             this.LB_Nome_Livraria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // LB_DataeHora
+            // 
+            this.LB_DataeHora.AutoSize = true;
+            this.LB_DataeHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.LB_DataeHora.ForeColor = System.Drawing.Color.White;
+            this.LB_DataeHora.Location = new System.Drawing.Point(4, 533);
+            this.LB_DataeHora.Name = "LB_DataeHora";
+            this.LB_DataeHora.Size = new System.Drawing.Size(186, 24);
+            this.LB_DataeHora.TabIndex = 10;
+            this.LB_DataeHora.Text = "00/00/0000 - 00:00:00";
+            // 
             // uC_Funcionarios1
             // 
             this.uC_Funcionarios1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -295,10 +315,12 @@ namespace Book_Manager
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "T_Menu";
             this.Text = "Book Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.T_Menu_FormClosed);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -320,5 +342,7 @@ namespace Book_Manager
         private System.Windows.Forms.Label LB_Nome_Livraria;
         private Principal principal1;
         private UC_Funcionarios uC_Funcionarios1;
+        private System.Windows.Forms.Label LB_DataeHora;
+        private System.Windows.Forms.Timer timer;
     }
 }
