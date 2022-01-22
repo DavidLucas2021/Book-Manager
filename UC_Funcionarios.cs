@@ -203,6 +203,10 @@ namespace Book_Manager
         {
             if(Tbx_Pesq_funcionario.Text != String.Empty)
             {
+                //LIMPEZA DOS DADOS DA TABELA PARA NÃO SER
+                //APRESENTADO DADOS DUPLICADOS TODA VEZ QUE 
+                //COMPA RECEBER UM NOVO CARACTER
+                dataTable.Clear();
                 try
                 {
                     connection.Open();
@@ -230,7 +234,6 @@ namespace Book_Manager
             }
             else
             {
-                dataTable.Clear();
                 Caixa_do_DB.DataSource = null;
             }
         }
