@@ -13,7 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-
+        
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
@@ -23,11 +23,18 @@ namespace Book_Manager
         //QUE PERMANECEM ALOCADAS NA MEMÓRIA E PODEM SER MANIPULADAS
         DataTable dataTable = new DataTable();
 
-
         public UC_Funcionarios()
         {
             InitializeComponent();
             Func_Desabilitar();
+            Func_Cancela_escrita_Datagrid();
+        }
+        //FUNÇÃO PARA EMPEDIR DE QUE O USUÁRIO  
+        //ALTERE DADOS AO CLICAR NO DATAGRIDVIEW 
+        //E DIGITAR PELO TECLADO 
+        private void Func_Cancela_escrita_Datagrid()
+        {
+            Caixa_do_DB.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
         private void Func_Desabilitar()
         {

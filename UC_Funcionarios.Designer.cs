@@ -154,6 +154,7 @@ namespace Book_Manager
             // 
             this.Caixa_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Caixa_do_DB.Location = new System.Drawing.Point(19, 360);
+            this.Caixa_do_DB.MultiSelect = false;
             this.Caixa_do_DB.Name = "Caixa_do_DB";
             this.Caixa_do_DB.Size = new System.Drawing.Size(427, 186);
             this.Caixa_do_DB.TabIndex = 11;
@@ -331,7 +332,6 @@ namespace Book_Manager
         private System.Windows.Forms.TextBox Tbx_Login;
         private System.Windows.Forms.TextBox Txb_Nome;
         private System.Windows.Forms.Label Lb_Código;
-        private System.Windows.Forms.DataGridView Caixa_do_DB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox Tbx_Pesq_funcionario;
         private System.Windows.Forms.Button Btn_Novo;
@@ -343,5 +343,6 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_texto_nome;
         private System.Windows.Forms.Label lb_texto_login;
         private System.Windows.Forms.Label lb_texto_senha;
+        private System.Windows.Forms.DataGridView Caixa_do_DB;
     }
 }
