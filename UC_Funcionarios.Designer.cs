@@ -60,7 +60,7 @@ namespace Book_Manager
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(170, 12);
+            this.label2.Location = new System.Drawing.Point(179, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(209, 39);
             this.label2.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace Book_Manager
             this.Lb_Codigotxt.AutoSize = true;
             this.Lb_Codigotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_Codigotxt.ForeColor = System.Drawing.Color.White;
-            this.Lb_Codigotxt.Location = new System.Drawing.Point(26, 77);
+            this.Lb_Codigotxt.Location = new System.Drawing.Point(15, 77);
             this.Lb_Codigotxt.Name = "Lb_Codigotxt";
             this.Lb_Codigotxt.Size = new System.Drawing.Size(83, 24);
             this.Lb_Codigotxt.TabIndex = 2;
@@ -83,7 +83,7 @@ namespace Book_Manager
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 153);
+            this.label1.Location = new System.Drawing.Point(23, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace Book_Manager
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 197);
+            this.label4.Location = new System.Drawing.Point(15, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 24);
             this.label4.TabIndex = 4;
@@ -105,7 +105,7 @@ namespace Book_Manager
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 113);
+            this.label5.Location = new System.Drawing.Point(19, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 5;
@@ -114,7 +114,7 @@ namespace Book_Manager
             // Txb_Senha
             // 
             this.Txb_Senha.Enabled = false;
-            this.Txb_Senha.Location = new System.Drawing.Point(108, 201);
+            this.Txb_Senha.Location = new System.Drawing.Point(97, 201);
             this.Txb_Senha.MaxLength = 8;
             this.Txb_Senha.Name = "Txb_Senha";
             this.Txb_Senha.Size = new System.Drawing.Size(332, 20);
@@ -124,7 +124,7 @@ namespace Book_Manager
             // Tbx_Login
             // 
             this.Tbx_Login.Enabled = false;
-            this.Tbx_Login.Location = new System.Drawing.Point(108, 157);
+            this.Tbx_Login.Location = new System.Drawing.Point(97, 157);
             this.Tbx_Login.MaxLength = 20;
             this.Tbx_Login.Name = "Tbx_Login";
             this.Tbx_Login.Size = new System.Drawing.Size(332, 20);
@@ -133,7 +133,7 @@ namespace Book_Manager
             // Txb_Nome
             // 
             this.Txb_Nome.Enabled = false;
-            this.Txb_Nome.Location = new System.Drawing.Point(108, 117);
+            this.Txb_Nome.Location = new System.Drawing.Point(97, 117);
             this.Txb_Nome.MaxLength = 60;
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(333, 20);
@@ -144,7 +144,7 @@ namespace Book_Manager
             this.Lb_Código.AutoSize = true;
             this.Lb_Código.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_Código.ForeColor = System.Drawing.Color.White;
-            this.Lb_Código.Location = new System.Drawing.Point(104, 77);
+            this.Lb_Código.Location = new System.Drawing.Point(93, 77);
             this.Lb_Código.Name = "Lb_Código";
             this.Lb_Código.Size = new System.Drawing.Size(0, 24);
             this.Lb_Código.TabIndex = 10;
@@ -153,9 +153,9 @@ namespace Book_Manager
             // Caixa_do_DB
             // 
             this.Caixa_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Caixa_do_DB.Location = new System.Drawing.Point(30, 360);
+            this.Caixa_do_DB.Location = new System.Drawing.Point(19, 360);
             this.Caixa_do_DB.Name = "Caixa_do_DB";
-            this.Caixa_do_DB.Size = new System.Drawing.Size(416, 186);
+            this.Caixa_do_DB.Size = new System.Drawing.Size(427, 186);
             this.Caixa_do_DB.TabIndex = 11;
             // 
             // groupBox1
@@ -163,9 +163,9 @@ namespace Book_Manager
             this.groupBox1.Controls.Add(this.Tbx_Pesq_funcionario);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(30, 302);
+            this.groupBox1.Location = new System.Drawing.Point(19, 302);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(416, 52);
+            this.groupBox1.Size = new System.Drawing.Size(427, 52);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa por Funcionário ";
@@ -249,7 +249,7 @@ namespace Book_Manager
             this.Btn_visivel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_visivel.FlatAppearance.BorderSize = 0;
             this.Btn_visivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_visivel.Location = new System.Drawing.Point(415, 202);
+            this.Btn_visivel.Location = new System.Drawing.Point(404, 202);
             this.Btn_visivel.Name = "Btn_visivel";
             this.Btn_visivel.Size = new System.Drawing.Size(25, 18);
             this.Btn_visivel.TabIndex = 19;
@@ -261,7 +261,7 @@ namespace Book_Manager
             // 
             this.lb_texto_nome.AutoSize = true;
             this.lb_texto_nome.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_nome.Location = new System.Drawing.Point(108, 120);
+            this.lb_texto_nome.Location = new System.Drawing.Point(97, 120);
             this.lb_texto_nome.Name = "lb_texto_nome";
             this.lb_texto_nome.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_nome.TabIndex = 20;
@@ -270,7 +270,7 @@ namespace Book_Manager
             // 
             this.lb_texto_login.AutoSize = true;
             this.lb_texto_login.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_login.Location = new System.Drawing.Point(108, 160);
+            this.lb_texto_login.Location = new System.Drawing.Point(97, 160);
             this.lb_texto_login.Name = "lb_texto_login";
             this.lb_texto_login.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_login.TabIndex = 21;
@@ -280,7 +280,7 @@ namespace Book_Manager
             this.lb_texto_senha.AutoSize = true;
             this.lb_texto_senha.BackColor = System.Drawing.SystemColors.Window;
             this.lb_texto_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lb_texto_senha.Location = new System.Drawing.Point(108, 204);
+            this.lb_texto_senha.Location = new System.Drawing.Point(97, 204);
             this.lb_texto_senha.Name = "lb_texto_senha";
             this.lb_texto_senha.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_senha.TabIndex = 22;

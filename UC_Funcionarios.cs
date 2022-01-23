@@ -13,6 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
+
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
@@ -21,6 +22,7 @@ namespace Book_Manager
         //CLASSE QUE PODE REPRESENTAR UMA OU MAIS TABELAS DE DADOS
         //QUE PERMANECEM ALOCADAS NA MEMÓRIA E PODEM SER MANIPULADAS
         DataTable dataTable = new DataTable();
+
 
         public UC_Funcionarios()
         {
@@ -37,12 +39,12 @@ namespace Book_Manager
             Tbx_Login.Clear();
             Txb_Senha.Clear();
             Tbx_Pesq_funcionario.Clear();
-            
+
             Btn_Alterar.Enabled = false;
             Btn_SalvarNoDB.Enabled = false;
             Btn_Excluir.Enabled = false;
             Btn_Cancelar.Enabled = false;
-            Btn_visivel.Enabled = false; 
+            Btn_visivel.Enabled = false;
         }
 
         private void Func_Habilitar()
@@ -80,7 +82,7 @@ namespace Book_Manager
 
         private void Btn_SalvarNoDB_Click(object sender, EventArgs e)
         {
-            if(Txb_Nome.Text == String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text == String.Empty)
+            if (Txb_Nome.Text == String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text == String.Empty)
             {
                 MessageBox.Show("Os campos Nome, Login e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Txb_Nome.Focus();
@@ -105,7 +107,7 @@ namespace Book_Manager
                     Txb_Senha.Focus();
                 }
             }
-            else if(Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text == String.Empty)
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text == String.Empty)
             {
                 MessageBox.Show("O campo Senha é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Txb_Senha.Focus();
@@ -132,48 +134,73 @@ namespace Book_Manager
             }
             else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
             {
-                if(Txb_Senha.TextLength == Txb_Senha.MaxLength)
+                if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
-                    try
+                    
+                    connection.Open();
+                    //DEFINE UM COMANDO PARA LER E COMPARAR OS DADOS INFORMADOS COM O BANDCO DE DADOS
+                    command.CommandText = "select * from TBLAtendente where ds_Login = ('" + Tbx_Login.Text + "')";
+                    command.Connection = connection;
+                    //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
+                    dataReader = command.ExecuteReader();
+
+                    if (dataReader.HasRows == false)
                     {
-                        String nome = Txb_Nome.Text;
-                        string login = Tbx_Login.Text;
-                        string senha = Txb_Senha.Text;
+                        dataReader.Close();
+                        try
+                        {
+                            String nome = Txb_Nome.Text;
+                            string login = Tbx_Login.Text;
+                            string senha = Txb_Senha.Text;
 
-                        //COMANDO INSERT NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
-                        //(ds_Login,ds_Senha,nm_Atendente) DENTRO DO BANCO DE DADOS 
-                        //ADICIONADO OS VALORES(@login,@senha,@nome)//DETERMINO COM
-                        //COMMAND.PARAMETERS QUAL VARIAVEL RECEBE QUAL VALOR.
-                        string sql = "insert into TBLAtendente(ds_Login,ds_Senha,nm_Atendente)values(@login,@senha,@nome)";
+                            //COMANDO INSERT NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
+                            //(ds_Login,ds_Senha,nm_Atendente) DENTRO DO BANCO DE DADOS 
+                            //ADICIONADO OS VALORES(@login,@senha,@nome)//DETERMINO COM
+                            //COMMAND.PARAMETERS QUAL VARIAVEL RECEBE QUAL VALOR.
+                            string sql = "insert into TBLAtendente(ds_Login,ds_Senha,nm_Atendente)values(@login,@senha,@nome)";
 
-                        //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
-                        //SqlCommand command = new SqlCommand(sql, connection);
+                            //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
+                            //SqlCommand command = new SqlCommand(sql, connection);
+                            
+                            command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                            command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
+                            command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
 
-                        command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
-                        command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
-                        command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+                            command.CommandText = sql;
+                            command.Connection = connection;
+                            //EXECUTA O COMANDO SEM CONSULTA, POIS NÃO PRECISA RETORNA NADA
+                            //EXENCUTENDO INSERÇÃO NO BANCO DE DADOS 
+                            command.ExecuteNonQuery();
 
-                        connection.Open();
-                        command.CommandText = sql;
-                        command.Connection = connection;
+                            Tbx_Pesq_funcionario.Clear();
+                            MessageBox.Show("Novo Funcionário cadastrado com sucesso!", "Inserção de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpar_Campos();
+                            Txb_Nome.Focus();
 
-                        //EXECUTA O COMANDO SEM CONSULTA, POIS NÃO PRECISA RETORNA NADA
-                        //EXENCUTENDO INSERÇÃO NO BANCO DE DADOS 
-                        command.ExecuteNonQuery();
-                        Limpar_Campos();
+                            //O TRECHO ABAIXO EVITA UMA EXCESSÃO 
+                            //QUE INFORMA QUE O "@LOGIN" JÁ CONTÉM 
+                            //VALOR SEMPRE QUE É REALIZADO UMA SEGUNDA
+                            //INSERÇÃO DE FUNCIONÁRIO | OS DEMAIS TRECHOS 
+                            //FECHAM O VINCULO COM O BANCO POR SEGURANÇA
+                            command.Parameters.Clear();
+                            dataReader.Close();
+                            connection.Close();
+                        }
+                        catch (Exception erro)
+                        {
+                            MessageBox.Show(erro.Message);
+                            dataReader.Close();
+                            connection.Close();
+                            Limpar_Campos();
+                        }
                     }
-                    catch(Exception erro)
+                    else
                     {
-                        MessageBox.Show(erro.Message);
+                        dataReader.Close();
                         connection.Close();
-                        //Limpar_Campos();
-                    }
-                    finally
-                    {
-                        connection.Close();
-                        MessageBox.Show("Novo Funcionário cadastrado com sucesso!", "Inserção de Dados", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        Limpar_Campos();
-                        Txb_Nome.Focus();
+                        MessageBox.Show("O login que você deseja cadastrar já existe. Tente um novo login diferente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Tbx_Login.Clear();
+                        Tbx_Login.Focus();
                     }
                 }
                 else
@@ -184,7 +211,6 @@ namespace Book_Manager
                 }
             }
         }
-        //FUNÇÃO DO BOTÃO DE VISIBILIDADE       
         private void Btn_visivel_MouseDown(object sender, MouseEventArgs e)
         {
             Btn_visivel.BackgroundImage = Properties.Resources.olho_aberto_removebg_preview;
@@ -196,12 +222,12 @@ namespace Book_Manager
             Btn_visivel.BackgroundImage = Properties.Resources.olho_fechado_removebg_preview;
             Txb_Senha.UseSystemPasswordChar = true;
         }
-        
+
         //EVENTO PARA CARREGAR OS DADOS DO BANCO DE DADOS 
         //QUANDO SOLICITADO NO CAMPO DE PESQUISA 
         private void Tbx_Pesq_funcionario_TextChanged(object sender, EventArgs e)
         {
-            if(Tbx_Pesq_funcionario.Text != String.Empty)
+            if (Tbx_Pesq_funcionario.Text != String.Empty)
             {
                 //LIMPEZA DOS DADOS DA TABELA PARA NÃO SER
                 //APRESENTADO DADOS DUPLICADOS TODA VEZ QUE 
@@ -223,9 +249,9 @@ namespace Book_Manager
                     Caixa_do_DB.DataSource = dataTable;
                     connection.Close();
                 }
-                catch(Exception erro)
-                { 
-                    MessageBox.Show(erro.Message);
+                catch (Exception erro_pesquisa)
+                {
+                    MessageBox.Show(erro_pesquisa.Message);
                 }
                 finally
                 {
@@ -239,3 +265,5 @@ namespace Book_Manager
         }
     }
 }
+
+
