@@ -13,7 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-        
+
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
@@ -148,7 +148,7 @@ namespace Book_Manager
             {
                 if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
-                    
+
                     connection.Open();
                     //DEFINE UM COMANDO PARA LER E COMPARAR OS DADOS INFORMADOS COM O BANDCO DE DADOS
                     command.CommandText = "select * from TBLAtendente where ds_Login = ('" + Tbx_Login.Text + "')";
@@ -173,7 +173,7 @@ namespace Book_Manager
 
                             //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
                             //SqlCommand command = new SqlCommand(sql, connection);
-                            
+
                             command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
                             command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
                             command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
@@ -195,13 +195,13 @@ namespace Book_Manager
                             //INSERÇÃO DE FUNCIONÁRIO | OS DEMAIS TRECHOS 
                             //FECHAM O VINCULO COM O BANCO POR SEGURANÇA
                             command.Parameters.Clear();
-                            dataReader.Close();
+                            //dataReader.Close();
                             connection.Close();
                         }
                         catch (Exception erro)
                         {
                             MessageBox.Show(erro.Message);
-                            dataReader.Close();
+                            //dataReader.Close();
                             connection.Close();
                             Limpar_Campos();
                         }
@@ -294,8 +294,123 @@ namespace Book_Manager
             Tbx_Login.Text = Caixa_do_DB.SelectedRows[0].Cells[1].Value.ToString();
             Txb_Senha.Text = Caixa_do_DB.SelectedRows[0].Cells[2].Value.ToString();
             Txb_Nome.Text = Caixa_do_DB.SelectedRows[0].Cells[3].Value.ToString();
+        }
+        //FUNÇÃO DE ALTERAÇÃO DE CADASTROS 
+        private void Btn_Alterar_Click(object sender, EventArgs e)
+        {
+            if (Txb_Nome.Text == String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text == String.Empty)
+            {
+                MessageBox.Show("Os campos Nome, Login e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Txb_Nome.Focus();
+            }
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text == String.Empty)
+            {
+                MessageBox.Show("Os campos Login e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Tbx_Login.Focus();
+            }
+            else if (Txb_Nome.Text == String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text == String.Empty)
+            {
+                MessageBox.Show("Os campos Nome e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Txb_Nome.Focus();
+            }
+            else if (Txb_Nome.Text == String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text != String.Empty)
+            {
+                MessageBox.Show("Os campos Nome e Login são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Txb_Senha.TextLength != Txb_Senha.MaxLength)
+                {
+                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Txb_Senha.Clear();
+                    Txb_Senha.Focus();
+                }
+            }
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text == String.Empty)
+            {
+                MessageBox.Show("O campo Senha é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Txb_Senha.Focus();
+            }
+            else if (Txb_Nome.Text == String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
+            {
+                MessageBox.Show("O campo Nome é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Txb_Senha.TextLength != Txb_Senha.MaxLength)
+                {
+                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Txb_Senha.Clear();
+                    Txb_Senha.Focus();
+                }
+            }
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text != String.Empty)
+            {
+                MessageBox.Show("O campo Login é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Txb_Senha.TextLength != Txb_Senha.MaxLength)
+                {
+                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Txb_Senha.Clear();
+                    Txb_Senha.Focus();
+                }
+            }
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
+            {
+                if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
+                {
+                    try
+                    {
+                        string nome = Txb_Nome.Text;
+                        string login = Tbx_Login.Text;
+                        string senha = Txb_Senha.Text;
+                        int cd = int.Parse(Lb_Código.Text);
 
+                        connection.Open();
+                        //COMANDO UPDATE(ALTERAÇÃO) NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
+                        //(ds_Login,ds_Senha,nm_Atendente) DENTRO DO BANCO DE DADOS 
+                        //ADICIONADO OS VALORES DAS VARIAVEIS(@login,@senha,@nome).
+                        //DETERMINO COM COMMAND.PARAMETERS QUAL SERÁ O VALOR DAS VARIAVEIS.
+                        //PARA ALTERAÇÃO DE DADOS O "cd" CARREGADO DEVE SER IGUAL AO "cd_Atendente"
+                        //DO DADO NO BANCO DE DADOS.
+                        string sql = "update TBLAtendente set ds_Login=@login,ds_Senha=@senha,nm_Atendente=@nome where cd_Atedente=@cd";
 
+                        //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
+                        //SqlCommand command = new SqlCommand(sql, connection);
+
+                        command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                        command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
+                        command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+                        command.Parameters.Add("@cd", SqlDbType.Int).Value = cd;
+
+                        command.CommandText = sql;
+                        command.Connection = connection;
+                        //EXECUTA O COMANDO SEM CONSULTA, POIS NÃO PRECISA RETORNA NADA
+                        //EXENCUTENDO INSERÇÃO NO BANCO DE DADOS 
+                        command.ExecuteNonQuery();
+
+                        Lb_Codigotxt.Visible = false;
+                        Lb_Código.Visible = false;
+                        Tbx_Pesq_funcionario.Clear();
+                        MessageBox.Show("Dados cadastrais do funcionário alterado com sucesso!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpar_Campos();
+                        Txb_Nome.Focus();
+
+                        //O TRECHO ABAIXO EVITA UMA EXCESSÃO 
+                        //QUE INFORMA QUE O "@LOGIN" JÁ CONTÉM 
+                        //VALOR SEMPRE QUE É REALIZADO UMA SEGUNDA
+                        //INSERÇÃO DE FUNCIONÁRIO | OS DEMAIS TRECHOS 
+                        //FECHAM O VINCULO COM O BANCO POR SEGURANÇA
+                        command.Parameters.Clear();
+                        connection.Close();
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show(erro.Message);
+                        connection.Close();
+                        Limpar_Campos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Txb_Senha.Clear();
+                    Txb_Senha.Focus();
+                }
+            }
         }
     }
 }

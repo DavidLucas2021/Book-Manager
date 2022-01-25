@@ -218,6 +218,7 @@ namespace Book_Manager
             this.Btn_Alterar.Text = " Alterar";
             this.Btn_Alterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Alterar.UseVisualStyleBackColor = true;
+            this.Btn_Alterar.Click += new System.EventHandler(this.Btn_Alterar_Click);
             // 
             // Btn_SalvarNoDB
             // 
