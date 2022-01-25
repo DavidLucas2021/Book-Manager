@@ -270,6 +270,14 @@ namespace Book_Manager
                 Caixa_do_DB.DataSource = null;
             }
         }
+        //FUNÇÃO PARA CARREGAR VALORES PARA ALTERAÇÃO
+        private void Caixa_do_DB_DoubleClick(object sender, EventArgs e)
+        {
+            Lb_Código.Text = Caixa_do_DB.SelectedRows[0].Cells[0].Value.ToString();
+
+
+            Txb_Nome.Text = Caixa_do_DB.SelectedRows[0].Cells[3].Value.ToString();
+        }
     }
 }
 

@@ -156,8 +156,10 @@ namespace Book_Manager
             this.Caixa_do_DB.Location = new System.Drawing.Point(19, 360);
             this.Caixa_do_DB.MultiSelect = false;
             this.Caixa_do_DB.Name = "Caixa_do_DB";
+            this.Caixa_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Caixa_do_DB.Size = new System.Drawing.Size(427, 186);
             this.Caixa_do_DB.TabIndex = 11;
+            this.Caixa_do_DB.DoubleClick += new System.EventHandler(this.Caixa_do_DB_DoubleClick);
             // 
             // groupBox1
             // 
