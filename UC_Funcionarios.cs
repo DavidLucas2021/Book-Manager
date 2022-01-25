@@ -45,13 +45,17 @@ namespace Book_Manager
             Txb_Nome.Clear();
             Tbx_Login.Clear();
             Txb_Senha.Clear();
-            Tbx_Pesq_funcionario.Clear();
+            //Tbx_Pesq_funcionario.Clear();
 
             Btn_Alterar.Enabled = false;
             Btn_SalvarNoDB.Enabled = false;
             Btn_Excluir.Enabled = false;
             Btn_Cancelar.Enabled = false;
             Btn_visivel.Enabled = false;
+
+            Lb_Codigotxt.Visible = false;
+            Lb_Código.Visible = false;
+            Lb_Código.Text = String.Empty;
         }
 
         private void Func_Habilitar()
@@ -78,6 +82,7 @@ namespace Book_Manager
             Func_Habilitar();
             Txb_Nome.Focus();
             Btn_Novo.Enabled = false;
+            Tbx_Pesq_funcionario.Clear();
         }
 
 
@@ -273,10 +278,24 @@ namespace Book_Manager
         //FUNÇÃO PARA CARREGAR VALORES PARA ALTERAÇÃO
         private void Caixa_do_DB_DoubleClick(object sender, EventArgs e)
         {
+            Btn_Novo.Enabled = false;
+            Btn_Alterar.Enabled = true;
+            Btn_Excluir.Enabled = true;
+            Btn_Cancelar.Enabled = true;
+
+            Txb_Nome.Enabled = true;
+            Tbx_Login.Enabled = true;
+            Txb_Senha.Enabled = true;
+            Btn_visivel.Enabled = true;
+
+            Lb_Codigotxt.Visible = true;
+            Lb_Código.Visible = true;
             Lb_Código.Text = Caixa_do_DB.SelectedRows[0].Cells[0].Value.ToString();
-
-
+            Tbx_Login.Text = Caixa_do_DB.SelectedRows[0].Cells[1].Value.ToString();
+            Txb_Senha.Text = Caixa_do_DB.SelectedRows[0].Cells[2].Value.ToString();
             Txb_Nome.Text = Caixa_do_DB.SelectedRows[0].Cells[3].Value.ToString();
+
+
         }
     }
 }
