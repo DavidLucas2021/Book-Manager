@@ -28,7 +28,13 @@ values('David','am@156','David Lucas')
 --COM O MESMO DADOS DA PRIMEIRA LINHA 
 --ATRAVES DO CÓDIGO ABAIXO(2 LINHAS ABAIXOS).
 delete FROM TBLAtendente
-WHERE cd_Atedente = '9';
+WHERE cd_Atedente = '25';
+
+--ALTERAÇÃO NA TABELA TBLAtendente - INCLUSÃO 
+--DO CAMPO DE STATUS JÁ DEFININDO TODOS OS ATENDENTES 
+--COMO ATIVOS || 
+alter table TBLAtendente 
+add ds_status bit not null default(1)
 
 --SELECIONANDO TODOS OS CAMPOS DA TABELA ATENDENTE
 --AO EXECUTAR É MOSTRADO A TABELA ATENDENTE COMO UM TODO
@@ -69,3 +75,6 @@ create table TBLtelefone
 
 select * from TBLcliente
 select * from TBLtelefone
+
+--PROCEDURE QUE RETORNA O TAMANHO DO BANCO DE DADOS 
+--sp_helpDB DB_Livraria
