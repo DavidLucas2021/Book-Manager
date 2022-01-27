@@ -51,6 +51,9 @@ namespace Book_Manager
             this.lb_texto_nome = new System.Windows.Forms.Label();
             this.lb_texto_login = new System.Windows.Forms.Label();
             this.lb_texto_senha = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.RB_Inativo = new System.Windows.Forms.RadioButton();
+            this.RB_Ativo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.Caixa_do_DB)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +86,7 @@ namespace Book_Manager
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 153);
+            this.label1.Location = new System.Drawing.Point(30, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 3;
@@ -94,7 +97,7 @@ namespace Book_Manager
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(15, 197);
+            this.label4.Location = new System.Drawing.Point(22, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 24);
             this.label4.TabIndex = 4;
@@ -105,7 +108,7 @@ namespace Book_Manager
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(19, 113);
+            this.label5.Location = new System.Drawing.Point(26, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 5;
@@ -114,7 +117,7 @@ namespace Book_Manager
             // Txb_Senha
             // 
             this.Txb_Senha.Enabled = false;
-            this.Txb_Senha.Location = new System.Drawing.Point(97, 201);
+            this.Txb_Senha.Location = new System.Drawing.Point(97, 197);
             this.Txb_Senha.MaxLength = 8;
             this.Txb_Senha.Name = "Txb_Senha";
             this.Txb_Senha.Size = new System.Drawing.Size(332, 20);
@@ -155,11 +158,11 @@ namespace Book_Manager
             this.Caixa_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Caixa_do_DB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Caixa_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Caixa_do_DB.Location = new System.Drawing.Point(8, 360);
+            this.Caixa_do_DB.Location = new System.Drawing.Point(8, 334);
             this.Caixa_do_DB.MultiSelect = false;
             this.Caixa_do_DB.Name = "Caixa_do_DB";
             this.Caixa_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Caixa_do_DB.Size = new System.Drawing.Size(466, 222);
+            this.Caixa_do_DB.Size = new System.Drawing.Size(466, 246);
             this.Caixa_do_DB.TabIndex = 11;
             this.Caixa_do_DB.DoubleClick += new System.EventHandler(this.Caixa_do_DB_DoubleClick);
             // 
@@ -168,7 +171,7 @@ namespace Book_Manager
             this.groupBox1.Controls.Add(this.Tbx_Pesq_funcionario);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(19, 302);
+            this.groupBox1.Location = new System.Drawing.Point(19, 276);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(427, 52);
             this.groupBox1.TabIndex = 13;
@@ -177,7 +180,7 @@ namespace Book_Manager
             // 
             // Tbx_Pesq_funcionario
             // 
-            this.Tbx_Pesq_funcionario.Location = new System.Drawing.Point(7, 19);
+            this.Tbx_Pesq_funcionario.Location = new System.Drawing.Point(11, 20);
             this.Tbx_Pesq_funcionario.MaxLength = 20;
             this.Tbx_Pesq_funcionario.Name = "Tbx_Pesq_funcionario";
             this.Tbx_Pesq_funcionario.Size = new System.Drawing.Size(403, 26);
@@ -208,6 +211,7 @@ namespace Book_Manager
             this.Btn_Excluir.Text = " Remover";
             this.Btn_Excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Excluir.UseVisualStyleBackColor = true;
+            this.Btn_Excluir.Click += new System.EventHandler(this.Btn_Excluir_Click);
             // 
             // Btn_Alterar
             // 
@@ -255,7 +259,7 @@ namespace Book_Manager
             this.Btn_visivel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_visivel.FlatAppearance.BorderSize = 0;
             this.Btn_visivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_visivel.Location = new System.Drawing.Point(404, 202);
+            this.Btn_visivel.Location = new System.Drawing.Point(404, 198);
             this.Btn_visivel.Name = "Btn_visivel";
             this.Btn_visivel.Size = new System.Drawing.Size(25, 18);
             this.Btn_visivel.TabIndex = 19;
@@ -286,16 +290,68 @@ namespace Book_Manager
             this.lb_texto_senha.AutoSize = true;
             this.lb_texto_senha.BackColor = System.Drawing.SystemColors.Window;
             this.lb_texto_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lb_texto_senha.Location = new System.Drawing.Point(97, 204);
+            this.lb_texto_senha.Location = new System.Drawing.Point(97, 200);
             this.lb_texto_senha.Name = "lb_texto_senha";
             this.lb_texto_senha.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_senha.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(26, 233);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 24);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Status:";
+            // 
+            // RB_Inativo
+            // 
+            this.RB_Inativo.AutoSize = true;
+            this.RB_Inativo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RB_Inativo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.RB_Inativo.FlatAppearance.BorderSize = 0;
+            this.RB_Inativo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.RB_Inativo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.RB_Inativo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.RB_Inativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.RB_Inativo.ForeColor = System.Drawing.Color.White;
+            this.RB_Inativo.Location = new System.Drawing.Point(194, 231);
+            this.RB_Inativo.Name = "RB_Inativo";
+            this.RB_Inativo.Size = new System.Drawing.Size(88, 28);
+            this.RB_Inativo.TabIndex = 24;
+            this.RB_Inativo.TabStop = true;
+            this.RB_Inativo.Text = "Inativo";
+            this.RB_Inativo.UseVisualStyleBackColor = true;
+            // 
+            // RB_Ativo
+            // 
+            this.RB_Ativo.AutoSize = true;
+            this.RB_Ativo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RB_Ativo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.RB_Ativo.FlatAppearance.BorderSize = 0;
+            this.RB_Ativo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.RB_Ativo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.RB_Ativo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.RB_Ativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.RB_Ativo.ForeColor = System.Drawing.Color.White;
+            this.RB_Ativo.Location = new System.Drawing.Point(114, 231);
+            this.RB_Ativo.Name = "RB_Ativo";
+            this.RB_Ativo.Size = new System.Drawing.Size(74, 28);
+            this.RB_Ativo.TabIndex = 25;
+            this.RB_Ativo.TabStop = true;
+            this.RB_Ativo.Text = "Ativo";
+            this.RB_Ativo.UseVisualStyleBackColor = true;
             // 
             // UC_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.RB_Ativo);
+            this.Controls.Add(this.RB_Inativo);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_texto_senha);
             this.Controls.Add(this.lb_texto_login);
             this.Controls.Add(this.lb_texto_nome);
@@ -349,5 +405,8 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_texto_login;
         private System.Windows.Forms.Label lb_texto_senha;
         private System.Windows.Forms.DataGridView Caixa_do_DB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton RB_Inativo;
+        private System.Windows.Forms.RadioButton RB_Ativo;
     }
 }

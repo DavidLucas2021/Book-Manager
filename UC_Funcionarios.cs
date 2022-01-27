@@ -56,6 +56,14 @@ namespace Book_Manager
             Lb_Codigotxt.Visible = false;
             Lb_Código.Visible = false;
             Lb_Código.Text = String.Empty;
+
+            RB_Ativo.Enabled = false;
+            RB_Ativo.Checked = false;
+            RB_Ativo.Visible = false; 
+
+            RB_Inativo.Enabled = false;
+            RB_Inativo.Checked = false;
+            RB_Inativo.Visible = false;
         }
 
         private void Func_Habilitar()
@@ -67,6 +75,12 @@ namespace Book_Manager
             Btn_SalvarNoDB.Enabled = true;
             Btn_Cancelar.Enabled = true;
             Btn_visivel.Enabled = true;
+
+            RB_Ativo.Enabled = true;
+            RB_Ativo.Visible = true;
+
+            RB_Inativo.Enabled = true;
+            RB_Inativo.Visible = true;
         }
 
         private void Limpar_Campos()
@@ -144,7 +158,11 @@ namespace Book_Manager
                     Txb_Senha.Focus();
                 }
             }
-            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty && RB_Ativo.Checked == false && RB_Inativo.Checked == false)
+            {
+                MessageBox.Show("Informe se o Funcionário será ativo ou Inativo", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty && (RB_Ativo.Checked == true || RB_Inativo.Checked == true))
             {
                 if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
@@ -164,12 +182,23 @@ namespace Book_Manager
                             String nome = Txb_Nome.Text;
                             string login = Tbx_Login.Text;
                             string senha = Txb_Senha.Text;
+                            
+                            bool ativo = false;
+                            if(RB_Ativo.Checked == true)
+                            {
+                                ativo = true;
+                            }
+                            else
+                            {
+                                ativo = false;
+                            }
+                            
 
                             //COMANDO INSERT NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
                             //(ds_Login,ds_Senha,nm_Atendente) DENTRO DO BANCO DE DADOS 
                             //ADICIONADO OS VALORES(@login,@senha,@nome)//DETERMINO COM
                             //COMMAND.PARAMETERS QUAL VARIAVEL RECEBE QUAL VALOR.
-                            string sql = "insert into TBLAtendente(ds_Login,ds_Senha,nm_Atendente)values(@login,@senha,@nome)";
+                            string sql = "insert into TBLAtendente(ds_Login,ds_Senha,nm_Atendente,ds_status)values(@login,@senha,@nome,@ativo)";
 
                             //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
                             //SqlCommand command = new SqlCommand(sql, connection);
@@ -177,6 +206,7 @@ namespace Book_Manager
                             command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
                             command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
                             command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+                            command.Parameters.Add("@ativo", SqlDbType.Bit).Value = ativo;
 
                             command.CommandText = sql;
                             command.Connection = connection;
@@ -187,6 +217,8 @@ namespace Book_Manager
                             Tbx_Pesq_funcionario.Clear();
                             MessageBox.Show("Novo Funcionário cadastrado com sucesso!", "Inserção de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpar_Campos();
+                            RB_Ativo.Checked = false;
+                            RB_Inativo.Checked = false;
                             Txb_Nome.Focus();
 
                             //O TRECHO ABAIXO EVITA UMA EXCESSÃO 
@@ -411,6 +443,11 @@ namespace Book_Manager
                     Txb_Senha.Focus();
                 }
             }
+        }
+        //FUNÇÃO DE DELETAR FUNCIO0NÁRIOS DO DB
+        private void Btn_Excluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

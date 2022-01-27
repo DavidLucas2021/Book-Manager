@@ -67,7 +67,7 @@ namespace Book_Manager
             {
                 try
                 {
-                    //ABRI UMA CONEXÃO COM O BANCO DE DADOS
+                    //TRECHO DO CÓDIGO QUE VERIFICA SE HÁ NO DB O LOGIN E SENHA ESPECIFICADO
                     connection.Open();
                     //DEFINE UM COMANDO PARA LER E COMPARAR OS DADOS INFORMADOS COM O BANDCO DE DADOS
                     command.CommandText = "select * from TBLAtendente where ds_Login = ('" + TB_Login.Text + "') and ds_Senha = ('" + TB_Senha.Text + "')";
@@ -75,21 +75,38 @@ namespace Book_Manager
                     command.Connection = connection;
                     //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
                     dataReader = command.ExecuteReader();
-                    
-                    //IDENTIFICA SE O SQL CONTEM LINHAS COM O COMANDO ESPECIFICADO 
-                    if(dataReader.HasRows)
-                    {
-                        //OCULTA A TELA DE LOGIN QUANDO O MENU ABRIR
-                         this.Hide();
-                        T_Menu _Menu = new T_Menu();
-                        _Menu.StartPosition = FormStartPosition.CenterScreen;
-                        _Menu.ShowDialog();
 
-                        
+                    if (dataReader.HasRows)
+                    {
+                        //TRECHO DO CÓDIGO QUE VERIFICA SE HÁ NO DB O LOGIN E SENHA ESPECIFICADO E SE ESTA ATIVO
+                        dataReader.Close();
+                        command.CommandText = "select * from TBLAtendente where ds_Login = ('" + TB_Login.Text + "') and ds_Senha = ('" + TB_Senha.Text + "') and ds_status = 1";
+                        //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
+                        command.Connection = connection;
+                        //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
+                        dataReader = command.ExecuteReader();
+                        if(dataReader.HasRows)
+                        {
+                            dataReader.Close();
+                            //OCULTA A TELA DE LOGIN QUANDO O MENU ABRIR
+                            this.Hide();
+                            T_Menu _Menu = new T_Menu();
+                            _Menu.StartPosition = FormStartPosition.CenterScreen;
+                            _Menu.ShowDialog();
+                        }
+                        else if(!dataReader.HasRows)
+                        {
+                            dataReader.Close();
+                            MessageBox.Show("Funcionário inativo!", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            TB_Login.Clear();
+                            TB_Senha.Clear();
+                            TB_Login.Focus();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Usuário ou senha inválidos!", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dataReader.Close();
+                        MessageBox.Show("Login ou senha inválido!", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         TB_Login.Clear();
                         TB_Senha.Clear();
                         TB_Login.Focus();
