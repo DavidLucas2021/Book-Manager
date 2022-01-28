@@ -182,18 +182,8 @@ namespace Book_Manager
                             String nome = Txb_Nome.Text;
                             string login = Tbx_Login.Text;
                             string senha = Txb_Senha.Text;
+                            bool ativo = RB_Ativo.Checked;
                             
-                            bool ativo = false;
-                            if(RB_Ativo.Checked == true)
-                            {
-                                ativo = true;
-                            }
-                            else
-                            {
-                                ativo = false;
-                            }
-                            
-
                             //COMANDO INSERT NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
                             //(ds_Login,ds_Senha,nm_Atendente) DENTRO DO BANCO DE DADOS 
                             //ADICIONADO OS VALORES(@login,@senha,@nome)//DETERMINO COM
@@ -311,9 +301,11 @@ namespace Book_Manager
         private void Caixa_do_DB_DoubleClick(object sender, EventArgs e)
         {
             Btn_Novo.Enabled = false;
+            Btn_SalvarNoDB.Enabled = false;
             Btn_Alterar.Enabled = true;
             Btn_Excluir.Enabled = true;
             Btn_Cancelar.Enabled = true;
+
 
             Txb_Nome.Enabled = true;
             Tbx_Login.Enabled = true;
@@ -322,10 +314,38 @@ namespace Book_Manager
 
             Lb_Codigotxt.Visible = true;
             Lb_Código.Visible = true;
+            RB_Ativo.Visible = true;
+            RB_Inativo.Visible = true; 
+
             Lb_Código.Text = Caixa_do_DB.SelectedRows[0].Cells[0].Value.ToString();
             Tbx_Login.Text = Caixa_do_DB.SelectedRows[0].Cells[1].Value.ToString();
             Txb_Senha.Text = Caixa_do_DB.SelectedRows[0].Cells[2].Value.ToString();
             Txb_Nome.Text = Caixa_do_DB.SelectedRows[0].Cells[3].Value.ToString();
+
+            //FUNÇÃO QUE CARREGA OS VALORES DOS RADIOS BUTTONS 
+            //CONFORME O BANCO DE DADOS -- É REALIZADO UMA VERIFICAÇÃO 
+            //ONDE SE VERIFICA SE OS DADOS CARREGADOS SÃO DE UM FUNCIONÁRIO
+            //ATIVO OU INATIVO -- CONFORME RESPOSTA OS RADIOS BUTTONS SÃO SETADOS
+            connection.Open();
+            command.CommandText = "select * from TBLAtendente where ds_Login = ('" + Tbx_Login.Text + "') and ds_Senha = ('" + Txb_Senha.Text + "') and ds_status = 1";
+            //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
+            command.Connection = connection;
+            //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
+            dataReader = command.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                RB_Ativo.Checked = true;
+                RB_Inativo.Checked = false;
+            }
+            else
+            {
+                RB_Ativo.Checked = false;
+                RB_Inativo.Checked = true;
+            }
+            connection.Close();
+            dataReader.Close();
+            RB_Ativo.Enabled = true;
+            RB_Inativo.Enabled = true;
         }
         //FUNÇÃO DE ALTERAÇÃO DE CADASTROS 
         private void Btn_Alterar_Click(object sender, EventArgs e)
@@ -380,7 +400,11 @@ namespace Book_Manager
                     Txb_Senha.Focus();
                 }
             }
-            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty && (RB_Ativo.Checked == false && RB_Inativo.Checked == false))
+            {
+                MessageBox.Show("Informe se o Funcionário será ativo ou Inativo", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty && (RB_Ativo.Checked == true || RB_Inativo.Checked == true))
             {
                 if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
@@ -390,6 +414,7 @@ namespace Book_Manager
                         string login = Tbx_Login.Text;
                         string senha = Txb_Senha.Text;
                         int cd = int.Parse(Lb_Código.Text);
+                        bool status = RB_Ativo.Checked;
 
                         connection.Open();
                         //COMANDO UPDATE(ALTERAÇÃO) NA TABALEA ATENDENTE NAS VARIAVEIS DETERMINADAS
@@ -398,7 +423,7 @@ namespace Book_Manager
                         //DETERMINO COM COMMAND.PARAMETERS QUAL SERÁ O VALOR DAS VARIAVEIS.
                         //PARA ALTERAÇÃO DE DADOS O "cd" CARREGADO DEVE SER IGUAL AO "cd_Atendente"
                         //DO DADO NO BANCO DE DADOS.
-                        string sql = "update TBLAtendente set ds_Login=@login,ds_Senha=@senha,nm_Atendente=@nome where cd_Atedente=@cd";
+                        string sql = "update TBLAtendente set ds_Login=@login,ds_Senha=@senha,nm_Atendente=@nome,ds_status=@status where cd_Atedente=@cd";
 
                         //INFORMANDO O COMANDO NA CONEXÃO DETERMINADA
                         //SqlCommand command = new SqlCommand(sql, connection);
@@ -407,6 +432,7 @@ namespace Book_Manager
                         command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
                         command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
                         command.Parameters.Add("@cd", SqlDbType.Int).Value = cd;
+                        command.Parameters.Add("@status", SqlDbType.Bit).Value = status;
 
                         command.CommandText = sql;
                         command.Connection = connection;
@@ -416,6 +442,10 @@ namespace Book_Manager
 
                         Lb_Codigotxt.Visible = false;
                         Lb_Código.Visible = false;
+                        RB_Ativo.Checked = false;
+                        RB_Ativo.Visible = false;
+                        RB_Inativo.Checked = false;
+                        RB_Inativo.Visible = false;
                         Tbx_Pesq_funcionario.Clear();
                         MessageBox.Show("Dados cadastrais do funcionário alterado com sucesso!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpar_Campos();

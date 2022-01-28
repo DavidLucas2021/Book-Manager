@@ -36,11 +36,29 @@ WHERE cd_Atedente = '25';
 alter table TBLAtendente 
 add ds_status bit not null default(1)
 
+
 --SELECIONANDO TODOS OS CAMPOS DA TABELA ATENDENTE
 --AO EXECUTAR É MOSTRADO A TABELA ATENDENTE COMO UM TODO
 select * from TBLAtendente
 --where ds_Login = 'David' and ds_Senha = 'am@156'
 
+
+--SETANDO O DS_STATUS EM 0 ATRAVÉZ 
+--DO CD_ATENDENTE DO FUNCIONÁRIO
+--QUE FOR ESPECIFICADO
+update TBLAtendente 
+set ds_status = 0
+where cd_Atedente = 8
+
+--MOSTRANDO A TABELA DE ATENDENTE 
+--SOMENTE COM FUNCIONÁRIOS ATIVOS
+select * from TBLAtendente
+where ds_status = 1 --and ds_Login like 'david'
+
+--MOSTRANDO A TABELA DE ATENDENTE 
+--SOMENTE COM FUNCIONÁRIOS INATIVOS
+select * from TBLAtendente
+where ds_status = 0
 
 
 --CRIANDO A TABELA PARA CRIENTE
