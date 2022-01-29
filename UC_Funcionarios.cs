@@ -321,18 +321,11 @@ namespace Book_Manager
             Tbx_Login.Text = Caixa_do_DB.SelectedRows[0].Cells[1].Value.ToString();
             Txb_Senha.Text = Caixa_do_DB.SelectedRows[0].Cells[2].Value.ToString();
             Txb_Nome.Text = Caixa_do_DB.SelectedRows[0].Cells[3].Value.ToString();
-
-            //FUNÇÃO QUE CARREGA OS VALORES DOS RADIOS BUTTONS 
-            //CONFORME O BANCO DE DADOS -- É REALIZADO UMA VERIFICAÇÃO 
-            //ONDE SE VERIFICA SE OS DADOS CARREGADOS SÃO DE UM FUNCIONÁRIO
-            //ATIVO OU INATIVO -- CONFORME RESPOSTA OS RADIOS BUTTONS SÃO SETADOS
-            connection.Open();
-            command.CommandText = "select * from TBLAtendente where ds_Login = ('" + Tbx_Login.Text + "') and ds_Senha = ('" + Txb_Senha.Text + "') and ds_status = 1";
-            //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
-            command.Connection = connection;
-            //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
-            dataReader = command.ExecuteReader();
-            if (dataReader.HasRows)
+            string valor = Caixa_do_DB.SelectedRows[0].Cells[4].Value.ToString();
+            
+            RB_Ativo.Enabled = true;
+            RB_Inativo.Enabled = true;
+            if (valor == "True")
             {
                 RB_Ativo.Checked = true;
                 RB_Inativo.Checked = false;
@@ -342,10 +335,6 @@ namespace Book_Manager
                 RB_Ativo.Checked = false;
                 RB_Inativo.Checked = true;
             }
-            connection.Close();
-            dataReader.Close();
-            RB_Ativo.Enabled = true;
-            RB_Inativo.Enabled = true;
         }
         //FUNÇÃO DE ALTERAÇÃO DE CADASTROS 
         private void Btn_Alterar_Click(object sender, EventArgs e)

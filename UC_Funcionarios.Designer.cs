@@ -162,7 +162,7 @@ namespace Book_Manager
             this.Caixa_do_DB.MultiSelect = false;
             this.Caixa_do_DB.Name = "Caixa_do_DB";
             this.Caixa_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Caixa_do_DB.Size = new System.Drawing.Size(466, 246);
+            this.Caixa_do_DB.Size = new System.Drawing.Size(452, 246);
             this.Caixa_do_DB.TabIndex = 11;
             this.Caixa_do_DB.DoubleClick += new System.EventHandler(this.Caixa_do_DB_DoubleClick);
             // 
@@ -191,7 +191,7 @@ namespace Book_Manager
             // 
             this.Btn_Cancelar.Enabled = false;
             this.Btn_Cancelar.Image = global::Book_Manager.Properties.Resources.excluir__1_;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(480, 440);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(466, 440);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(106, 60);
             this.Btn_Cancelar.TabIndex = 18;
@@ -204,7 +204,7 @@ namespace Book_Manager
             // 
             this.Btn_Excluir.Enabled = false;
             this.Btn_Excluir.Image = global::Book_Manager.Properties.Resources.excluir;
-            this.Btn_Excluir.Location = new System.Drawing.Point(480, 360);
+            this.Btn_Excluir.Location = new System.Drawing.Point(466, 360);
             this.Btn_Excluir.Name = "Btn_Excluir";
             this.Btn_Excluir.Size = new System.Drawing.Size(106, 60);
             this.Btn_Excluir.TabIndex = 17;
@@ -217,7 +217,7 @@ namespace Book_Manager
             // 
             this.Btn_Alterar.Enabled = false;
             this.Btn_Alterar.Image = global::Book_Manager.Properties.Resources.botao_editar;
-            this.Btn_Alterar.Location = new System.Drawing.Point(480, 276);
+            this.Btn_Alterar.Location = new System.Drawing.Point(466, 276);
             this.Btn_Alterar.Name = "Btn_Alterar";
             this.Btn_Alterar.Size = new System.Drawing.Size(106, 60);
             this.Btn_Alterar.TabIndex = 16;
@@ -230,7 +230,7 @@ namespace Book_Manager
             // 
             this.Btn_SalvarNoDB.Enabled = false;
             this.Btn_SalvarNoDB.Image = global::Book_Manager.Properties.Resources.salve_;
-            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(480, 197);
+            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(466, 197);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
             this.Btn_SalvarNoDB.Size = new System.Drawing.Size(106, 60);
             this.Btn_SalvarNoDB.TabIndex = 15;
@@ -242,7 +242,7 @@ namespace Book_Manager
             // Btn_Novo
             // 
             this.Btn_Novo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Novo.Image")));
-            this.Btn_Novo.Location = new System.Drawing.Point(480, 117);
+            this.Btn_Novo.Location = new System.Drawing.Point(466, 117);
             this.Btn_Novo.Name = "Btn_Novo";
             this.Btn_Novo.Size = new System.Drawing.Size(106, 60);
             this.Btn_Novo.TabIndex = 14;
