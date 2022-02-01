@@ -43,7 +43,7 @@ namespace Book_Manager
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Tbx_Pesq_funcionario = new System.Windows.Forms.TextBox();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
-            this.Btn_Excluir = new System.Windows.Forms.Button();
+            this.Btn_Ativ_Inat = new System.Windows.Forms.Button();
             this.Btn_Alterar = new System.Windows.Forms.Button();
             this.Btn_SalvarNoDB = new System.Windows.Forms.Button();
             this.Btn_Novo = new System.Windows.Forms.Button();
@@ -52,8 +52,7 @@ namespace Book_Manager
             this.lb_texto_login = new System.Windows.Forms.Label();
             this.lb_texto_senha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.RB_Inativo = new System.Windows.Forms.RadioButton();
-            this.RB_Ativo = new System.Windows.Forms.RadioButton();
+            this.LBL_status = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Caixa_do_DB)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -193,25 +192,25 @@ namespace Book_Manager
             this.Btn_Cancelar.Image = global::Book_Manager.Properties.Resources.excluir__1_;
             this.Btn_Cancelar.Location = new System.Drawing.Point(466, 440);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
-            this.Btn_Cancelar.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Cancelar.Size = new System.Drawing.Size(117, 60);
             this.Btn_Cancelar.TabIndex = 18;
             this.Btn_Cancelar.Text = " Cancelar";
             this.Btn_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
             this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
-            // Btn_Excluir
+            // Btn_Ativ_Inat
             // 
-            this.Btn_Excluir.Enabled = false;
-            this.Btn_Excluir.Image = global::Book_Manager.Properties.Resources.excluir;
-            this.Btn_Excluir.Location = new System.Drawing.Point(466, 360);
-            this.Btn_Excluir.Name = "Btn_Excluir";
-            this.Btn_Excluir.Size = new System.Drawing.Size(106, 60);
-            this.Btn_Excluir.TabIndex = 17;
-            this.Btn_Excluir.Text = " Remover";
-            this.Btn_Excluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btn_Excluir.UseVisualStyleBackColor = true;
-            this.Btn_Excluir.Click += new System.EventHandler(this.Btn_Excluir_Click);
+            this.Btn_Ativ_Inat.Enabled = false;
+            this.Btn_Ativ_Inat.Image = global::Book_Manager.Properties.Resources.excluir;
+            this.Btn_Ativ_Inat.Location = new System.Drawing.Point(466, 360);
+            this.Btn_Ativ_Inat.Name = "Btn_Ativ_Inat";
+            this.Btn_Ativ_Inat.Size = new System.Drawing.Size(117, 60);
+            this.Btn_Ativ_Inat.TabIndex = 17;
+            this.Btn_Ativ_Inat.Text = "Ativar/Inativar";
+            this.Btn_Ativ_Inat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Ativ_Inat.UseVisualStyleBackColor = true;
+            this.Btn_Ativ_Inat.Click += new System.EventHandler(this.Btn_Ativ_Inat_Click);
             // 
             // Btn_Alterar
             // 
@@ -219,7 +218,7 @@ namespace Book_Manager
             this.Btn_Alterar.Image = global::Book_Manager.Properties.Resources.botao_editar;
             this.Btn_Alterar.Location = new System.Drawing.Point(466, 276);
             this.Btn_Alterar.Name = "Btn_Alterar";
-            this.Btn_Alterar.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Alterar.Size = new System.Drawing.Size(117, 60);
             this.Btn_Alterar.TabIndex = 16;
             this.Btn_Alterar.Text = " Alterar";
             this.Btn_Alterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -232,7 +231,7 @@ namespace Book_Manager
             this.Btn_SalvarNoDB.Image = global::Book_Manager.Properties.Resources.salve_;
             this.Btn_SalvarNoDB.Location = new System.Drawing.Point(466, 197);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
-            this.Btn_SalvarNoDB.Size = new System.Drawing.Size(106, 60);
+            this.Btn_SalvarNoDB.Size = new System.Drawing.Size(117, 60);
             this.Btn_SalvarNoDB.TabIndex = 15;
             this.Btn_SalvarNoDB.Text = " Salvar";
             this.Btn_SalvarNoDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -244,7 +243,7 @@ namespace Book_Manager
             this.Btn_Novo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Novo.Image")));
             this.Btn_Novo.Location = new System.Drawing.Point(466, 117);
             this.Btn_Novo.Name = "Btn_Novo";
-            this.Btn_Novo.Size = new System.Drawing.Size(106, 60);
+            this.Btn_Novo.Size = new System.Drawing.Size(117, 60);
             this.Btn_Novo.TabIndex = 14;
             this.Btn_Novo.Text = " Novo";
             this.Btn_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -306,58 +305,30 @@ namespace Book_Manager
             this.label3.TabIndex = 23;
             this.label3.Text = "Status:";
             // 
-            // RB_Inativo
+            // LBL_status
             // 
-            this.RB_Inativo.AutoSize = true;
-            this.RB_Inativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RB_Inativo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.RB_Inativo.FlatAppearance.BorderSize = 0;
-            this.RB_Inativo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.RB_Inativo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RB_Inativo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.RB_Inativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.RB_Inativo.ForeColor = System.Drawing.Color.White;
-            this.RB_Inativo.Location = new System.Drawing.Point(194, 231);
-            this.RB_Inativo.Name = "RB_Inativo";
-            this.RB_Inativo.Size = new System.Drawing.Size(88, 28);
-            this.RB_Inativo.TabIndex = 24;
-            this.RB_Inativo.TabStop = true;
-            this.RB_Inativo.Text = "Inativo";
-            this.RB_Inativo.UseVisualStyleBackColor = true;
-            // 
-            // RB_Ativo
-            // 
-            this.RB_Ativo.AutoSize = true;
-            this.RB_Ativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RB_Ativo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.RB_Ativo.FlatAppearance.BorderSize = 0;
-            this.RB_Ativo.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.RB_Ativo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RB_Ativo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.RB_Ativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.RB_Ativo.ForeColor = System.Drawing.Color.White;
-            this.RB_Ativo.Location = new System.Drawing.Point(114, 231);
-            this.RB_Ativo.Name = "RB_Ativo";
-            this.RB_Ativo.Size = new System.Drawing.Size(74, 28);
-            this.RB_Ativo.TabIndex = 25;
-            this.RB_Ativo.TabStop = true;
-            this.RB_Ativo.Text = "Ativo";
-            this.RB_Ativo.UseVisualStyleBackColor = true;
+            this.LBL_status.AutoSize = true;
+            this.LBL_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_status.ForeColor = System.Drawing.Color.White;
+            this.LBL_status.Location = new System.Drawing.Point(96, 233);
+            this.LBL_status.Name = "LBL_status";
+            this.LBL_status.Size = new System.Drawing.Size(56, 24);
+            this.LBL_status.TabIndex = 24;
+            this.LBL_status.Text = "Ativo";
             // 
             // UC_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.RB_Ativo);
-            this.Controls.Add(this.RB_Inativo);
+            this.Controls.Add(this.LBL_status);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_texto_senha);
             this.Controls.Add(this.lb_texto_login);
             this.Controls.Add(this.lb_texto_nome);
             this.Controls.Add(this.Btn_visivel);
             this.Controls.Add(this.Btn_Cancelar);
-            this.Controls.Add(this.Btn_Excluir);
+            this.Controls.Add(this.Btn_Ativ_Inat);
             this.Controls.Add(this.Btn_Alterar);
             this.Controls.Add(this.Btn_SalvarNoDB);
             this.Controls.Add(this.Btn_Novo);
@@ -398,7 +369,7 @@ namespace Book_Manager
         private System.Windows.Forms.Button Btn_Novo;
         private System.Windows.Forms.Button Btn_SalvarNoDB;
         private System.Windows.Forms.Button Btn_Alterar;
-        private System.Windows.Forms.Button Btn_Excluir;
+        private System.Windows.Forms.Button Btn_Ativ_Inat;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Button Btn_visivel;
         private System.Windows.Forms.Label lb_texto_nome;
@@ -406,7 +377,6 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_texto_senha;
         private System.Windows.Forms.DataGridView Caixa_do_DB;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton RB_Inativo;
-        private System.Windows.Forms.RadioButton RB_Ativo;
+        private System.Windows.Forms.Label LBL_status;
     }
 }
