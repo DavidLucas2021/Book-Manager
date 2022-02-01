@@ -462,89 +462,101 @@ namespace Book_Manager
             DialogResult ativ_inat = MessageBox.Show("Tem certaza que deseja alterar o status do funcionário(a)?", "Ativar/Inativar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(ativ_inat == DialogResult.Yes)
             {
-                connection.Open();
-                command.CommandText = "select * from TBLAtendente where cd_atedente = ('" + Lb_Código.Text + "') and ds_status = 1";
-                //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
-                command.Connection = connection;
-                //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
-                dataReader = command.ExecuteReader();
-
-                if (txtnome_carregado != Txb_Nome.Text || txtlogin_carregado != Tbx_Login.Text || txtsenha_carregado != Txb_Senha.Text)
+                try
                 {
-                    MessageBox.Show("As alterações realizadas nos dados cadastrais do funcionário não serão contabilizadas. Para alterações de dados utilize o botão alterar. O botão que foi utilizado serve somente para ativar e inativar funcionários.", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtnome_carregado = String.Empty;
-                    txtlogin_carregado = String.Empty;
-                    txtsenha_carregado = String.Empty;
-                }
-                else
-                {
-                    txtnome_carregado = String.Empty;
-                    txtlogin_carregado = String.Empty;
-                    txtsenha_carregado = String.Empty;
-                }
-
-                if (dataReader.HasRows)
-                {
-                    dataReader.Close();
-                    //string nome = Txb_Nome.Text;
-                    //string login = Tbx_Login.Text;
-                    //string senha = Txb_Senha.Text;
-                    int cd = int.Parse(Lb_Código.Text);
-                    bool status = false;
-
-                    string sql = "update TBLAtendente set ds_status=@status where cd_Atedente=@cd";
-                    //ds_Login = @login,ds_Senha = @senha,nm_Atendente = @nome,
-                    //command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
-                    //command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
-                    //command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
-                    command.Parameters.Add("@cd", SqlDbType.Int).Value = cd;
-                    command.Parameters.Add("@status", SqlDbType.Int).Value = status;
-
-                    command.CommandText = sql;
+                    connection.Open();
+                    command.CommandText = "select * from TBLAtendente where cd_atedente = ('" + Lb_Código.Text + "') and ds_status = 1";
+                    //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
                     command.Connection = connection;
-                    command.ExecuteNonQuery();
+                    //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
+                    dataReader = command.ExecuteReader();
 
-                    MessageBox.Show("Funcionário inativado com sucesso!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (txtnome_carregado != Txb_Nome.Text || txtlogin_carregado != Tbx_Login.Text || txtsenha_carregado != Txb_Senha.Text)
+                    {
+                        MessageBox.Show("As alterações realizadas nos dados cadastrais do funcionário não serão contabilizadas. Para alterações de dados utilize o botão alterar. O botão que foi utilizado serve somente para ativar e inativar funcionários.", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtnome_carregado = String.Empty;
+                        txtlogin_carregado = String.Empty;
+                        txtsenha_carregado = String.Empty;
+                    }
+                    else
+                    {
+                        txtnome_carregado = String.Empty;
+                        txtlogin_carregado = String.Empty;
+                        txtsenha_carregado = String.Empty;
+                    }
 
-                    Limpar_Campos();
-                    Tbx_Pesq_funcionario.Clear();
-                    Btn_Ativ_Inat.Text = "Ativar/Inativar";
+                    if (dataReader.HasRows)
+                    {
+                        dataReader.Close();
+                        //string nome = Txb_Nome.Text;
+                        //string login = Tbx_Login.Text;
+                        //string senha = Txb_Senha.Text;
+                        int cd = int.Parse(Lb_Código.Text);
+                        bool status = false;
 
+                        string sql = "update TBLAtendente set ds_status=@status where cd_Atedente=@cd";
+                        //ds_Login = @login,ds_Senha = @senha,nm_Atendente = @nome,
+                        //command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                        //command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
+                        //command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+                        command.Parameters.Add("@cd", SqlDbType.Int).Value = cd;
+                        command.Parameters.Add("@status", SqlDbType.Int).Value = status;
+
+                        command.CommandText = sql;
+                        command.Connection = connection;
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Funcionário inativado com sucesso!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Limpar_Campos();
+                        Tbx_Pesq_funcionario.Clear();
+                        Btn_Ativ_Inat.Text = "Ativar/Inativar";
+
+                        command.Parameters.Clear();
+                        connection.Close();
+                    }
+                    else
+                    {
+                        dataReader.Close();
+                        //string nome = Txb_Nome.Text;
+                        //string login = Tbx_Login.Text;
+                        //string senha = Txb_Senha.Text;
+                        int cd = int.Parse(Lb_Código.Text);
+                        bool status = true;
+
+                        string sql = "update TBLAtendente set ds_status=@status where cd_Atedente=@cd";
+                        //ds_Login = @login,ds_Senha = @senha,nm_Atendente = @nome,
+                        //command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                        //command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
+                        //command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
+                        command.Parameters.Add("@cd", SqlDbType.Int).Value = cd;
+                        command.Parameters.Add("@status", SqlDbType.Int).Value = status;
+
+                        command.CommandText = sql;
+                        command.Connection = connection;
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Funcionário ativado com sucesso!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Limpar_Campos();
+                        Tbx_Pesq_funcionario.Clear();
+                        Btn_Ativ_Inat.Text = "Ativar/Inativar";
+
+                        command.Parameters.Clear();
+                        connection.Close();
+                    }
+                    Func_Desabilitar();
+                    Btn_Novo.Enabled = true;
+                }
+                catch(Exception erro)
+                {
+                    MessageBox.Show(erro.Message);
                     command.Parameters.Clear();
                     connection.Close();
+
+                    Func_Desabilitar();
+                    Btn_Novo.Enabled = true;
                 }
-                else
-                {
-                    dataReader.Close();
-                    //string nome = Txb_Nome.Text;
-                    //string login = Tbx_Login.Text;
-                    //string senha = Txb_Senha.Text;
-                    int cd = int.Parse(Lb_Código.Text);
-                    bool status = true;
-
-                    string sql = "update TBLAtendente set ds_status=@status where cd_Atedente=@cd";
-                    //ds_Login = @login,ds_Senha = @senha,nm_Atendente = @nome,
-                    //command.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
-                    //command.Parameters.Add("@senha", SqlDbType.Char).Value = senha;
-                    //command.Parameters.Add("@nome", SqlDbType.VarChar).Value = nome;
-                    command.Parameters.Add("@cd", SqlDbType.Int).Value = cd;
-                    command.Parameters.Add("@status", SqlDbType.Int).Value = status;
-
-                    command.CommandText = sql;
-                    command.Connection = connection;
-                    command.ExecuteNonQuery();
-
-                    MessageBox.Show("Funcionário ativado com sucesso!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Limpar_Campos();
-                    Tbx_Pesq_funcionario.Clear();
-                    Btn_Ativ_Inat.Text = "Ativar/Inativar";
-
-                    command.Parameters.Clear();
-                    connection.Close();
-                }
-                Func_Desabilitar();
-                Btn_Novo.Enabled = true;
             }
             else
             {
