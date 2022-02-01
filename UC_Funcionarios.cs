@@ -23,11 +23,21 @@ namespace Book_Manager
         //QUE PERMANECEM ALOCADAS NA MEMÓRIA E PODEM SER MANIPULADAS
         DataTable dataTable = new DataTable();
 
+        //VARIÁVEIS UTILIZADAS PARA FAZER COMPARAÇÃO 
+        //DO QUE FOI CARREGADO NA FUNÇÃO DOUBLECLICK_DB
+        //COM OQUE FOI ENCONTRADO AO CLICAR EM ATIVAR/INATIVAR
+        string txtnome_carregado = String.Empty;
+        string txtlogin_carregado = String.Empty;
+        string txtsenha_carregado = String.Empty;
+
         public UC_Funcionarios()
         {
             InitializeComponent();
             Func_Desabilitar();
             Func_Cancela_escrita_Datagrid();
+            //VARIAVEL UTILIZADA PARA FAZER COMPARAÇÃO 
+            //DO QUE FOI CARREGADO NA FUNÇÃO DOUBLECLICK_DB
+            //COM OQUE FOI ENCONTRADO AO CLICAR EM ATIVAR/INATIVAR
         }
         //FUNÇÃO PARA EMPEDIR DE QUE O USUÁRIO  
         //ALTERE DADOS AO CLICAR NO DATAGRIDVIEW 
@@ -305,7 +315,12 @@ namespace Book_Manager
             Txb_Nome.Text = Caixa_do_DB.SelectedRows[0].Cells[3].Value.ToString();
             string valor = Caixa_do_DB.SelectedRows[0].Cells[4].Value.ToString();
 
-            
+            //vARIÁVEIS RECEBEM O PRIMEIRO VALOR 
+            //QUANDO A INFORMAÇÃO É CARREGADA DO DB
+            txtnome_carregado = Txb_Nome.Text;
+            txtlogin_carregado = Tbx_Login.Text;
+            txtsenha_carregado = Txb_Senha.Text;
+
             if (valor == "True")
             {
                 LBL_status.Text = "Ativo";
@@ -451,7 +466,21 @@ namespace Book_Manager
             command.Connection = connection;
             //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
             dataReader = command.ExecuteReader();
-            
+
+            if (txtnome_carregado != Txb_Nome.Text || txtlogin_carregado != Tbx_Login.Text || txtsenha_carregado != Txb_Senha.Text)
+            {
+                MessageBox.Show("As alterações realizadas nos dados cadastrais do funcionário não serão contabilizadas. Para alterações nos dados utilize o botão alterar. O botão Ativar/Inativar serve somente para ativar e inativar funcionários.","Aviso importante",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                txtnome_carregado = String.Empty;
+                txtlogin_carregado = String.Empty;
+                txtsenha_carregado = String.Empty;
+            }
+            else
+            {
+                txtnome_carregado = String.Empty;
+                txtlogin_carregado = String.Empty;
+                txtsenha_carregado = String.Empty;
+            }
+
             if (dataReader.HasRows)
             {
                 dataReader.Close();
@@ -512,6 +541,8 @@ namespace Book_Manager
                 command.Parameters.Clear();
                 connection.Close();
             }
+            Func_Desabilitar();
+            Btn_Novo.Enabled = true;
         }
     }
 }
