@@ -30,7 +30,7 @@ namespace Book_Manager
         //INFORMANDO O SERVIDOR DO BANCO DE DADOS, A
         //AUTENTICAÇÃO (SSPI = AUTENTICAÇÃO DO WINDOWS)
         //E NOME DO BANCO DE DADOS  
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         //COMMAND = CLASSE PARA ENVIAR ISNTRUÇÕES 
         //(SELECT, INSERT, UPDATE, DELETE E ETC...)
         //AO BANCO DE DADOS 
@@ -44,9 +44,9 @@ namespace Book_Manager
         //BOTÃO PARA FECHAR A APLICAÇÃO
         private void BT_Fechar_Click(object sender, EventArgs e)
         {
-            //Application.Exit();
+            Application.Exit();
             //T_Login.ActiveForm.Close();
-            this.Close();
+            //this.Close();
         }
         //EVENTO PARA QUANDO O BOTÃO ESTIVER ACIONADO 
         private void BT_Visibilidade_MouseDown(object sender, MouseEventArgs e)
@@ -90,7 +90,7 @@ namespace Book_Manager
                             dataReader.Close();
                             //OCULTA A TELA DE LOGIN QUANDO O MENU ABRIR
                             this.Hide();
-                            T_Menu _Menu = new T_Menu();
+                            T_Menu _Menu = new T_Menu(TB_Login.Text);
                             _Menu.StartPosition = FormStartPosition.CenterScreen;
                             _Menu.ShowDialog();
                         }

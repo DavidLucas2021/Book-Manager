@@ -13,7 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
         //CLASSE QUE RECEBE DADOS DE UMA TABELA APÓS O COMANDO SELECT
@@ -175,7 +175,7 @@ namespace Book_Manager
             {
                 if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
-
+                    Btn_SalvarNoDB.TabIndex = 4;
                     connection.Open();
                     //DEFINE UM COMANDO PARA LER E COMPARAR OS DADOS INFORMADOS COM O BANDCO DE DADOS
                     command.CommandText = "select * from TBLAtendente where ds_Login = ('" + Tbx_Login.Text + "')";
@@ -487,7 +487,7 @@ namespace Book_Manager
 
                     if (txtnome_carregado != Txb_Nome.Text || txtlogin_carregado != Tbx_Login.Text || txtsenha_carregado != Txb_Senha.Text)
                     {
-                        MessageBox.Show("As alterações realizadas nos dados cadastrais do funcionário não serão contabilizadas. Para alterações de dados utilize o botão alterar. O botão que foi utilizado serve somente para ativar e inativar funcionários.", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("As alterações realizadas nos dados cadastrais do(a) funcionário(a) não serão contabilizadas. Para alterações de dados utilize o botão alterar. O botão que foi utilizado serve somente para ativar e inativar funcionários(as).", "Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtnome_carregado = String.Empty;
                         txtlogin_carregado = String.Empty;
                         txtsenha_carregado = String.Empty;
@@ -578,11 +578,6 @@ namespace Book_Manager
                 Btn_Novo.Enabled = true;
             }
         }
-
-        //private void Txb_Senha_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    textebox(e);
-        //}
     }
 }
 

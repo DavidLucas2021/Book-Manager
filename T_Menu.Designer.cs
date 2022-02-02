@@ -32,8 +32,11 @@ namespace Book_Manager
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(T_Menu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LB_Usuariotxt = new System.Windows.Forms.Label();
+            this.Btn_Sair_Login = new System.Windows.Forms.Button();
             this.BT_Caixa = new System.Windows.Forms.Button();
             this.BT_Pedido = new System.Windows.Forms.Button();
+            this.LB_Usuario = new System.Windows.Forms.Label();
             this.BT_Autores = new System.Windows.Forms.Button();
             this.BT_Editoras = new System.Windows.Forms.Button();
             this.BT_Categorias = new System.Windows.Forms.Button();
@@ -43,8 +46,8 @@ namespace Book_Manager
             this.BT_Funcionarios = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.LB_Nome_Livraria = new System.Windows.Forms.Label();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.LB_DataeHora = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.uC_Funcionarios1 = new Book_Manager.UC_Funcionarios();
             this.principal1 = new Book_Manager.Principal();
             this.panel1.SuspendLayout();
@@ -54,9 +57,11 @@ namespace Book_Manager
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(83)))), ((int)(((byte)(125)))));
-            this.panel1.Controls.Add(this.LB_DataeHora);
+            this.panel1.Controls.Add(this.LB_Usuariotxt);
+            this.panel1.Controls.Add(this.Btn_Sair_Login);
             this.panel1.Controls.Add(this.BT_Caixa);
             this.panel1.Controls.Add(this.BT_Pedido);
+            this.panel1.Controls.Add(this.LB_Usuario);
             this.panel1.Controls.Add(this.BT_Autores);
             this.panel1.Controls.Add(this.BT_Editoras);
             this.panel1.Controls.Add(this.BT_Categorias);
@@ -70,6 +75,35 @@ namespace Book_Manager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 557);
             this.panel1.TabIndex = 0;
+            // 
+            // LB_Usuariotxt
+            // 
+            this.LB_Usuariotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Usuariotxt.ForeColor = System.Drawing.Color.White;
+            this.LB_Usuariotxt.Location = new System.Drawing.Point(68, 481);
+            this.LB_Usuariotxt.Name = "LB_Usuariotxt";
+            this.LB_Usuariotxt.Size = new System.Drawing.Size(121, 28);
+            this.LB_Usuariotxt.TabIndex = 13;
+            this.LB_Usuariotxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Btn_Sair_Login
+            // 
+            this.Btn_Sair_Login.FlatAppearance.BorderSize = 0;
+            this.Btn_Sair_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Sair_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Sair_Login.ForeColor = System.Drawing.Color.White;
+            this.Btn_Sair_Login.Image = global::Book_Manager.Properties.Resources.logout__1_;
+            this.Btn_Sair_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Sair_Login.Location = new System.Drawing.Point(0, 513);
+            this.Btn_Sair_Login.Name = "Btn_Sair_Login";
+            this.Btn_Sair_Login.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Btn_Sair_Login.Size = new System.Drawing.Size(90, 44);
+            this.Btn_Sair_Login.TabIndex = 12;
+            this.Btn_Sair_Login.Text = "Sair";
+            this.Btn_Sair_Login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Sair_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Sair_Login.UseVisualStyleBackColor = true;
+            this.Btn_Sair_Login.Click += new System.EventHandler(this.Btn_Sair_Login_Click);
             // 
             // BT_Caixa
             // 
@@ -108,6 +142,17 @@ namespace Book_Manager
             this.BT_Pedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_Pedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BT_Pedido.UseVisualStyleBackColor = true;
+            // 
+            // LB_Usuario
+            // 
+            this.LB_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Usuario.ForeColor = System.Drawing.Color.White;
+            this.LB_Usuario.Location = new System.Drawing.Point(3, 481);
+            this.LB_Usuario.Name = "LB_Usuario";
+            this.LB_Usuario.Size = new System.Drawing.Size(69, 28);
+            this.LB_Usuario.TabIndex = 11;
+            this.LB_Usuario.Text = "Login:";
+            this.LB_Usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BT_Autores
             // 
@@ -248,6 +293,7 @@ namespace Book_Manager
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Controls.Add(this.LB_Nome_Livraria);
+            this.flowLayoutPanel1.Controls.Add(this.LB_DataeHora);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -256,31 +302,30 @@ namespace Book_Manager
             // 
             // LB_Nome_Livraria
             // 
-            this.LB_Nome_Livraria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LB_Nome_Livraria.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Nome_Livraria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Nome_Livraria.ForeColor = System.Drawing.Color.White;
             this.LB_Nome_Livraria.Location = new System.Drawing.Point(3, 0);
             this.LB_Nome_Livraria.Name = "LB_Nome_Livraria";
-            this.LB_Nome_Livraria.Size = new System.Drawing.Size(197, 68);
+            this.LB_Nome_Livraria.Size = new System.Drawing.Size(197, 36);
             this.LB_Nome_Livraria.TabIndex = 1;
             this.LB_Nome_Livraria.Text = "Livraria Johnson";
             this.LB_Nome_Livraria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LB_DataeHora
+            // 
+            this.LB_DataeHora.BackColor = System.Drawing.Color.Black;
+            this.LB_DataeHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_DataeHora.ForeColor = System.Drawing.Color.White;
+            this.LB_DataeHora.Location = new System.Drawing.Point(3, 36);
+            this.LB_DataeHora.Name = "LB_DataeHora";
+            this.LB_DataeHora.Size = new System.Drawing.Size(186, 24);
+            this.LB_DataeHora.TabIndex = 10;
+            this.LB_DataeHora.Text = "00/00/0000 - 00:00:00";
             // 
             // timer
             // 
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // LB_DataeHora
-            // 
-            this.LB_DataeHora.AutoSize = true;
-            this.LB_DataeHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.LB_DataeHora.ForeColor = System.Drawing.Color.White;
-            this.LB_DataeHora.Location = new System.Drawing.Point(4, 533);
-            this.LB_DataeHora.Name = "LB_DataeHora";
-            this.LB_DataeHora.Size = new System.Drawing.Size(186, 24);
-            this.LB_DataeHora.TabIndex = 10;
-            this.LB_DataeHora.Text = "00/00/0000 - 00:00:00";
             // 
             // uC_Funcionarios1
             // 
@@ -320,7 +365,6 @@ namespace Book_Manager
             this.Text = "Book Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.T_Menu_FormClosed);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -344,5 +388,8 @@ namespace Book_Manager
         private UC_Funcionarios uC_Funcionarios1;
         private System.Windows.Forms.Label LB_DataeHora;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button Btn_Sair_Login;
+        private System.Windows.Forms.Label LB_Usuario;
+        private System.Windows.Forms.Label LB_Usuariotxt;
     }
 }
