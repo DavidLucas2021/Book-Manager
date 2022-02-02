@@ -13,8 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
         //CLASSE QUE RECEBE DADOS DE UMA TABELA APÓS O COMANDO SELECT
@@ -35,10 +34,25 @@ namespace Book_Manager
             InitializeComponent();
             Func_Desabilitar();
             Func_Cancela_escrita_Datagrid();
-            //VARIAVEL UTILIZADA PARA FAZER COMPARAÇÃO 
-            //DO QUE FOI CARREGADO NA FUNÇÃO DOUBLECLICK_DB
-            //COM OQUE FOI ENCONTRADO AO CLICAR EM ATIVAR/INATIVAR
         }
+
+        //FUNÇÃO PARA DETERMINAR NO TXB_SENHA QUE SOMENTE 
+        //NUMEROS SEJAM COLOCADOS NO CAMPO DE TEXTO.
+        //A FUNÇÃO PODE SER UTILIZADA CASO HAJA NECESSIDADE DE OPTAR 
+        //POR CAMPO DE SENHA ACEITANDO SOMENTE NUMEROS.
+        //private void Func_Somentenumeros(KeyPressEventArgs e)
+        //{
+        //    //KEYCHAR UTILIZA A TABELA ASCII PARA DETERMINAR O CARACTER
+        //    if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != 44 && e.KeyChar != 46)
+        //    {
+        //        e.Handled = true;
+        //    }
+        //}
+        //private void Txb_Senha_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    Func_Somentenumeros(e);
+        //}
+
         //FUNÇÃO PARA EMPEDIR DE QUE O USUÁRIO  
         //ALTERE DADOS AO CLICAR NO DATAGRIDVIEW 
         //E DIGITAR PELO TECLADO 
@@ -46,6 +60,7 @@ namespace Book_Manager
         {
             Caixa_do_DB.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
+        
         private void Func_Desabilitar()
         {
             Txb_Nome.Enabled = false;
@@ -70,7 +85,6 @@ namespace Book_Manager
             LBL_status.Visible = false;
             LBL_status.Text = String.Empty;
         }
-
         private void Func_Habilitar()
         {
             Txb_Nome.Enabled = true;
@@ -564,6 +578,11 @@ namespace Book_Manager
                 Btn_Novo.Enabled = true;
             }
         }
+
+        //private void Txb_Senha_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    textebox(e);
+        //}
     }
 }
 

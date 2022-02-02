@@ -29,6 +29,11 @@ namespace Book_Manager
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Funcionarios));
             this.label2 = new System.Windows.Forms.Label();
             this.Lb_Codigotxt = new System.Windows.Forms.Label();
@@ -120,7 +125,7 @@ namespace Book_Manager
             this.Txb_Senha.MaxLength = 8;
             this.Txb_Senha.Name = "Txb_Senha";
             this.Txb_Senha.Size = new System.Drawing.Size(332, 20);
-            this.Txb_Senha.TabIndex = 7;
+            this.Txb_Senha.TabIndex = 3;
             this.Txb_Senha.UseSystemPasswordChar = true;
             // 
             // Tbx_Login
@@ -130,7 +135,7 @@ namespace Book_Manager
             this.Tbx_Login.MaxLength = 20;
             this.Tbx_Login.Name = "Tbx_Login";
             this.Tbx_Login.Size = new System.Drawing.Size(332, 20);
-            this.Tbx_Login.TabIndex = 8;
+            this.Tbx_Login.TabIndex = 2;
             // 
             // Txb_Nome
             // 
@@ -139,7 +144,7 @@ namespace Book_Manager
             this.Txb_Nome.MaxLength = 60;
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(333, 20);
-            this.Txb_Nome.TabIndex = 9;
+            this.Txb_Nome.TabIndex = 1;
             // 
             // Lb_Código
             // 
@@ -154,12 +159,43 @@ namespace Book_Manager
             // 
             // Caixa_do_DB
             // 
-            this.Caixa_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.Caixa_do_DB.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Caixa_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.Caixa_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Caixa_do_DB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Caixa_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.Caixa_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Caixa_do_DB.DefaultCellStyle = dataGridViewCellStyle8;
             this.Caixa_do_DB.Location = new System.Drawing.Point(8, 334);
             this.Caixa_do_DB.MultiSelect = false;
             this.Caixa_do_DB.Name = "Caixa_do_DB";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Caixa_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.Caixa_do_DB.RowHeadersVisible = false;
+            this.Caixa_do_DB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Caixa_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.Caixa_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Caixa_do_DB.Size = new System.Drawing.Size(452, 246);
             this.Caixa_do_DB.TabIndex = 11;
@@ -183,7 +219,7 @@ namespace Book_Manager
             this.Tbx_Pesq_funcionario.MaxLength = 20;
             this.Tbx_Pesq_funcionario.Name = "Tbx_Pesq_funcionario";
             this.Tbx_Pesq_funcionario.Size = new System.Drawing.Size(403, 26);
-            this.Tbx_Pesq_funcionario.TabIndex = 14;
+            this.Tbx_Pesq_funcionario.TabIndex = 4;
             this.Tbx_Pesq_funcionario.TextChanged += new System.EventHandler(this.Tbx_Pesq_funcionario_TextChanged);
             // 
             // Btn_Cancelar
@@ -193,7 +229,7 @@ namespace Book_Manager
             this.Btn_Cancelar.Location = new System.Drawing.Point(466, 440);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(117, 60);
-            this.Btn_Cancelar.TabIndex = 18;
+            this.Btn_Cancelar.TabIndex = 103;
             this.Btn_Cancelar.Text = " Cancelar";
             this.Btn_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
@@ -206,7 +242,7 @@ namespace Book_Manager
             this.Btn_Ativ_Inat.Location = new System.Drawing.Point(466, 360);
             this.Btn_Ativ_Inat.Name = "Btn_Ativ_Inat";
             this.Btn_Ativ_Inat.Size = new System.Drawing.Size(117, 60);
-            this.Btn_Ativ_Inat.TabIndex = 17;
+            this.Btn_Ativ_Inat.TabIndex = 103;
             this.Btn_Ativ_Inat.Text = "Ativar/Inativar";
             this.Btn_Ativ_Inat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Ativ_Inat.UseVisualStyleBackColor = true;
@@ -219,7 +255,7 @@ namespace Book_Manager
             this.Btn_Alterar.Location = new System.Drawing.Point(466, 276);
             this.Btn_Alterar.Name = "Btn_Alterar";
             this.Btn_Alterar.Size = new System.Drawing.Size(117, 60);
-            this.Btn_Alterar.TabIndex = 16;
+            this.Btn_Alterar.TabIndex = 102;
             this.Btn_Alterar.Text = " Alterar";
             this.Btn_Alterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Alterar.UseVisualStyleBackColor = true;
@@ -232,7 +268,7 @@ namespace Book_Manager
             this.Btn_SalvarNoDB.Location = new System.Drawing.Point(466, 197);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
             this.Btn_SalvarNoDB.Size = new System.Drawing.Size(117, 60);
-            this.Btn_SalvarNoDB.TabIndex = 15;
+            this.Btn_SalvarNoDB.TabIndex = 101;
             this.Btn_SalvarNoDB.Text = " Salvar";
             this.Btn_SalvarNoDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_SalvarNoDB.UseVisualStyleBackColor = true;
@@ -244,7 +280,7 @@ namespace Book_Manager
             this.Btn_Novo.Location = new System.Drawing.Point(466, 117);
             this.Btn_Novo.Name = "Btn_Novo";
             this.Btn_Novo.Size = new System.Drawing.Size(117, 60);
-            this.Btn_Novo.TabIndex = 14;
+            this.Btn_Novo.TabIndex = 100;
             this.Btn_Novo.Text = " Novo";
             this.Btn_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Novo.UseVisualStyleBackColor = true;
