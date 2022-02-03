@@ -80,9 +80,9 @@ namespace Book_Manager
             // 
             this.LB_Usuariotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Usuariotxt.ForeColor = System.Drawing.Color.White;
-            this.LB_Usuariotxt.Location = new System.Drawing.Point(68, 481);
+            this.LB_Usuariotxt.Location = new System.Drawing.Point(4, 481);
             this.LB_Usuariotxt.Name = "LB_Usuariotxt";
-            this.LB_Usuariotxt.Size = new System.Drawing.Size(121, 28);
+            this.LB_Usuariotxt.Size = new System.Drawing.Size(185, 28);
             this.LB_Usuariotxt.TabIndex = 13;
             this.LB_Usuariotxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -94,10 +94,10 @@ namespace Book_Manager
             this.Btn_Sair_Login.ForeColor = System.Drawing.Color.White;
             this.Btn_Sair_Login.Image = global::Book_Manager.Properties.Resources.logout__1_;
             this.Btn_Sair_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Sair_Login.Location = new System.Drawing.Point(0, 513);
+            this.Btn_Sair_Login.Location = new System.Drawing.Point(107, 512);
             this.Btn_Sair_Login.Name = "Btn_Sair_Login";
             this.Btn_Sair_Login.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Btn_Sair_Login.Size = new System.Drawing.Size(90, 44);
+            this.Btn_Sair_Login.Size = new System.Drawing.Size(90, 45);
             this.Btn_Sair_Login.TabIndex = 12;
             this.Btn_Sair_Login.Text = "Sair";
             this.Btn_Sair_Login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,10 +114,10 @@ namespace Book_Manager
             this.BT_Caixa.ForeColor = System.Drawing.Color.White;
             this.BT_Caixa.Image = global::Book_Manager.Properties.Resources.fluxo_de_caixa;
             this.BT_Caixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Caixa.Location = new System.Drawing.Point(0, 428);
+            this.BT_Caixa.Location = new System.Drawing.Point(0, 388);
             this.BT_Caixa.Name = "BT_Caixa";
             this.BT_Caixa.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Caixa.Size = new System.Drawing.Size(200, 45);
+            this.BT_Caixa.Size = new System.Drawing.Size(200, 40);
             this.BT_Caixa.TabIndex = 9;
             this.BT_Caixa.Text = " Caixa";
             this.BT_Caixa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,10 +133,10 @@ namespace Book_Manager
             this.BT_Pedido.ForeColor = System.Drawing.Color.White;
             this.BT_Pedido.Image = ((System.Drawing.Image)(resources.GetObject("BT_Pedido.Image")));
             this.BT_Pedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Pedido.Location = new System.Drawing.Point(0, 383);
+            this.BT_Pedido.Location = new System.Drawing.Point(0, 348);
             this.BT_Pedido.Name = "BT_Pedido";
             this.BT_Pedido.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Pedido.Size = new System.Drawing.Size(200, 45);
+            this.BT_Pedido.Size = new System.Drawing.Size(200, 40);
             this.BT_Pedido.TabIndex = 8;
             this.BT_Pedido.Text = " Pedidos";
             this.BT_Pedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,7 +147,7 @@ namespace Book_Manager
             // 
             this.LB_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Usuario.ForeColor = System.Drawing.Color.White;
-            this.LB_Usuario.Location = new System.Drawing.Point(3, 481);
+            this.LB_Usuario.Location = new System.Drawing.Point(3, 449);
             this.LB_Usuario.Name = "LB_Usuario";
             this.LB_Usuario.Size = new System.Drawing.Size(69, 28);
             this.LB_Usuario.TabIndex = 11;
@@ -163,10 +163,10 @@ namespace Book_Manager
             this.BT_Autores.ForeColor = System.Drawing.Color.White;
             this.BT_Autores.Image = ((System.Drawing.Image)(resources.GetObject("BT_Autores.Image")));
             this.BT_Autores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Autores.Location = new System.Drawing.Point(0, 338);
+            this.BT_Autores.Location = new System.Drawing.Point(0, 308);
             this.BT_Autores.Name = "BT_Autores";
             this.BT_Autores.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Autores.Size = new System.Drawing.Size(200, 45);
+            this.BT_Autores.Size = new System.Drawing.Size(200, 40);
             this.BT_Autores.TabIndex = 7;
             this.BT_Autores.Text = " Autores";
             this.BT_Autores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -182,10 +182,10 @@ namespace Book_Manager
             this.BT_Editoras.ForeColor = System.Drawing.Color.White;
             this.BT_Editoras.Image = global::Book_Manager.Properties.Resources.design_editorial;
             this.BT_Editoras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Editoras.Location = new System.Drawing.Point(0, 293);
+            this.BT_Editoras.Location = new System.Drawing.Point(0, 268);
             this.BT_Editoras.Name = "BT_Editoras";
             this.BT_Editoras.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Editoras.Size = new System.Drawing.Size(200, 45);
+            this.BT_Editoras.Size = new System.Drawing.Size(200, 40);
             this.BT_Editoras.TabIndex = 6;
             this.BT_Editoras.Text = " Editoras";
             this.BT_Editoras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,10 +201,10 @@ namespace Book_Manager
             this.BT_Categorias.ForeColor = System.Drawing.Color.White;
             this.BT_Categorias.Image = ((System.Drawing.Image)(resources.GetObject("BT_Categorias.Image")));
             this.BT_Categorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Categorias.Location = new System.Drawing.Point(0, 248);
+            this.BT_Categorias.Location = new System.Drawing.Point(0, 228);
             this.BT_Categorias.Name = "BT_Categorias";
             this.BT_Categorias.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Categorias.Size = new System.Drawing.Size(200, 45);
+            this.BT_Categorias.Size = new System.Drawing.Size(200, 40);
             this.BT_Categorias.TabIndex = 5;
             this.BT_Categorias.Text = " Categorias";
             this.BT_Categorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -220,10 +220,10 @@ namespace Book_Manager
             this.BT_Livros.ForeColor = System.Drawing.Color.White;
             this.BT_Livros.Image = global::Book_Manager.Properties.Resources.pilha_de_livros;
             this.BT_Livros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Livros.Location = new System.Drawing.Point(0, 203);
+            this.BT_Livros.Location = new System.Drawing.Point(0, 188);
             this.BT_Livros.Name = "BT_Livros";
             this.BT_Livros.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Livros.Size = new System.Drawing.Size(200, 45);
+            this.BT_Livros.Size = new System.Drawing.Size(200, 40);
             this.BT_Livros.TabIndex = 4;
             this.BT_Livros.Text = " Livros";
             this.BT_Livros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,10 +239,10 @@ namespace Book_Manager
             this.BT_Telefone.ForeColor = System.Drawing.Color.White;
             this.BT_Telefone.Image = ((System.Drawing.Image)(resources.GetObject("BT_Telefone.Image")));
             this.BT_Telefone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Telefone.Location = new System.Drawing.Point(0, 158);
+            this.BT_Telefone.Location = new System.Drawing.Point(0, 148);
             this.BT_Telefone.Name = "BT_Telefone";
             this.BT_Telefone.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Telefone.Size = new System.Drawing.Size(200, 45);
+            this.BT_Telefone.Size = new System.Drawing.Size(200, 40);
             this.BT_Telefone.TabIndex = 3;
             this.BT_Telefone.Text = " Telefones";
             this.BT_Telefone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,10 +258,10 @@ namespace Book_Manager
             this.BT_Clientes.ForeColor = System.Drawing.Color.White;
             this.BT_Clientes.Image = ((System.Drawing.Image)(resources.GetObject("BT_Clientes.Image")));
             this.BT_Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_Clientes.Location = new System.Drawing.Point(0, 113);
+            this.BT_Clientes.Location = new System.Drawing.Point(0, 108);
             this.BT_Clientes.Name = "BT_Clientes";
             this.BT_Clientes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Clientes.Size = new System.Drawing.Size(200, 45);
+            this.BT_Clientes.Size = new System.Drawing.Size(200, 40);
             this.BT_Clientes.TabIndex = 2;
             this.BT_Clientes.Text = " Clientes";
             this.BT_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,7 +281,7 @@ namespace Book_Manager
             this.BT_Funcionarios.Location = new System.Drawing.Point(0, 68);
             this.BT_Funcionarios.Name = "BT_Funcionarios";
             this.BT_Funcionarios.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.BT_Funcionarios.Size = new System.Drawing.Size(200, 45);
+            this.BT_Funcionarios.Size = new System.Drawing.Size(200, 40);
             this.BT_Funcionarios.TabIndex = 1;
             this.BT_Funcionarios.Text = " Funcionários";
             this.BT_Funcionarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -78,7 +78,7 @@ namespace Book_Manager
             this.Lb_Codigotxt.AutoSize = true;
             this.Lb_Codigotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_Codigotxt.ForeColor = System.Drawing.Color.White;
-            this.Lb_Codigotxt.Location = new System.Drawing.Point(15, 77);
+            this.Lb_Codigotxt.Location = new System.Drawing.Point(20, 69);
             this.Lb_Codigotxt.Name = "Lb_Codigotxt";
             this.Lb_Codigotxt.Size = new System.Drawing.Size(83, 24);
             this.Lb_Codigotxt.TabIndex = 2;
@@ -90,7 +90,7 @@ namespace Book_Manager
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 153);
+            this.label1.Location = new System.Drawing.Point(35, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 3;
@@ -101,7 +101,7 @@ namespace Book_Manager
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(22, 193);
+            this.label4.Location = new System.Drawing.Point(27, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 24);
             this.label4.TabIndex = 4;
@@ -112,7 +112,7 @@ namespace Book_Manager
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(26, 113);
+            this.label5.Location = new System.Drawing.Point(31, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 5;
@@ -121,7 +121,7 @@ namespace Book_Manager
             // Txb_Senha
             // 
             this.Txb_Senha.Enabled = false;
-            this.Txb_Senha.Location = new System.Drawing.Point(97, 197);
+            this.Txb_Senha.Location = new System.Drawing.Point(102, 189);
             this.Txb_Senha.MaxLength = 8;
             this.Txb_Senha.Name = "Txb_Senha";
             this.Txb_Senha.Size = new System.Drawing.Size(332, 20);
@@ -131,7 +131,7 @@ namespace Book_Manager
             // Tbx_Login
             // 
             this.Tbx_Login.Enabled = false;
-            this.Tbx_Login.Location = new System.Drawing.Point(97, 157);
+            this.Tbx_Login.Location = new System.Drawing.Point(102, 149);
             this.Tbx_Login.MaxLength = 20;
             this.Tbx_Login.Name = "Tbx_Login";
             this.Tbx_Login.Size = new System.Drawing.Size(332, 20);
@@ -140,7 +140,7 @@ namespace Book_Manager
             // Txb_Nome
             // 
             this.Txb_Nome.Enabled = false;
-            this.Txb_Nome.Location = new System.Drawing.Point(97, 117);
+            this.Txb_Nome.Location = new System.Drawing.Point(102, 109);
             this.Txb_Nome.MaxLength = 60;
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(333, 20);
@@ -151,7 +151,7 @@ namespace Book_Manager
             this.Lb_Código.AutoSize = true;
             this.Lb_Código.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lb_Código.ForeColor = System.Drawing.Color.White;
-            this.Lb_Código.Location = new System.Drawing.Point(93, 77);
+            this.Lb_Código.Location = new System.Drawing.Point(98, 69);
             this.Lb_Código.Name = "Lb_Código";
             this.Lb_Código.Size = new System.Drawing.Size(0, 24);
             this.Lb_Código.TabIndex = 10;
@@ -181,7 +181,7 @@ namespace Book_Manager
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Caixa_do_DB.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Caixa_do_DB.Location = new System.Drawing.Point(8, 334);
+            this.Caixa_do_DB.Location = new System.Drawing.Point(13, 326);
             this.Caixa_do_DB.MultiSelect = false;
             this.Caixa_do_DB.Name = "Caixa_do_DB";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -197,7 +197,7 @@ namespace Book_Manager
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Caixa_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Caixa_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Caixa_do_DB.Size = new System.Drawing.Size(452, 246);
+            this.Caixa_do_DB.Size = new System.Drawing.Size(452, 223);
             this.Caixa_do_DB.TabIndex = 11;
             this.Caixa_do_DB.DoubleClick += new System.EventHandler(this.Caixa_do_DB_DoubleClick);
             // 
@@ -206,7 +206,7 @@ namespace Book_Manager
             this.groupBox1.Controls.Add(this.Tbx_Pesq_funcionario);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(19, 276);
+            this.groupBox1.Location = new System.Drawing.Point(24, 268);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(427, 52);
             this.groupBox1.TabIndex = 13;
@@ -226,7 +226,7 @@ namespace Book_Manager
             // 
             this.Btn_Cancelar.Enabled = false;
             this.Btn_Cancelar.Image = global::Book_Manager.Properties.Resources.excluir__1_;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(466, 440);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(471, 432);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(117, 60);
             this.Btn_Cancelar.TabIndex = 103;
@@ -239,7 +239,7 @@ namespace Book_Manager
             // 
             this.Btn_Ativ_Inat.Enabled = false;
             this.Btn_Ativ_Inat.Image = global::Book_Manager.Properties.Resources.excluir;
-            this.Btn_Ativ_Inat.Location = new System.Drawing.Point(466, 360);
+            this.Btn_Ativ_Inat.Location = new System.Drawing.Point(471, 352);
             this.Btn_Ativ_Inat.Name = "Btn_Ativ_Inat";
             this.Btn_Ativ_Inat.Size = new System.Drawing.Size(117, 60);
             this.Btn_Ativ_Inat.TabIndex = 103;
@@ -252,7 +252,7 @@ namespace Book_Manager
             // 
             this.Btn_Alterar.Enabled = false;
             this.Btn_Alterar.Image = global::Book_Manager.Properties.Resources.botao_editar;
-            this.Btn_Alterar.Location = new System.Drawing.Point(466, 276);
+            this.Btn_Alterar.Location = new System.Drawing.Point(471, 268);
             this.Btn_Alterar.Name = "Btn_Alterar";
             this.Btn_Alterar.Size = new System.Drawing.Size(117, 60);
             this.Btn_Alterar.TabIndex = 102;
@@ -265,7 +265,7 @@ namespace Book_Manager
             // 
             this.Btn_SalvarNoDB.Enabled = false;
             this.Btn_SalvarNoDB.Image = global::Book_Manager.Properties.Resources.salve_;
-            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(466, 197);
+            this.Btn_SalvarNoDB.Location = new System.Drawing.Point(471, 189);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
             this.Btn_SalvarNoDB.Size = new System.Drawing.Size(117, 60);
             this.Btn_SalvarNoDB.TabIndex = 4;
@@ -277,7 +277,7 @@ namespace Book_Manager
             // Btn_Novo
             // 
             this.Btn_Novo.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Novo.Image")));
-            this.Btn_Novo.Location = new System.Drawing.Point(466, 117);
+            this.Btn_Novo.Location = new System.Drawing.Point(471, 109);
             this.Btn_Novo.Name = "Btn_Novo";
             this.Btn_Novo.Size = new System.Drawing.Size(117, 60);
             this.Btn_Novo.TabIndex = 100;
@@ -294,7 +294,7 @@ namespace Book_Manager
             this.Btn_visivel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_visivel.FlatAppearance.BorderSize = 0;
             this.Btn_visivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_visivel.Location = new System.Drawing.Point(404, 198);
+            this.Btn_visivel.Location = new System.Drawing.Point(409, 190);
             this.Btn_visivel.Name = "Btn_visivel";
             this.Btn_visivel.Size = new System.Drawing.Size(25, 18);
             this.Btn_visivel.TabIndex = 19;
@@ -306,7 +306,7 @@ namespace Book_Manager
             // 
             this.lb_texto_nome.AutoSize = true;
             this.lb_texto_nome.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_nome.Location = new System.Drawing.Point(97, 120);
+            this.lb_texto_nome.Location = new System.Drawing.Point(102, 112);
             this.lb_texto_nome.Name = "lb_texto_nome";
             this.lb_texto_nome.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_nome.TabIndex = 20;
@@ -315,7 +315,7 @@ namespace Book_Manager
             // 
             this.lb_texto_login.AutoSize = true;
             this.lb_texto_login.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_login.Location = new System.Drawing.Point(97, 160);
+            this.lb_texto_login.Location = new System.Drawing.Point(102, 152);
             this.lb_texto_login.Name = "lb_texto_login";
             this.lb_texto_login.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_login.TabIndex = 21;
@@ -325,7 +325,7 @@ namespace Book_Manager
             this.lb_texto_senha.AutoSize = true;
             this.lb_texto_senha.BackColor = System.Drawing.SystemColors.Window;
             this.lb_texto_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lb_texto_senha.Location = new System.Drawing.Point(97, 200);
+            this.lb_texto_senha.Location = new System.Drawing.Point(102, 192);
             this.lb_texto_senha.Name = "lb_texto_senha";
             this.lb_texto_senha.Size = new System.Drawing.Size(0, 13);
             this.lb_texto_senha.TabIndex = 22;
@@ -335,7 +335,7 @@ namespace Book_Manager
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(26, 233);
+            this.label3.Location = new System.Drawing.Point(31, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 24);
             this.label3.TabIndex = 23;
@@ -346,7 +346,7 @@ namespace Book_Manager
             this.LBL_status.AutoSize = true;
             this.LBL_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_status.ForeColor = System.Drawing.Color.White;
-            this.LBL_status.Location = new System.Drawing.Point(96, 233);
+            this.LBL_status.Location = new System.Drawing.Point(101, 225);
             this.LBL_status.Name = "LBL_status";
             this.LBL_status.Size = new System.Drawing.Size(56, 24);
             this.LBL_status.TabIndex = 24;

@@ -12,11 +12,12 @@ namespace Book_Manager
 {
     public partial class T_Menu : Form
     {
-        public T_Menu(string usuário_logado)
+        public T_Menu(string usuario_logado)
         {
             InitializeComponent();
             uC_Funcionarios1.Hide();
-            LB_Usuariotxt.Text = usuário_logado;
+            //INFORMA O USUÁRIO LOGADO NO SISTEMA 
+            LB_Usuariotxt.Text = usuario_logado;
         }
 
         private void T_Menu_FormClosed(object sender, FormClosedEventArgs e)

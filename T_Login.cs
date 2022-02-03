@@ -37,9 +37,9 @@ namespace Book_Manager
         SqlCommand command = new SqlCommand();
         //DATAREADER = CLASSE PARA OBTER DADOS DE UMA TABELA 
         //APÓS A EXECUÇÃO DE UM SELECT
-        SqlDataReader dataReader;
-
-
+        //SqlDataReader dataReader;
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        DataTable dataTable = new DataTable();
 
         //BOTÃO PARA FECHAR A APLICAÇÃO
         private void BT_Fechar_Click(object sender, EventArgs e)
@@ -74,52 +74,60 @@ namespace Book_Manager
                     //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
                     command.Connection = connection;
                     //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
-                    dataReader = command.ExecuteReader();
+                    dataAdapter.SelectCommand = command;
+                    dataAdapter.Fill(dataTable);
 
-                    if (dataReader.HasRows)
+                    if (dataTable.Rows.Count > 0)
                     {
+                        dataTable.Clear();
                         //TRECHO DO CÓDIGO QUE VERIFICA SE HÁ NO DB O LOGIN E SENHA ESPECIFICADO E SE ESTA ATIVO
-                        dataReader.Close();
                         command.CommandText = "select * from TBLAtendente where ds_Login = ('" + TB_Login.Text + "') and ds_Senha = ('" + TB_Senha.Text + "') and ds_status = 1";
                         //VINCULA ESSE COMANDO AO BANCO DE DADOS EM CONNECTION
                         command.Connection = connection;
                         //EXECUTA A LEITURA DO BANCO DE DADOS É RETORNA A TABELA CONFORME COMANDO 
-                        dataReader = command.ExecuteReader();
-                        if(dataReader.HasRows)
+                        dataAdapter.SelectCommand = command;
+                        dataAdapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
                         {
-                            dataReader.Close();
                             //OCULTA A TELA DE LOGIN QUANDO O MENU ABRIR
                             this.Hide();
-                            T_Menu _Menu = new T_Menu(TB_Login.Text);
+                            string usuario_logado = dataTable.Rows[0]["nm_Atendente"].ToString();
+                            T_Menu _Menu = new T_Menu(usuario_logado);
                             _Menu.StartPosition = FormStartPosition.CenterScreen;
                             _Menu.ShowDialog();
+                            dataTable.Clear();
                         }
-                        else if(!dataReader.HasRows)
+                        else if(dataTable.Rows.Count <= 0)
                         {
-                            dataReader.Close();
                             MessageBox.Show("Funcionário inativo!", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             TB_Login.Clear();
                             TB_Senha.Clear();
                             TB_Login.Focus();
+                            dataTable.Clear();
                         }
                     }
                     else
                     {
-                        dataReader.Close();
                         MessageBox.Show("Login ou senha inválido!", "Erro ao logar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         TB_Login.Clear();
                         TB_Senha.Clear();
                         TB_Login.Focus();
+                        dataTable.Clear();
                     }
                 }
                 catch(Exception erro)
                 {
                     MessageBox.Show(erro.Message);
+                    TB_Login.Clear();
+                    TB_Senha.Clear();
                     connection.Close();
+                    dataTable.Clear();
                 }
                 finally
                 {
                     connection.Close();
+                    dataTable.Clear();
                 }
             }
             else
