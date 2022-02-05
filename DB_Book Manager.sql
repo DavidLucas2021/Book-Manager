@@ -75,9 +75,13 @@ create table TBLcliente
 	nm_Bairro varchar(20) not null,
 	nm_Cidade varchar(20) not null,
 	sg_UF char(2) not null,
-	no_CEP char(8) not null
-
+	no_CEP char(8) not null,
 )
+
+alter table TBLcliente 
+add ds_status bit not null default(1)
+
+
 select * from TBLcliente
 
 --CRIANDO TABELA DE TELEFONE 

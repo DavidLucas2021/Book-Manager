@@ -48,8 +48,9 @@ namespace Book_Manager
             this.LB_Nome_Livraria = new System.Windows.Forms.Label();
             this.LB_DataeHora = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.uC_Funcionarios1 = new Book_Manager.UC_Funcionarios();
             this.principal1 = new Book_Manager.Principal();
+            this.uC_Funcionarios1 = new Book_Manager.UC_Funcionarios();
+            this.uC_Cliente1 = new Book_Manager.UC_Cliente();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,14 +74,14 @@ namespace Book_Manager
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 557);
+            this.panel1.Size = new System.Drawing.Size(200, 607);
             this.panel1.TabIndex = 0;
             // 
             // LB_Usuariotxt
             // 
             this.LB_Usuariotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Usuariotxt.ForeColor = System.Drawing.Color.White;
-            this.LB_Usuariotxt.Location = new System.Drawing.Point(4, 481);
+            this.LB_Usuariotxt.Location = new System.Drawing.Point(4, 523);
             this.LB_Usuariotxt.Name = "LB_Usuariotxt";
             this.LB_Usuariotxt.Size = new System.Drawing.Size(185, 28);
             this.LB_Usuariotxt.TabIndex = 13;
@@ -94,7 +95,7 @@ namespace Book_Manager
             this.Btn_Sair_Login.ForeColor = System.Drawing.Color.White;
             this.Btn_Sair_Login.Image = global::Book_Manager.Properties.Resources.logout__1_;
             this.Btn_Sair_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Sair_Login.Location = new System.Drawing.Point(107, 512);
+            this.Btn_Sair_Login.Location = new System.Drawing.Point(99, 559);
             this.Btn_Sair_Login.Name = "Btn_Sair_Login";
             this.Btn_Sair_Login.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.Btn_Sair_Login.Size = new System.Drawing.Size(90, 45);
@@ -147,7 +148,7 @@ namespace Book_Manager
             // 
             this.LB_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Usuario.ForeColor = System.Drawing.Color.White;
-            this.LB_Usuario.Location = new System.Drawing.Point(3, 449);
+            this.LB_Usuario.Location = new System.Drawing.Point(3, 485);
             this.LB_Usuario.Name = "LB_Usuario";
             this.LB_Usuario.Size = new System.Drawing.Size(69, 28);
             this.LB_Usuario.TabIndex = 11;
@@ -267,6 +268,7 @@ namespace Book_Manager
             this.BT_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_Clientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BT_Clientes.UseVisualStyleBackColor = true;
+            this.BT_Clientes.Click += new System.EventHandler(this.BT_Clientes_Click);
             // 
             // BT_Funcionarios
             // 
@@ -327,34 +329,37 @@ namespace Book_Manager
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // uC_Funcionarios1
-            // 
-            this.uC_Funcionarios1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_Funcionarios1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.uC_Funcionarios1.Location = new System.Drawing.Point(195, 0);
-            this.uC_Funcionarios1.Name = "uC_Funcionarios1";
-            this.uC_Funcionarios1.Size = new System.Drawing.Size(600, 600);
-            this.uC_Funcionarios1.TabIndex = 2;
-            // 
             // principal1
             // 
-            this.principal1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.principal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.principal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(83)))), ((int)(((byte)(125)))));
             this.principal1.ForeColor = System.Drawing.Color.Black;
             this.principal1.Location = new System.Drawing.Point(195, 0);
             this.principal1.Name = "principal1";
-            this.principal1.Size = new System.Drawing.Size(600, 600);
+            this.principal1.Size = new System.Drawing.Size(800, 650);
             this.principal1.TabIndex = 1;
+            // 
+            // uC_Funcionarios1
+            // 
+            this.uC_Funcionarios1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.uC_Funcionarios1.Location = new System.Drawing.Point(195, 3);
+            this.uC_Funcionarios1.Name = "uC_Funcionarios1";
+            this.uC_Funcionarios1.Size = new System.Drawing.Size(800, 650);
+            this.uC_Funcionarios1.TabIndex = 2;
+            // 
+            // uC_Cliente1
+            // 
+            this.uC_Cliente1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.uC_Cliente1.Location = new System.Drawing.Point(195, 0);
+            this.uC_Cliente1.Name = "uC_Cliente1";
+            this.uC_Cliente1.Size = new System.Drawing.Size(800, 650);
+            this.uC_Cliente1.TabIndex = 3;
             // 
             // T_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 557);
+            this.ClientSize = new System.Drawing.Size(980, 607);
+            this.Controls.Add(this.uC_Cliente1);
             this.Controls.Add(this.uC_Funcionarios1);
             this.Controls.Add(this.principal1);
             this.Controls.Add(this.panel1);
@@ -384,12 +389,13 @@ namespace Book_Manager
         private System.Windows.Forms.Button BT_Clientes;
         private System.Windows.Forms.Button BT_Funcionarios;
         private System.Windows.Forms.Label LB_Nome_Livraria;
-        private Principal principal1;
-        private UC_Funcionarios uC_Funcionarios1;
         private System.Windows.Forms.Label LB_DataeHora;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button Btn_Sair_Login;
         private System.Windows.Forms.Label LB_Usuario;
         private System.Windows.Forms.Label LB_Usuariotxt;
+        private Principal principal1;
+        private UC_Funcionarios uC_Funcionarios1;
+        private UC_Cliente uC_Cliente1;
     }
 }

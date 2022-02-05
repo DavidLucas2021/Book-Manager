@@ -71,6 +71,12 @@
     <Compile Include="T_Menu.Designer.cs">
       <DependentUpon>T_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Cliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Cliente.Designer.cs">
+      <DependentUpon>UC_Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Funcionarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="T_Menu.resx">
       <DependentUpon>T_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Cliente.resx">
+      <DependentUpon>UC_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Funcionarios.resx">
       <DependentUpon>UC_Funcionarios.cs</DependentUpon>

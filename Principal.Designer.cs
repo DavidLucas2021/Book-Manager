@@ -40,7 +40,7 @@ namespace Book_Manager
             this.pictureBox1.Image = global::Book_Manager.Properties.Resources.cd1a51334959a73a683ef473c7a42336_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 650);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -53,7 +53,7 @@ namespace Book_Manager
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Principal";
-            this.Size = new System.Drawing.Size(600, 600);
+            this.Size = new System.Drawing.Size(800, 650);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
