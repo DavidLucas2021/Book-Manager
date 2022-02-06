@@ -15,8 +15,8 @@ namespace Book_Manager
         public T_Menu(string usuario_logado)
         {
             InitializeComponent();
-            uC_Funcionarios1.Hide();
-            uC_Cliente1.Hide();
+            //uC_Funcionarios1.Hide();
+            //uC_Cliente1.Hide();
             principal1.Show();
             //INFORMA O USUÁRIO LOGADO NO SISTEMA 
             LB_Usuariotxt.Text = usuario_logado;
@@ -29,9 +29,10 @@ namespace Book_Manager
 
         private void BT_Funcionarios_Click(object sender, EventArgs e)
         {
-            principal1.Hide();
-            uC_Cliente1.Hide();
-            uC_Funcionarios1.Show();
+            //principal1.Hide();
+            //uC_Cliente1.Hide();
+            //uC_Funcionarios1.Show();
+            uC_Funcionarios1.BringToFront();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -49,9 +50,10 @@ namespace Book_Manager
 
         private void BT_Clientes_Click(object sender, EventArgs e)
         {
-            principal1.Hide();
-            uC_Funcionarios1.Hide();
-            uC_Cliente1.Show();
+            //principal1.Hide();
+            //uC_Funcionarios1.Hide();
+            //uC_Cliente1.Show();
+            uC_Cliente1.BringToFront();
         }
     }
 }

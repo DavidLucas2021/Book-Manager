@@ -341,7 +341,7 @@ namespace Book_Manager
             // uC_Funcionarios1
             // 
             this.uC_Funcionarios1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.uC_Funcionarios1.Location = new System.Drawing.Point(195, 3);
+            this.uC_Funcionarios1.Location = new System.Drawing.Point(195, 0);
             this.uC_Funcionarios1.Name = "uC_Funcionarios1";
             this.uC_Funcionarios1.Size = new System.Drawing.Size(800, 650);
             this.uC_Funcionarios1.TabIndex = 2;

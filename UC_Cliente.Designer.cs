@@ -30,11 +30,11 @@ namespace Book_Manager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Ativ_Inat = new System.Windows.Forms.Button();
             this.Btn_Alterar = new System.Windows.Forms.Button();
@@ -46,12 +46,11 @@ namespace Book_Manager
             this.lb_texto_login = new System.Windows.Forms.Label();
             this.lb_texto_nome = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Tbx_Pesq_funcionario = new System.Windows.Forms.TextBox();
+            this.Txb_Pesq_funcionario = new System.Windows.Forms.TextBox();
             this.DataGrid_do_DB = new System.Windows.Forms.DataGridView();
             this.Lb_Código = new System.Windows.Forms.Label();
             this.Txb_Nome = new System.Windows.Forms.TextBox();
             this.Txb_email = new System.Windows.Forms.TextBox();
-            this.Txb_pessoa = new System.Windows.Forms.TextBox();
             this.lb_nome = new System.Windows.Forms.Label();
             this.lb_pessoa = new System.Windows.Forms.Label();
             this.lb_email = new System.Windows.Forms.Label();
@@ -66,11 +65,9 @@ namespace Book_Manager
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Txb_cidade = new System.Windows.Forms.TextBox();
-            this.Txb_uf = new System.Windows.Forms.TextBox();
             this.lb_uf = new System.Windows.Forms.Label();
             this.lb_cidade = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Txb_cep = new System.Windows.Forms.TextBox();
             this.lb_cep = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -80,13 +77,16 @@ namespace Book_Manager
             this.lb_numero = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.Txb_telefone = new System.Windows.Forms.TextBox();
-            this.Txb_cpf = new System.Windows.Forms.TextBox();
-            this.lb_cpf = new System.Windows.Forms.Label();
+            this.lb_cpfoucnpj = new System.Windows.Forms.Label();
             this.lb_telefone = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txb_cnpj = new System.Windows.Forms.TextBox();
             this.lb_cnpj = new System.Windows.Forms.Label();
+            this.mkt_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.cbx_pessoa = new System.Windows.Forms.ComboBox();
+            this.cbx_uf = new System.Windows.Forms.ComboBox();
+            this.mkb_cpfoucnpj = new System.Windows.Forms.MaskedTextBox();
+            this.mkb_cnpj = new System.Windows.Forms.MaskedTextBox();
+            this.mkb_cep = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_do_DB)).BeginInit();
             this.SuspendLayout();
@@ -201,7 +201,7 @@ namespace Book_Manager
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Tbx_Pesq_funcionario);
+            this.groupBox1.Controls.Add(this.Txb_Pesq_funcionario);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(89, 331);
@@ -211,53 +211,53 @@ namespace Book_Manager
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa por Funcionário ";
             // 
-            // Tbx_Pesq_funcionario
+            // Txb_Pesq_funcionario
             // 
-            this.Tbx_Pesq_funcionario.Location = new System.Drawing.Point(11, 20);
-            this.Tbx_Pesq_funcionario.MaxLength = 20;
-            this.Tbx_Pesq_funcionario.Name = "Tbx_Pesq_funcionario";
-            this.Tbx_Pesq_funcionario.Size = new System.Drawing.Size(515, 26);
-            this.Tbx_Pesq_funcionario.TabIndex = 4;
+            this.Txb_Pesq_funcionario.Location = new System.Drawing.Point(11, 20);
+            this.Txb_Pesq_funcionario.MaxLength = 20;
+            this.Txb_Pesq_funcionario.Name = "Txb_Pesq_funcionario";
+            this.Txb_Pesq_funcionario.Size = new System.Drawing.Size(515, 26);
+            this.Txb_Pesq_funcionario.TabIndex = 4;
             // 
             // DataGrid_do_DB
             // 
             this.DataGrid_do_DB.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGrid_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid_do_DB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGrid_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle8;
             this.DataGrid_do_DB.Location = new System.Drawing.Point(89, 389);
             this.DataGrid_do_DB.MultiSelect = false;
             this.DataGrid_do_DB.Name = "DataGrid_do_DB";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DataGrid_do_DB.RowHeadersVisible = false;
             this.DataGrid_do_DB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DataGrid_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid_do_DB.Size = new System.Drawing.Size(534, 202);
             this.DataGrid_do_DB.TabIndex = 118;
@@ -290,16 +290,6 @@ namespace Book_Manager
             this.Txb_email.Name = "Txb_email";
             this.Txb_email.Size = new System.Drawing.Size(171, 20);
             this.Txb_email.TabIndex = 111;
-            // 
-            // Txb_pessoa
-            // 
-            this.Txb_pessoa.Enabled = false;
-            this.Txb_pessoa.Location = new System.Drawing.Point(167, 168);
-            this.Txb_pessoa.MaxLength = 8;
-            this.Txb_pessoa.Name = "Txb_pessoa";
-            this.Txb_pessoa.Size = new System.Drawing.Size(171, 20);
-            this.Txb_pessoa.TabIndex = 114;
-            this.Txb_pessoa.UseSystemPasswordChar = true;
             // 
             // lb_nome
             // 
@@ -393,7 +383,6 @@ namespace Book_Manager
             this.Txb_complemento.Name = "Txb_complemento";
             this.Txb_complemento.Size = new System.Drawing.Size(171, 20);
             this.Txb_complemento.TabIndex = 128;
-            this.Txb_complemento.UseSystemPasswordChar = true;
             // 
             // lb_complemento
             // 
@@ -445,16 +434,6 @@ namespace Book_Manager
             this.Txb_cidade.Size = new System.Drawing.Size(171, 20);
             this.Txb_cidade.TabIndex = 132;
             // 
-            // Txb_uf
-            // 
-            this.Txb_uf.Enabled = false;
-            this.Txb_uf.Location = new System.Drawing.Point(167, 272);
-            this.Txb_uf.MaxLength = 8;
-            this.Txb_uf.Name = "Txb_uf";
-            this.Txb_uf.Size = new System.Drawing.Size(84, 20);
-            this.Txb_uf.TabIndex = 134;
-            this.Txb_uf.UseSystemPasswordChar = true;
-            // 
             // lb_uf
             // 
             this.lb_uf.AutoSize = true;
@@ -485,15 +464,6 @@ namespace Book_Manager
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 13);
             this.label13.TabIndex = 152;
-            // 
-            // Txb_cep
-            // 
-            this.Txb_cep.Enabled = false;
-            this.Txb_cep.Location = new System.Drawing.Point(444, 246);
-            this.Txb_cep.MaxLength = 20;
-            this.Txb_cep.Name = "Txb_cep";
-            this.Txb_cep.Size = new System.Drawing.Size(171, 20);
-            this.Txb_cep.TabIndex = 150;
             // 
             // lb_cep
             // 
@@ -542,7 +512,6 @@ namespace Book_Manager
             this.Txb_bairro.Name = "Txb_bairro";
             this.Txb_bairro.Size = new System.Drawing.Size(171, 20);
             this.Txb_bairro.TabIndex = 146;
-            this.Txb_bairro.UseSystemPasswordChar = true;
             // 
             // lb_bairro
             // 
@@ -585,35 +554,16 @@ namespace Book_Manager
             this.label20.Size = new System.Drawing.Size(0, 13);
             this.label20.TabIndex = 142;
             // 
-            // Txb_telefone
+            // lb_cpfoucnpj
             // 
-            this.Txb_telefone.Enabled = false;
-            this.Txb_telefone.Location = new System.Drawing.Point(444, 142);
-            this.Txb_telefone.MaxLength = 20;
-            this.Txb_telefone.Name = "Txb_telefone";
-            this.Txb_telefone.Size = new System.Drawing.Size(171, 20);
-            this.Txb_telefone.TabIndex = 138;
-            // 
-            // Txb_cpf
-            // 
-            this.Txb_cpf.Enabled = false;
-            this.Txb_cpf.Location = new System.Drawing.Point(444, 168);
-            this.Txb_cpf.MaxLength = 8;
-            this.Txb_cpf.Name = "Txb_cpf";
-            this.Txb_cpf.Size = new System.Drawing.Size(171, 20);
-            this.Txb_cpf.TabIndex = 140;
-            this.Txb_cpf.UseSystemPasswordChar = true;
-            // 
-            // lb_cpf
-            // 
-            this.lb_cpf.AutoSize = true;
-            this.lb_cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cpf.ForeColor = System.Drawing.Color.White;
-            this.lb_cpf.Location = new System.Drawing.Point(382, 168);
-            this.lb_cpf.Name = "lb_cpf";
-            this.lb_cpf.Size = new System.Drawing.Size(56, 24);
-            this.lb_cpf.TabIndex = 141;
-            this.lb_cpf.Text = "CPF:";
+            this.lb_cpfoucnpj.AutoSize = true;
+            this.lb_cpfoucnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cpfoucnpj.ForeColor = System.Drawing.Color.White;
+            this.lb_cpfoucnpj.Location = new System.Drawing.Point(370, 168);
+            this.lb_cpfoucnpj.Name = "lb_cpfoucnpj";
+            this.lb_cpfoucnpj.Size = new System.Drawing.Size(68, 24);
+            this.lb_cpfoucnpj.TabIndex = 141;
+            this.lb_cpfoucnpj.Text = "CNPJ:";
             // 
             // lb_telefone
             // 
@@ -635,15 +585,6 @@ namespace Book_Manager
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 155;
             // 
-            // Txb_cnpj
-            // 
-            this.Txb_cnpj.Enabled = false;
-            this.Txb_cnpj.Location = new System.Drawing.Point(444, 273);
-            this.Txb_cnpj.MaxLength = 20;
-            this.Txb_cnpj.Name = "Txb_cnpj";
-            this.Txb_cnpj.Size = new System.Drawing.Size(171, 20);
-            this.Txb_cnpj.TabIndex = 153;
-            // 
             // lb_cnpj
             // 
             this.lb_cnpj.AutoSize = true;
@@ -655,16 +596,103 @@ namespace Book_Manager
             this.lb_cnpj.TabIndex = 154;
             this.lb_cnpj.Text = "CNPJ:";
             // 
+            // mkt_telefone
+            // 
+            this.mkt_telefone.Location = new System.Drawing.Point(444, 141);
+            this.mkt_telefone.Mask = "(00)00000-0000";
+            this.mkt_telefone.Name = "mkt_telefone";
+            this.mkt_telefone.Size = new System.Drawing.Size(171, 20);
+            this.mkt_telefone.TabIndex = 156;
+            this.mkt_telefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // cbx_pessoa
+            // 
+            this.cbx_pessoa.FormattingEnabled = true;
+            this.cbx_pessoa.Items.AddRange(new object[] {
+            "Física",
+            "Jurídica"});
+            this.cbx_pessoa.Location = new System.Drawing.Point(166, 168);
+            this.cbx_pessoa.Name = "cbx_pessoa";
+            this.cbx_pessoa.Size = new System.Drawing.Size(172, 21);
+            this.cbx_pessoa.TabIndex = 157;
+            this.cbx_pessoa.SelectionChangeCommitted += new System.EventHandler(this.cbx_pessoa_SelectionChangeCommitted);
+            // 
+            // cbx_uf
+            // 
+            this.cbx_uf.FormattingEnabled = true;
+            this.cbx_uf.Items.AddRange(new object[] {
+            " AC",
+            " AL",
+            " AP",
+            " AM",
+            " BA",
+            " CE",
+            " DF",
+            " ES",
+            " GO",
+            " MA",
+            " MT",
+            " MS",
+            " MG",
+            " PA",
+            " PB",
+            " PR",
+            " PE",
+            " PI",
+            " RJ",
+            " RN",
+            " RS",
+            " RO",
+            " RR",
+            " SC",
+            " SP",
+            " SE",
+            " TO"});
+            this.cbx_uf.Location = new System.Drawing.Point(166, 272);
+            this.cbx_uf.Name = "cbx_uf";
+            this.cbx_uf.Size = new System.Drawing.Size(84, 21);
+            this.cbx_uf.TabIndex = 158;
+            // 
+            // mkb_cpfoucnpj
+            // 
+            this.mkb_cpfoucnpj.Location = new System.Drawing.Point(444, 169);
+            this.mkb_cpfoucnpj.Name = "mkb_cpfoucnpj";
+            this.mkb_cpfoucnpj.Size = new System.Drawing.Size(171, 20);
+            this.mkb_cpfoucnpj.TabIndex = 159;
+            this.mkb_cpfoucnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mkb_cnpj
+            // 
+            this.mkb_cnpj.Location = new System.Drawing.Point(444, 273);
+            this.mkb_cnpj.Mask = "00.000.000/0000-00";
+            this.mkb_cnpj.Name = "mkb_cnpj";
+            this.mkb_cnpj.Size = new System.Drawing.Size(171, 20);
+            this.mkb_cnpj.TabIndex = 160;
+            this.mkb_cnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mkb_cep
+            // 
+            this.mkb_cep.Location = new System.Drawing.Point(444, 246);
+            this.mkb_cep.Mask = "00000-000";
+            this.mkb_cep.Name = "mkb_cep";
+            this.mkb_cep.Size = new System.Drawing.Size(171, 20);
+            this.mkb_cep.TabIndex = 161;
+            this.mkb_cep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // UC_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.mkb_cep);
+            this.Controls.Add(this.mkb_cnpj);
+            this.Controls.Add(this.mkb_cpfoucnpj);
+            this.Controls.Add(this.cbx_uf);
+            this.Controls.Add(this.cbx_pessoa);
+            this.Controls.Add(this.mkt_telefone);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Txb_cnpj);
             this.Controls.Add(this.lb_cnpj);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.Txb_cep);
             this.Controls.Add(this.lb_cep);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
@@ -674,14 +702,11 @@ namespace Book_Manager
             this.Controls.Add(this.lb_numero);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.Txb_telefone);
-            this.Controls.Add(this.Txb_cpf);
-            this.Controls.Add(this.lb_cpf);
+            this.Controls.Add(this.lb_cpfoucnpj);
             this.Controls.Add(this.lb_telefone);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Txb_cidade);
-            this.Controls.Add(this.Txb_uf);
             this.Controls.Add(this.lb_uf);
             this.Controls.Add(this.lb_cidade);
             this.Controls.Add(this.label2);
@@ -700,7 +725,6 @@ namespace Book_Manager
             this.Controls.Add(this.Lb_Código);
             this.Controls.Add(this.Txb_Nome);
             this.Controls.Add(this.Txb_email);
-            this.Controls.Add(this.Txb_pessoa);
             this.Controls.Add(this.lb_nome);
             this.Controls.Add(this.lb_pessoa);
             this.Controls.Add(this.lb_email);
@@ -734,12 +758,11 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_texto_login;
         private System.Windows.Forms.Label lb_texto_nome;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox Tbx_Pesq_funcionario;
+        private System.Windows.Forms.TextBox Txb_Pesq_funcionario;
         private System.Windows.Forms.DataGridView DataGrid_do_DB;
         private System.Windows.Forms.Label Lb_Código;
         private System.Windows.Forms.TextBox Txb_Nome;
         private System.Windows.Forms.TextBox Txb_email;
-        private System.Windows.Forms.TextBox Txb_pessoa;
         private System.Windows.Forms.Label lb_nome;
         private System.Windows.Forms.Label lb_pessoa;
         private System.Windows.Forms.Label lb_email;
@@ -754,11 +777,9 @@ namespace Book_Manager
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Txb_cidade;
-        private System.Windows.Forms.TextBox Txb_uf;
         private System.Windows.Forms.Label lb_uf;
         private System.Windows.Forms.Label lb_cidade;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox Txb_cep;
         private System.Windows.Forms.Label lb_cep;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -768,12 +789,15 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_numero;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox Txb_telefone;
-        private System.Windows.Forms.TextBox Txb_cpf;
-        private System.Windows.Forms.Label lb_cpf;
+        private System.Windows.Forms.Label lb_cpfoucnpj;
         private System.Windows.Forms.Label lb_telefone;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Txb_cnpj;
         private System.Windows.Forms.Label lb_cnpj;
+        private System.Windows.Forms.MaskedTextBox mkt_telefone;
+        private System.Windows.Forms.ComboBox cbx_pessoa;
+        private System.Windows.Forms.ComboBox cbx_uf;
+        private System.Windows.Forms.MaskedTextBox mkb_cpfoucnpj;
+        private System.Windows.Forms.MaskedTextBox mkb_cnpj;
+        private System.Windows.Forms.MaskedTextBox mkb_cep;
     }
 }
