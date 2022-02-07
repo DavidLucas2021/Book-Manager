@@ -77,15 +77,13 @@ namespace Book_Manager
             this.lb_numero = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.lb_cpfoucnpj = new System.Windows.Forms.Label();
+            this.lb_cpf = new System.Windows.Forms.Label();
             this.lb_telefone = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lb_cnpj = new System.Windows.Forms.Label();
             this.mkt_telefone = new System.Windows.Forms.MaskedTextBox();
             this.cbx_pessoa = new System.Windows.Forms.ComboBox();
             this.cbx_uf = new System.Windows.Forms.ComboBox();
             this.mkb_cpfoucnpj = new System.Windows.Forms.MaskedTextBox();
-            this.mkb_cnpj = new System.Windows.Forms.MaskedTextBox();
             this.mkb_cep = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_do_DB)).BeginInit();
@@ -102,6 +100,7 @@ namespace Book_Manager
             this.Btn_Cancelar.Text = " Cancelar";
             this.Btn_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
+            this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
             // Btn_Ativ_Inat
             // 
@@ -149,13 +148,14 @@ namespace Book_Manager
             this.Btn_Novo.Text = " Novo";
             this.Btn_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_Novo.UseVisualStyleBackColor = true;
+            this.Btn_Novo.Click += new System.EventHandler(this.Btn_Novo_Click);
             // 
             // lb_ativ_inativo
             // 
             this.lb_ativ_inativo.AutoSize = true;
             this.lb_ativ_inativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ativ_inativo.ForeColor = System.Drawing.Color.White;
-            this.lb_ativ_inativo.Location = new System.Drawing.Point(510, 296);
+            this.lb_ativ_inativo.Location = new System.Drawing.Point(510, 269);
             this.lb_ativ_inativo.Name = "lb_ativ_inativo";
             this.lb_ativ_inativo.Size = new System.Drawing.Size(0, 24);
             this.lb_ativ_inativo.TabIndex = 125;
@@ -165,11 +165,12 @@ namespace Book_Manager
             this.lb_status.AutoSize = true;
             this.lb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_status.ForeColor = System.Drawing.Color.White;
-            this.lb_status.Location = new System.Drawing.Point(440, 296);
+            this.lb_status.Location = new System.Drawing.Point(440, 269);
             this.lb_status.Name = "lb_status";
             this.lb_status.Size = new System.Drawing.Size(72, 24);
             this.lb_status.TabIndex = 124;
             this.lb_status.Text = "Status:";
+            this.lb_status.Visible = false;
             // 
             // lb_texto_senha
             // 
@@ -554,16 +555,17 @@ namespace Book_Manager
             this.label20.Size = new System.Drawing.Size(0, 13);
             this.label20.TabIndex = 142;
             // 
-            // lb_cpfoucnpj
+            // lb_cpf
             // 
-            this.lb_cpfoucnpj.AutoSize = true;
-            this.lb_cpfoucnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cpfoucnpj.ForeColor = System.Drawing.Color.White;
-            this.lb_cpfoucnpj.Location = new System.Drawing.Point(370, 168);
-            this.lb_cpfoucnpj.Name = "lb_cpfoucnpj";
-            this.lb_cpfoucnpj.Size = new System.Drawing.Size(68, 24);
-            this.lb_cpfoucnpj.TabIndex = 141;
-            this.lb_cpfoucnpj.Text = "CNPJ:";
+            this.lb_cpf.AutoSize = true;
+            this.lb_cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_cpf.ForeColor = System.Drawing.Color.White;
+            this.lb_cpf.Location = new System.Drawing.Point(384, 168);
+            this.lb_cpf.Name = "lb_cpf";
+            this.lb_cpf.Size = new System.Drawing.Size(56, 24);
+            this.lb_cpf.TabIndex = 141;
+            this.lb_cpf.Text = "CPF:";
+            this.lb_cpf.Visible = false;
             // 
             // lb_telefone
             // 
@@ -576,25 +578,17 @@ namespace Book_Manager
             this.lb_telefone.TabIndex = 139;
             this.lb_telefone.Text = "Telefone:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(425, 278);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 155;
-            // 
             // lb_cnpj
             // 
             this.lb_cnpj.AutoSize = true;
             this.lb_cnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cnpj.ForeColor = System.Drawing.Color.White;
-            this.lb_cnpj.Location = new System.Drawing.Point(370, 270);
+            this.lb_cnpj.Location = new System.Drawing.Point(370, 168);
             this.lb_cnpj.Name = "lb_cnpj";
             this.lb_cnpj.Size = new System.Drawing.Size(68, 24);
             this.lb_cnpj.TabIndex = 154;
             this.lb_cnpj.Text = "CNPJ:";
+            this.lb_cnpj.Visible = false;
             // 
             // mkt_telefone
             // 
@@ -607,6 +601,7 @@ namespace Book_Manager
             // 
             // cbx_pessoa
             // 
+            this.cbx_pessoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_pessoa.FormattingEnabled = true;
             this.cbx_pessoa.Items.AddRange(new object[] {
             "Física",
@@ -615,10 +610,11 @@ namespace Book_Manager
             this.cbx_pessoa.Name = "cbx_pessoa";
             this.cbx_pessoa.Size = new System.Drawing.Size(172, 21);
             this.cbx_pessoa.TabIndex = 157;
-            this.cbx_pessoa.SelectionChangeCommitted += new System.EventHandler(this.cbx_pessoa_SelectionChangeCommitted);
+            this.cbx_pessoa.SelectedIndexChanged += new System.EventHandler(this.cbx_pessoa_SelectedIndexChanged);
             // 
             // cbx_uf
             // 
+            this.cbx_uf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_uf.FormattingEnabled = true;
             this.cbx_uf.Items.AddRange(new object[] {
             " AC",
@@ -661,15 +657,6 @@ namespace Book_Manager
             this.mkb_cpfoucnpj.TabIndex = 159;
             this.mkb_cpfoucnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // mkb_cnpj
-            // 
-            this.mkb_cnpj.Location = new System.Drawing.Point(444, 273);
-            this.mkb_cnpj.Mask = "00.000.000/0000-00";
-            this.mkb_cnpj.Name = "mkb_cnpj";
-            this.mkb_cnpj.Size = new System.Drawing.Size(171, 20);
-            this.mkb_cnpj.TabIndex = 160;
-            this.mkb_cnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
             // mkb_cep
             // 
             this.mkb_cep.Location = new System.Drawing.Point(444, 246);
@@ -685,12 +672,10 @@ namespace Book_Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.mkb_cep);
-            this.Controls.Add(this.mkb_cnpj);
             this.Controls.Add(this.mkb_cpfoucnpj);
             this.Controls.Add(this.cbx_uf);
             this.Controls.Add(this.cbx_pessoa);
             this.Controls.Add(this.mkt_telefone);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_cnpj);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lb_cep);
@@ -702,7 +687,7 @@ namespace Book_Manager
             this.Controls.Add(this.lb_numero);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.lb_cpfoucnpj);
+            this.Controls.Add(this.lb_cpf);
             this.Controls.Add(this.lb_telefone);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -789,15 +774,13 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_numero;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label lb_cpfoucnpj;
+        private System.Windows.Forms.Label lb_cpf;
         private System.Windows.Forms.Label lb_telefone;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_cnpj;
         private System.Windows.Forms.MaskedTextBox mkt_telefone;
         private System.Windows.Forms.ComboBox cbx_pessoa;
         private System.Windows.Forms.ComboBox cbx_uf;
         private System.Windows.Forms.MaskedTextBox mkb_cpfoucnpj;
-        private System.Windows.Forms.MaskedTextBox mkb_cnpj;
         private System.Windows.Forms.MaskedTextBox mkb_cep;
     }
 }
