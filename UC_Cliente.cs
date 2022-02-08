@@ -138,5 +138,13 @@ namespace Book_Manager
         {
             Func_desbilitar();
         }
+        //FUNCIONALIDADE PARA IMPEDIR QUE O CAMPO NUMERO RECEBA LETRAS
+        private void Txb_numero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

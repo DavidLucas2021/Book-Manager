@@ -30,11 +30,11 @@ namespace Book_Manager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Ativ_Inat = new System.Windows.Forms.Button();
             this.Btn_Alterar = new System.Windows.Forms.Button();
@@ -223,42 +223,42 @@ namespace Book_Manager
             // DataGrid_do_DB
             // 
             this.DataGrid_do_DB.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGrid_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid_do_DB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGrid_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGrid_do_DB.Location = new System.Drawing.Point(89, 389);
             this.DataGrid_do_DB.MultiSelect = false;
             this.DataGrid_do_DB.Name = "DataGrid_do_DB";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGrid_do_DB.RowHeadersVisible = false;
             this.DataGrid_do_DB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGrid_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid_do_DB.Size = new System.Drawing.Size(534, 202);
             this.DataGrid_do_DB.TabIndex = 118;
@@ -287,7 +287,7 @@ namespace Book_Manager
             // 
             this.Txb_email.Enabled = false;
             this.Txb_email.Location = new System.Drawing.Point(167, 142);
-            this.Txb_email.MaxLength = 20;
+            this.Txb_email.MaxLength = 60;
             this.Txb_email.Name = "Txb_email";
             this.Txb_email.Size = new System.Drawing.Size(171, 20);
             this.Txb_email.TabIndex = 111;
@@ -371,7 +371,7 @@ namespace Book_Manager
             // 
             this.Txb_logradouro.Enabled = false;
             this.Txb_logradouro.Location = new System.Drawing.Point(167, 194);
-            this.Txb_logradouro.MaxLength = 20;
+            this.Txb_logradouro.MaxLength = 60;
             this.Txb_logradouro.Name = "Txb_logradouro";
             this.Txb_logradouro.Size = new System.Drawing.Size(171, 20);
             this.Txb_logradouro.TabIndex = 126;
@@ -380,7 +380,7 @@ namespace Book_Manager
             // 
             this.Txb_complemento.Enabled = false;
             this.Txb_complemento.Location = new System.Drawing.Point(167, 220);
-            this.Txb_complemento.MaxLength = 8;
+            this.Txb_complemento.MaxLength = 20;
             this.Txb_complemento.Name = "Txb_complemento";
             this.Txb_complemento.Size = new System.Drawing.Size(171, 20);
             this.Txb_complemento.TabIndex = 128;
@@ -500,16 +500,17 @@ namespace Book_Manager
             // 
             this.Txb_numero.Enabled = false;
             this.Txb_numero.Location = new System.Drawing.Point(444, 194);
-            this.Txb_numero.MaxLength = 20;
+            this.Txb_numero.MaxLength = 5;
             this.Txb_numero.Name = "Txb_numero";
             this.Txb_numero.Size = new System.Drawing.Size(171, 20);
             this.Txb_numero.TabIndex = 144;
+            this.Txb_numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txb_numero_KeyPress);
             // 
             // Txb_bairro
             // 
             this.Txb_bairro.Enabled = false;
             this.Txb_bairro.Location = new System.Drawing.Point(444, 220);
-            this.Txb_bairro.MaxLength = 8;
+            this.Txb_bairro.MaxLength = 20;
             this.Txb_bairro.Name = "Txb_bairro";
             this.Txb_bairro.Size = new System.Drawing.Size(171, 20);
             this.Txb_bairro.TabIndex = 146;
