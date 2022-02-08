@@ -12,6 +12,7 @@ namespace Book_Manager
 {
     public partial class UC_Cliente : UserControl
     {
+        List<object> Lcampos = new List<object>();
         public UC_Cliente()
         {
             InitializeComponent();
@@ -132,6 +133,7 @@ namespace Book_Manager
         {
             Func_habilitar();
             Txb_Nome.Focus();
+            Btn_SalvarNoDB.Enabled = true;
         }
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
@@ -146,5 +148,33 @@ namespace Book_Manager
                 e.Handled = true;
             }
         }
+
+
+        private bool Func_Textbox_Vazios()
+        {
+            foreach(Control c in this.Controls)
+            {
+                if(c is TextBox)
+                {
+                    TextBox textBox = c as TextBox;
+                    if(String.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void Btn_SalvarNoDB_Click(object sender, EventArgs e)
+        {
+            if(Func_Textbox_Vazios() == true)
+            {
+                MessageBox.Show("Exite campo(s) vazios! Preencha todos os campos.", "Campo(s) vazios.",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+        //FALTA: FAZER A FUNÇÃO DE CAMPO VAZIO PARA OS MASKTEXTBOX TBM
+        //       FAZER LÓGICA QUE HABILITE O CAMPO CPFOUCNPJ SOMENTE QUANDO O PESSOA FOR SELECIONADO
+        //       CRIAR LÓGICA QUE IDENTIFIQUE QUANDO OS VALORES DE CEP E CPFOUCNPJ SÃO INVALIDOS
     }
 }
