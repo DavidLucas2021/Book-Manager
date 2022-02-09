@@ -12,7 +12,6 @@ namespace Book_Manager
 {
     public partial class UC_Cliente : UserControl
     {
-        List<object> Lcampos = new List<object>();
         public UC_Cliente()
         {
             InitializeComponent();
@@ -26,17 +25,20 @@ namespace Book_Manager
             {
                 lb_cpf.Visible = false;
                 lb_cnpj.Visible = false;
+                mkb_cpfoucnpj.Mask = string.Empty;
             }
             else if (cbx_pessoa.SelectedIndex == 0)
             {
                 lb_cpf.Visible = true;
                 lb_cnpj.Visible = false;
+                mkb_cpfoucnpj.Enabled = true;
                 mkb_cpfoucnpj.Mask = "000.000.000-00";
             }
             else if (cbx_pessoa.SelectedIndex == 1)
             {
                 lb_cpf.Visible = false;
                 lb_cnpj.Visible = true;
+                mkb_cpfoucnpj.Enabled = true;
                 mkb_cpfoucnpj.Mask = "00.000.000/0000-00";
             }
         }
@@ -64,7 +66,7 @@ namespace Book_Manager
             Txb_email.Enabled = true;
             mkt_telefone.Enabled = true;
             cbx_pessoa.Enabled = true;
-            mkb_cpfoucnpj.Enabled = true;
+            mkb_cpfoucnpj.Enabled = false;
             Txb_logradouro.Enabled = true;
             Txb_numero.Enabled = true;
             Txb_complemento.Enabled = true;
@@ -162,6 +164,22 @@ namespace Book_Manager
                         return true;
                     }
                 }
+                else if (c is MaskedTextBox)
+                {
+                    MaskedTextBox maskedTextBox = c as MaskedTextBox;
+                    if(string.IsNullOrWhiteSpace(maskedTextBox.Text))
+                    {
+                        return true;
+                    }
+                }
+                else if(c is ComboBox)
+                {
+                    ComboBox comboBox = c as ComboBox;
+                    if(string.IsNullOrWhiteSpace(comboBox.Text))
+                    {
+                        return true;
+                    }
+                }
             }
             return false;
         }
@@ -172,9 +190,32 @@ namespace Book_Manager
             {
                 MessageBox.Show("Exite campo(s) vazios! Preencha todos os campos.", "Campo(s) vazios.",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+            else if(!mkt_telefone.MaskCompleted)
+            {
+                MessageBox.Show("Número de telefone inválido! Informe um número com o total de 11 caracteres incluindo DDD.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(lb_cpf.Visible == true)
+            {
+                if(!mkb_cpfoucnpj.MaskCompleted)
+                {
+                    MessageBox.Show("CPF inválido! Informe um CPF com o total de 11 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if(lb_cnpj.Visible == true)
+            {
+                if(!mkb_cpfoucnpj.MaskCompleted)
+                {
+                    MessageBox.Show("CNPJ inválido! Informe um CNPJ com o total de 14 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if(mkb_cep.MaskCompleted)
+            {
+                MessageBox.Show("CEP inválido! Informe um CEP com o total de 8 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("DEU CERTO!!");
+            }
         }
-        //FALTA: FAZER A FUNÇÃO DE CAMPO VAZIO PARA OS MASKTEXTBOX TBM
-        //       FAZER LÓGICA QUE HABILITE O CAMPO CPFOUCNPJ SOMENTE QUANDO O PESSOA FOR SELECIONADO
-        //       CRIAR LÓGICA QUE IDENTIFIQUE QUANDO OS VALORES DE CEP E CPFOUCNPJ SÃO INVALIDOS
     }
 }
