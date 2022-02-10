@@ -30,11 +30,11 @@ namespace Book_Manager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Ativ_Inat = new System.Windows.Forms.Button();
             this.Btn_Alterar = new System.Windows.Forms.Button();
@@ -121,7 +121,7 @@ namespace Book_Manager
             this.Btn_SalvarNoDB.Location = new System.Drawing.Point(645, 182);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
             this.Btn_SalvarNoDB.Size = new System.Drawing.Size(117, 60);
-            this.Btn_SalvarNoDB.TabIndex = 104;
+            this.Btn_SalvarNoDB.TabIndex = 12;
             this.Btn_SalvarNoDB.Text = " Salvar";
             this.Btn_SalvarNoDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_SalvarNoDB.UseVisualStyleBackColor = true;
@@ -179,47 +179,47 @@ namespace Book_Manager
             this.Txb_Pesq_funcionario.MaxLength = 20;
             this.Txb_Pesq_funcionario.Name = "Txb_Pesq_funcionario";
             this.Txb_Pesq_funcionario.Size = new System.Drawing.Size(515, 26);
-            this.Txb_Pesq_funcionario.TabIndex = 4;
+            this.Txb_Pesq_funcionario.TabIndex = 13;
             // 
             // DataGrid_do_DB
             // 
             this.DataGrid_do_DB.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGrid_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid_do_DB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGrid_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle8;
             this.DataGrid_do_DB.Location = new System.Drawing.Point(89, 389);
             this.DataGrid_do_DB.MultiSelect = false;
             this.DataGrid_do_DB.Name = "DataGrid_do_DB";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DataGrid_do_DB.RowHeadersVisible = false;
             this.DataGrid_do_DB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DataGrid_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid_do_DB.Size = new System.Drawing.Size(534, 202);
             this.DataGrid_do_DB.TabIndex = 118;
@@ -242,7 +242,7 @@ namespace Book_Manager
             this.Txb_Nome.MaxLength = 60;
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(448, 20);
-            this.Txb_Nome.TabIndex = 110;
+            this.Txb_Nome.TabIndex = 0;
             // 
             // Txb_email
             // 
@@ -251,7 +251,7 @@ namespace Book_Manager
             this.Txb_email.MaxLength = 60;
             this.Txb_email.Name = "Txb_email";
             this.Txb_email.Size = new System.Drawing.Size(171, 20);
-            this.Txb_email.TabIndex = 111;
+            this.Txb_email.TabIndex = 1;
             // 
             // lb_nome
             // 
@@ -316,7 +316,7 @@ namespace Book_Manager
             this.Txb_logradouro.MaxLength = 60;
             this.Txb_logradouro.Name = "Txb_logradouro";
             this.Txb_logradouro.Size = new System.Drawing.Size(171, 20);
-            this.Txb_logradouro.TabIndex = 126;
+            this.Txb_logradouro.TabIndex = 3;
             // 
             // Txb_complemento
             // 
@@ -325,7 +325,7 @@ namespace Book_Manager
             this.Txb_complemento.MaxLength = 20;
             this.Txb_complemento.Name = "Txb_complemento";
             this.Txb_complemento.Size = new System.Drawing.Size(171, 20);
-            this.Txb_complemento.TabIndex = 128;
+            this.Txb_complemento.TabIndex = 4;
             // 
             // lb_complemento
             // 
@@ -356,7 +356,7 @@ namespace Book_Manager
             this.Txb_cidade.MaxLength = 20;
             this.Txb_cidade.Name = "Txb_cidade";
             this.Txb_cidade.Size = new System.Drawing.Size(171, 20);
-            this.Txb_cidade.TabIndex = 132;
+            this.Txb_cidade.TabIndex = 5;
             // 
             // lb_uf
             // 
@@ -398,7 +398,7 @@ namespace Book_Manager
             this.Txb_numero.MaxLength = 5;
             this.Txb_numero.Name = "Txb_numero";
             this.Txb_numero.Size = new System.Drawing.Size(171, 20);
-            this.Txb_numero.TabIndex = 144;
+            this.Txb_numero.TabIndex = 9;
             this.Txb_numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txb_numero_KeyPress);
             // 
             // Txb_bairro
@@ -408,7 +408,7 @@ namespace Book_Manager
             this.Txb_bairro.MaxLength = 20;
             this.Txb_bairro.Name = "Txb_bairro";
             this.Txb_bairro.Size = new System.Drawing.Size(171, 20);
-            this.Txb_bairro.TabIndex = 146;
+            this.Txb_bairro.TabIndex = 10;
             // 
             // lb_bairro
             // 
@@ -473,7 +473,7 @@ namespace Book_Manager
             this.mkt_telefone.Mask = "(00)00000-0000";
             this.mkt_telefone.Name = "mkt_telefone";
             this.mkt_telefone.Size = new System.Drawing.Size(171, 20);
-            this.mkt_telefone.TabIndex = 156;
+            this.mkt_telefone.TabIndex = 7;
             this.mkt_telefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // cbx_pessoa
@@ -486,7 +486,7 @@ namespace Book_Manager
             this.cbx_pessoa.Location = new System.Drawing.Point(166, 168);
             this.cbx_pessoa.Name = "cbx_pessoa";
             this.cbx_pessoa.Size = new System.Drawing.Size(172, 21);
-            this.cbx_pessoa.TabIndex = 157;
+            this.cbx_pessoa.TabIndex = 2;
             this.cbx_pessoa.SelectedIndexChanged += new System.EventHandler(this.cbx_pessoa_SelectedIndexChanged);
             // 
             // cbx_uf
@@ -524,14 +524,14 @@ namespace Book_Manager
             this.cbx_uf.Location = new System.Drawing.Point(166, 272);
             this.cbx_uf.Name = "cbx_uf";
             this.cbx_uf.Size = new System.Drawing.Size(84, 21);
-            this.cbx_uf.TabIndex = 158;
+            this.cbx_uf.TabIndex = 6;
             // 
             // mkb_cpfoucnpj
             // 
             this.mkb_cpfoucnpj.Location = new System.Drawing.Point(444, 169);
             this.mkb_cpfoucnpj.Name = "mkb_cpfoucnpj";
             this.mkb_cpfoucnpj.Size = new System.Drawing.Size(171, 20);
-            this.mkb_cpfoucnpj.TabIndex = 162;
+            this.mkb_cpfoucnpj.TabIndex = 8;
             this.mkb_cpfoucnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mkt_cep
@@ -540,7 +540,7 @@ namespace Book_Manager
             this.mkt_cep.Mask = "00000-000";
             this.mkt_cep.Name = "mkt_cep";
             this.mkt_cep.Size = new System.Drawing.Size(171, 20);
-            this.mkt_cep.TabIndex = 160;
+            this.mkt_cep.TabIndex = 11;
             this.mkt_cep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // UC_Cliente
