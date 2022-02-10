@@ -30,11 +30,11 @@ namespace Book_Manager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Btn_Ativ_Inat = new System.Windows.Forms.Button();
             this.Btn_Alterar = new System.Windows.Forms.Button();
@@ -42,10 +42,7 @@ namespace Book_Manager
             this.Btn_Novo = new System.Windows.Forms.Button();
             this.lb_ativ_inativo = new System.Windows.Forms.Label();
             this.lb_status = new System.Windows.Forms.Label();
-            this.lb_texto_senha = new System.Windows.Forms.Label();
-            this.lb_texto_login = new System.Windows.Forms.Label();
-            this.lb_texto_nome = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpb_pesquisa = new System.Windows.Forms.GroupBox();
             this.Txb_Pesq_funcionario = new System.Windows.Forms.TextBox();
             this.DataGrid_do_DB = new System.Windows.Forms.DataGridView();
             this.Lb_Código = new System.Windows.Forms.Label();
@@ -56,27 +53,18 @@ namespace Book_Manager
             this.lb_email = new System.Windows.Forms.Label();
             this.Lb_Codigotxt = new System.Windows.Forms.Label();
             this.lb_cliente = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.Txb_logradouro = new System.Windows.Forms.TextBox();
             this.Txb_complemento = new System.Windows.Forms.TextBox();
             this.lb_complemento = new System.Windows.Forms.Label();
             this.lb_logradouro = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.Txb_cidade = new System.Windows.Forms.TextBox();
             this.lb_uf = new System.Windows.Forms.Label();
             this.lb_cidade = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.lb_cep = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.Txb_numero = new System.Windows.Forms.TextBox();
             this.Txb_bairro = new System.Windows.Forms.TextBox();
             this.lb_bairro = new System.Windows.Forms.Label();
             this.lb_numero = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.lb_cpf = new System.Windows.Forms.Label();
             this.lb_telefone = new System.Windows.Forms.Label();
             this.lb_cnpj = new System.Windows.Forms.Label();
@@ -84,8 +72,8 @@ namespace Book_Manager
             this.cbx_pessoa = new System.Windows.Forms.ComboBox();
             this.cbx_uf = new System.Windows.Forms.ComboBox();
             this.mkb_cpfoucnpj = new System.Windows.Forms.MaskedTextBox();
-            this.mkb_cep = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox1.SuspendLayout();
+            this.mkt_cep = new System.Windows.Forms.MaskedTextBox();
+            this.gpb_pesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_do_DB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,45 +161,17 @@ namespace Book_Manager
             this.lb_status.Text = "Status:";
             this.lb_status.Visible = false;
             // 
-            // lb_texto_senha
+            // gpb_pesquisa
             // 
-            this.lb_texto_senha.AutoSize = true;
-            this.lb_texto_senha.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lb_texto_senha.Location = new System.Drawing.Point(167, 171);
-            this.lb_texto_senha.Name = "lb_texto_senha";
-            this.lb_texto_senha.Size = new System.Drawing.Size(0, 13);
-            this.lb_texto_senha.TabIndex = 123;
-            // 
-            // lb_texto_login
-            // 
-            this.lb_texto_login.AutoSize = true;
-            this.lb_texto_login.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_login.Location = new System.Drawing.Point(167, 145);
-            this.lb_texto_login.Name = "lb_texto_login";
-            this.lb_texto_login.Size = new System.Drawing.Size(0, 13);
-            this.lb_texto_login.TabIndex = 122;
-            // 
-            // lb_texto_nome
-            // 
-            this.lb_texto_nome.AutoSize = true;
-            this.lb_texto_nome.BackColor = System.Drawing.SystemColors.Window;
-            this.lb_texto_nome.Location = new System.Drawing.Point(167, 105);
-            this.lb_texto_nome.Name = "lb_texto_nome";
-            this.lb_texto_nome.Size = new System.Drawing.Size(0, 13);
-            this.lb_texto_nome.TabIndex = 121;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Txb_Pesq_funcionario);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(89, 331);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(534, 52);
-            this.groupBox1.TabIndex = 119;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pesquisa por Funcionário ";
+            this.gpb_pesquisa.Controls.Add(this.Txb_Pesq_funcionario);
+            this.gpb_pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpb_pesquisa.ForeColor = System.Drawing.Color.White;
+            this.gpb_pesquisa.Location = new System.Drawing.Point(89, 331);
+            this.gpb_pesquisa.Name = "gpb_pesquisa";
+            this.gpb_pesquisa.Size = new System.Drawing.Size(534, 52);
+            this.gpb_pesquisa.TabIndex = 119;
+            this.gpb_pesquisa.TabStop = false;
+            this.gpb_pesquisa.Text = "Pesquisa por Funcionário ";
             // 
             // Txb_Pesq_funcionario
             // 
@@ -224,42 +184,42 @@ namespace Book_Manager
             // DataGrid_do_DB
             // 
             this.DataGrid_do_DB.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DataGrid_do_DB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGrid_do_DB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.DataGrid_do_DB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid_do_DB.DefaultCellStyle = dataGridViewCellStyle18;
             this.DataGrid_do_DB.Location = new System.Drawing.Point(89, 389);
             this.DataGrid_do_DB.MultiSelect = false;
             this.DataGrid_do_DB.Name = "DataGrid_do_DB";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid_do_DB.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.DataGrid_do_DB.RowHeadersVisible = false;
             this.DataGrid_do_DB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGrid_do_DB.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.DataGrid_do_DB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGrid_do_DB.Size = new System.Drawing.Size(534, 202);
             this.DataGrid_do_DB.TabIndex = 118;
@@ -349,25 +309,6 @@ namespace Book_Manager
             this.lb_cliente.TabIndex = 109;
             this.lb_cliente.Text = "Cliente";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(167, 223);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 131;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(167, 197);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 130;
-            // 
             // Txb_logradouro
             // 
             this.Txb_logradouro.Enabled = false;
@@ -408,25 +349,6 @@ namespace Book_Manager
             this.lb_logradouro.TabIndex = 127;
             this.lb_logradouro.Text = "Logradouro:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Window;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(167, 275);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 137;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(167, 249);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
-            this.label10.TabIndex = 136;
-            // 
             // Txb_cidade
             // 
             this.Txb_cidade.Enabled = false;
@@ -458,15 +380,6 @@ namespace Book_Manager
             this.lb_cidade.TabIndex = 133;
             this.lb_cidade.Text = "Cidade:";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.Window;
-            this.label13.Location = new System.Drawing.Point(425, 251);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 13);
-            this.label13.TabIndex = 152;
-            // 
             // lb_cep
             // 
             this.lb_cep.AutoSize = true;
@@ -477,25 +390,6 @@ namespace Book_Manager
             this.lb_cep.Size = new System.Drawing.Size(54, 24);
             this.lb_cep.TabIndex = 151;
             this.lb_cep.Text = "Cep:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.Window;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.Location = new System.Drawing.Point(425, 225);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(0, 13);
-            this.label15.TabIndex = 149;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.Window;
-            this.label16.Location = new System.Drawing.Point(425, 199);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 13);
-            this.label16.TabIndex = 148;
             // 
             // Txb_numero
             // 
@@ -537,25 +431,6 @@ namespace Book_Manager
             this.lb_numero.Size = new System.Drawing.Size(91, 24);
             this.lb_numero.TabIndex = 145;
             this.lb_numero.Text = "Número:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.Window;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label19.Location = new System.Drawing.Point(425, 173);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(0, 13);
-            this.label19.TabIndex = 143;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.Window;
-            this.label20.Location = new System.Drawing.Point(425, 147);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(0, 13);
-            this.label20.TabIndex = 142;
             // 
             // lb_cpf
             // 
@@ -656,58 +531,46 @@ namespace Book_Manager
             this.mkb_cpfoucnpj.Location = new System.Drawing.Point(444, 169);
             this.mkb_cpfoucnpj.Name = "mkb_cpfoucnpj";
             this.mkb_cpfoucnpj.Size = new System.Drawing.Size(171, 20);
-            this.mkb_cpfoucnpj.TabIndex = 159;
+            this.mkb_cpfoucnpj.TabIndex = 162;
             this.mkb_cpfoucnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // mkb_cep
+            // mkt_cep
             // 
-            this.mkb_cep.Location = new System.Drawing.Point(444, 246);
-            this.mkb_cep.Mask = "00000-000";
-            this.mkb_cep.Name = "mkb_cep";
-            this.mkb_cep.Size = new System.Drawing.Size(171, 20);
-            this.mkb_cep.TabIndex = 161;
-            this.mkb_cep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mkt_cep.Location = new System.Drawing.Point(444, 246);
+            this.mkt_cep.Mask = "00000-000";
+            this.mkt_cep.Name = "mkt_cep";
+            this.mkt_cep.Size = new System.Drawing.Size(171, 20);
+            this.mkt_cep.TabIndex = 160;
+            this.mkt_cep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // UC_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.mkb_cep);
+            this.Controls.Add(this.mkt_cep);
             this.Controls.Add(this.mkb_cpfoucnpj);
             this.Controls.Add(this.cbx_uf);
             this.Controls.Add(this.cbx_pessoa);
             this.Controls.Add(this.mkt_telefone);
             this.Controls.Add(this.lb_cnpj);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.lb_cep);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.Txb_numero);
             this.Controls.Add(this.Txb_bairro);
             this.Controls.Add(this.lb_bairro);
             this.Controls.Add(this.lb_numero);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.lb_cpf);
             this.Controls.Add(this.lb_telefone);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.Txb_cidade);
             this.Controls.Add(this.lb_uf);
             this.Controls.Add(this.lb_cidade);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.Txb_logradouro);
             this.Controls.Add(this.Txb_complemento);
             this.Controls.Add(this.lb_complemento);
             this.Controls.Add(this.lb_logradouro);
             this.Controls.Add(this.lb_ativ_inativo);
             this.Controls.Add(this.lb_status);
-            this.Controls.Add(this.lb_texto_senha);
-            this.Controls.Add(this.lb_texto_login);
-            this.Controls.Add(this.lb_texto_nome);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpb_pesquisa);
             this.Controls.Add(this.DataGrid_do_DB);
             this.Controls.Add(this.Lb_Código);
             this.Controls.Add(this.Txb_Nome);
@@ -724,8 +587,8 @@ namespace Book_Manager
             this.Controls.Add(this.Btn_Novo);
             this.Name = "UC_Cliente";
             this.Size = new System.Drawing.Size(800, 650);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpb_pesquisa.ResumeLayout(false);
+            this.gpb_pesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_do_DB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -741,10 +604,7 @@ namespace Book_Manager
         private System.Windows.Forms.Button Btn_Novo;
         private System.Windows.Forms.Label lb_ativ_inativo;
         private System.Windows.Forms.Label lb_status;
-        private System.Windows.Forms.Label lb_texto_senha;
-        private System.Windows.Forms.Label lb_texto_login;
-        private System.Windows.Forms.Label lb_texto_nome;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpb_pesquisa;
         private System.Windows.Forms.TextBox Txb_Pesq_funcionario;
         private System.Windows.Forms.DataGridView DataGrid_do_DB;
         private System.Windows.Forms.Label Lb_Código;
@@ -755,27 +615,18 @@ namespace Book_Manager
         private System.Windows.Forms.Label lb_email;
         private System.Windows.Forms.Label Lb_Codigotxt;
         private System.Windows.Forms.Label lb_cliente;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Txb_logradouro;
         private System.Windows.Forms.TextBox Txb_complemento;
         private System.Windows.Forms.Label lb_complemento;
         private System.Windows.Forms.Label lb_logradouro;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Txb_cidade;
         private System.Windows.Forms.Label lb_uf;
         private System.Windows.Forms.Label lb_cidade;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lb_cep;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox Txb_numero;
         private System.Windows.Forms.TextBox Txb_bairro;
         private System.Windows.Forms.Label lb_bairro;
         private System.Windows.Forms.Label lb_numero;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lb_cpf;
         private System.Windows.Forms.Label lb_telefone;
         private System.Windows.Forms.Label lb_cnpj;
@@ -783,6 +634,6 @@ namespace Book_Manager
         private System.Windows.Forms.ComboBox cbx_pessoa;
         private System.Windows.Forms.ComboBox cbx_uf;
         private System.Windows.Forms.MaskedTextBox mkb_cpfoucnpj;
-        private System.Windows.Forms.MaskedTextBox mkb_cep;
+        private System.Windows.Forms.MaskedTextBox mkt_cep;
     }
 }

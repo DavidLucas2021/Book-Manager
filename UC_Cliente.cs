@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Book_Manager
@@ -21,7 +14,7 @@ namespace Book_Manager
         private void Func_SelecaoFisicaouJuridica()
         {
             //-1 == QUANDO NÃO HÁ NADA SELECIONADO
-            if(cbx_pessoa.SelectedIndex == -1)
+            if (cbx_pessoa.SelectedIndex == -1)
             {
                 lb_cpf.Visible = false;
                 lb_cnpj.Visible = false;
@@ -72,7 +65,7 @@ namespace Book_Manager
             Txb_complemento.Enabled = true;
             Txb_bairro.Enabled = true;
             Txb_cidade.Enabled = true;
-            mkb_cep.Enabled = true;
+            mkt_cep.Enabled = true;
             cbx_uf.Enabled = true;
 
             Txb_Nome.Clear();
@@ -86,7 +79,7 @@ namespace Book_Manager
             Txb_complemento.Clear();
             Txb_bairro.Clear();
             Txb_cidade.Clear();
-            mkb_cep.Clear();
+            mkt_cep.Clear();
             cbx_pessoa.SelectedIndex = -1;
 
         }
@@ -114,11 +107,11 @@ namespace Book_Manager
             Txb_complemento.Enabled = false;
             Txb_bairro.Enabled = false;
             Txb_cidade.Enabled = false;
-            mkb_cep.Enabled = false;
+            mkt_cep.Enabled = false;
             cbx_uf.Enabled = false;
 
             Txb_Nome.Clear();
-            Txb_email.Clear(); 
+            Txb_email.Clear();
             mkt_telefone.Clear();
             cbx_pessoa.SelectedIndex = -1;
             mkb_cpfoucnpj.Clear();
@@ -127,7 +120,7 @@ namespace Book_Manager
             Txb_complemento.Clear();
             Txb_bairro.Clear();
             Txb_cidade.Clear();
-            mkb_cep.Clear();
+            mkt_cep.Clear();
             cbx_uf.SelectedIndex = -1;
         }
 
@@ -152,14 +145,14 @@ namespace Book_Manager
         }
 
 
-        private bool Func_Textbox_Vazios()
+        private bool Func_Ferramentas_Vazias()
         {
-            foreach(Control c in this.Controls)
+            foreach (Control c in this.Controls)
             {
-                if(c is TextBox)
+                if (c is TextBox)
                 {
                     TextBox textBox = c as TextBox;
-                    if(String.IsNullOrWhiteSpace(textBox.Text))
+                    if (String.IsNullOrWhiteSpace(textBox.Text))
                     {
                         return true;
                     }
@@ -167,15 +160,15 @@ namespace Book_Manager
                 else if (c is MaskedTextBox)
                 {
                     MaskedTextBox maskedTextBox = c as MaskedTextBox;
-                    if(string.IsNullOrWhiteSpace(maskedTextBox.Text))
+                    if (string.IsNullOrWhiteSpace(maskedTextBox.Text))
                     {
                         return true;
                     }
                 }
-                else if(c is ComboBox)
+                else if (c is ComboBox)
                 {
                     ComboBox comboBox = c as ComboBox;
-                    if(string.IsNullOrWhiteSpace(comboBox.Text))
+                    if (string.IsNullOrWhiteSpace(comboBox.Text))
                     {
                         return true;
                     }
@@ -186,35 +179,39 @@ namespace Book_Manager
 
         private void Btn_SalvarNoDB_Click(object sender, EventArgs e)
         {
-            if(Func_Textbox_Vazios() == true)
+            if(Func_Ferramentas_Vazias() == true)
             {
-                MessageBox.Show("Exite campo(s) vazios! Preencha todos os campos.", "Campo(s) vazios.",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Exite campo(s) vazios! Preencha todos os campos.", "Campo(s) vazios.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(!mkt_telefone.MaskCompleted)
+
+            if(!string.IsNullOrWhiteSpace(mkt_telefone.Text) && !mkt_telefone.MaskCompleted)
             {
                 MessageBox.Show("Número de telefone inválido! Informe um número com o total de 11 caracteres incluindo DDD.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(lb_cpf.Visible == true)
+
+            if(lb_cpf.Visible == true)
             {
-                if(!mkb_cpfoucnpj.MaskCompleted)
+                if (!string.IsNullOrWhiteSpace(mkb_cpfoucnpj.Text) && !mkb_cpfoucnpj.MaskCompleted)
                 {
                     MessageBox.Show("CPF inválido! Informe um CPF com o total de 11 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else if(lb_cnpj.Visible == true)
             {
-                if(!mkb_cpfoucnpj.MaskCompleted)
+                if (!string.IsNullOrWhiteSpace(mkb_cpfoucnpj.Text) && !mkb_cpfoucnpj.MaskCompleted)
                 {
                     MessageBox.Show("CNPJ inválido! Informe um CNPJ com o total de 14 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else if(mkb_cep.MaskCompleted)
+
+            if(!string.IsNullOrWhiteSpace(mkt_cep.Text) && !mkt_cep.MaskCompleted)
             {
                 MessageBox.Show("CEP inválido! Informe um CEP com o total de 8 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            
+            if(Func_Ferramentas_Vazias() == false && mkt_telefone.MaskCompleted && mkb_cpfoucnpj.MaskCompleted && mkt_cep.MaskCompleted)
             {
-                MessageBox.Show("DEU CERTO!!");
+                MessageBox.Show("deu certo!!!");
             }
         }
     }
