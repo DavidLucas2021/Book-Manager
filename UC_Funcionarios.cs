@@ -13,7 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
         //CLASSE QUE RECEBE DADOS DE UMA TABELA APÓS O COMANDO SELECT
@@ -121,57 +121,23 @@ namespace Book_Manager
 
         private void Btn_SalvarNoDB_Click(object sender, EventArgs e)
         {
-            if (Txb_Nome.Text == String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text == String.Empty)
-            {
-                MessageBox.Show("Os campos Nome, Login e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Txb_Nome.Focus();
-            }
-            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text == String.Empty)
-            {
-                MessageBox.Show("Os campos Login e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Tbx_Login.Focus();
-            }
-            else if (Txb_Nome.Text == String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text == String.Empty)
-            {
-                MessageBox.Show("Os campos Nome e Senha são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Txb_Nome.Focus();
-            }
-            else if (Txb_Nome.Text == String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text != String.Empty)
-            {
-                MessageBox.Show("Os campos Nome e Login são de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (Txb_Senha.TextLength != Txb_Senha.MaxLength)
-                {
-                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Txb_Senha.Clear();
-                    Txb_Senha.Focus();
-                }
-            }
-            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text == String.Empty)
-            {
-                MessageBox.Show("O campo Senha é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Txb_Senha.Focus();
-            }
-            else if (Txb_Nome.Text == String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
+            if (Txb_Nome.Text == String.Empty)
             {
                 MessageBox.Show("O campo Nome é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (Txb_Senha.TextLength != Txb_Senha.MaxLength)
-                {
-                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Txb_Senha.Clear();
-                    Txb_Senha.Focus();
-                }
+                Txb_Nome.Focus();
             }
-            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text == String.Empty && Txb_Senha.Text != String.Empty)
+            if (Tbx_Login.Text == String.Empty)
             {
-                MessageBox.Show("O campo Login é de preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (Txb_Senha.TextLength != Txb_Senha.MaxLength)
-                {
-                    MessageBox.Show("O campo Senha deve conter o total de 8 caracteres!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Txb_Senha.Clear();
-                    Txb_Senha.Focus();
-                }
+                MessageBox.Show("O campo Login é preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Tbx_Login.Focus();
             }
-            else if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
+            if (Txb_Senha.Text == String.Empty)
+            {
+                MessageBox.Show("O campo Senha é preenchimento obrigatório!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Txb_Nome.Focus();
+            }
+            
+            if (Txb_Nome.Text != String.Empty && Tbx_Login.Text != String.Empty && Txb_Senha.Text != String.Empty)
             {
                 if (Txb_Senha.TextLength == Txb_Senha.MaxLength)
                 {
