@@ -13,7 +13,7 @@ namespace Book_Manager
 {
     public partial class UC_Funcionarios : UserControl
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-VBFVGAJ\SQLDLAREDES;integrated security=SSPI;initial Catalog=DB_Livraria");
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-O72G9B1;integrated security=SSPI;initial Catalog=DB_Livraria");
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
         //CLASSE QUE RECEBE DADOS DE UMA TABELA APÓS O COMANDO SELECT
