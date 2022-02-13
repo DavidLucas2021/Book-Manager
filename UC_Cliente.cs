@@ -144,6 +144,33 @@ namespace Book_Manager
             }
         }
 
+        private void Func_SomenteLetra(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita somente letras");
+            }
+        }
+
+        private void Txb_logradouro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Func_SomenteLetra(e);
+        }
+        private void Txb_complemento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Func_SomenteLetra(e);
+        }
+
+        private void Txb_cidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Func_SomenteLetra(e);
+        }
+
+        private void Txb_bairro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Func_SomenteLetra(e);
+        }
 
         private bool Func_Ferramentas_Vazias()
         {
@@ -179,14 +206,16 @@ namespace Book_Manager
 
         private void Btn_SalvarNoDB_Click(object sender, EventArgs e)
         {
+            bool emailvalido = true;
+
             if(Func_Ferramentas_Vazias() == true)
             {
-                MessageBox.Show("Exite campo(s) vazios! Preencha todos os campos.", "Campo(s) vazios.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Todos os campos devem ser preenchidos.", "Campo(s) vazios.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if(!string.IsNullOrWhiteSpace(mkt_telefone.Text) && !mkt_telefone.MaskCompleted)
             {
-                MessageBox.Show("Número de telefone inválido! Informe um número com o total de 11 caracteres incluindo DDD.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Telefone inválido! Informe um número com o total de 11 caracteres incluindo DDD.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if(lb_cpf.Visible == true)
@@ -208,8 +237,25 @@ namespace Book_Manager
             {
                 MessageBox.Show("CEP inválido! Informe um CEP com o total de 8 caracteres.", "Campo inválido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
-            if(Func_Ferramentas_Vazias() == false && mkt_telefone.MaskCompleted && mkb_cpfoucnpj.MaskCompleted && mkt_cep.MaskCompleted)
+
+            if (lb_cpf.Visible)
+            {
+                if ((!Txb_email.Text.Contains("@gmail.com") || (Txb_email.Text.Contains("@gmail.com") && Txb_email.TextLength < 12)) || (!Txb_email.Text.Contains("@outlook.com") || (Txb_email.Text.Contains("@outlook.com") && Txb_email.TextLength < 14)))
+                {
+                    MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
+                    emailvalido = false;
+                }
+            }
+            else if(lb_cnpj.Visible)
+            {
+                if (!Txb_email.Text.Contains("@") || (Txb_email.Text.Contains("@") && Txb_email.TextLength < 10))
+                {
+                    MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
+                    emailvalido = false;
+                }
+            }
+
+            if (Func_Ferramentas_Vazias() == false && mkt_telefone.MaskCompleted && mkb_cpfoucnpj.MaskCompleted && mkt_cep.MaskCompleted && emailvalido == true)
             {
                 MessageBox.Show("deu certo!!!");
             }
