@@ -121,7 +121,7 @@ namespace Book_Manager
             this.Btn_SalvarNoDB.Location = new System.Drawing.Point(645, 182);
             this.Btn_SalvarNoDB.Name = "Btn_SalvarNoDB";
             this.Btn_SalvarNoDB.Size = new System.Drawing.Size(117, 60);
-            this.Btn_SalvarNoDB.TabIndex = 104;
+            this.Btn_SalvarNoDB.TabIndex = 12;
             this.Btn_SalvarNoDB.Text = " Salvar";
             this.Btn_SalvarNoDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_SalvarNoDB.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@ namespace Book_Manager
             this.Txb_Pesq_funcionario.MaxLength = 20;
             this.Txb_Pesq_funcionario.Name = "Txb_Pesq_funcionario";
             this.Txb_Pesq_funcionario.Size = new System.Drawing.Size(515, 26);
-            this.Txb_Pesq_funcionario.TabIndex = 4;
+            this.Txb_Pesq_funcionario.TabIndex = 13;
             // 
             // DataGrid_do_DB
             // 
@@ -242,7 +242,7 @@ namespace Book_Manager
             this.Txb_Nome.MaxLength = 60;
             this.Txb_Nome.Name = "Txb_Nome";
             this.Txb_Nome.Size = new System.Drawing.Size(448, 20);
-            this.Txb_Nome.TabIndex = 110;
+            this.Txb_Nome.TabIndex = 0;
             // 
             // Txb_email
             // 
@@ -251,7 +251,7 @@ namespace Book_Manager
             this.Txb_email.MaxLength = 60;
             this.Txb_email.Name = "Txb_email";
             this.Txb_email.Size = new System.Drawing.Size(171, 20);
-            this.Txb_email.TabIndex = 111;
+            this.Txb_email.TabIndex = 1;
             // 
             // lb_nome
             // 
@@ -401,7 +401,7 @@ namespace Book_Manager
             this.Txb_numero.MaxLength = 5;
             this.Txb_numero.Name = "Txb_numero";
             this.Txb_numero.Size = new System.Drawing.Size(171, 20);
-            this.Txb_numero.TabIndex = 144;
+            this.Txb_numero.TabIndex = 9;
             this.Txb_numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txb_numero_KeyPress);
             // 
             // Txb_bairro
@@ -477,7 +477,7 @@ namespace Book_Manager
             this.mkt_telefone.Mask = "(00)00000-0000";
             this.mkt_telefone.Name = "mkt_telefone";
             this.mkt_telefone.Size = new System.Drawing.Size(171, 20);
-            this.mkt_telefone.TabIndex = 156;
+            this.mkt_telefone.TabIndex = 7;
             this.mkt_telefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // cbx_pessoa
@@ -490,7 +490,7 @@ namespace Book_Manager
             this.cbx_pessoa.Location = new System.Drawing.Point(166, 168);
             this.cbx_pessoa.Name = "cbx_pessoa";
             this.cbx_pessoa.Size = new System.Drawing.Size(172, 21);
-            this.cbx_pessoa.TabIndex = 157;
+            this.cbx_pessoa.TabIndex = 2;
             this.cbx_pessoa.SelectedIndexChanged += new System.EventHandler(this.cbx_pessoa_SelectedIndexChanged);
             // 
             // cbx_uf
@@ -528,14 +528,14 @@ namespace Book_Manager
             this.cbx_uf.Location = new System.Drawing.Point(166, 272);
             this.cbx_uf.Name = "cbx_uf";
             this.cbx_uf.Size = new System.Drawing.Size(84, 21);
-            this.cbx_uf.TabIndex = 158;
+            this.cbx_uf.TabIndex = 6;
             // 
             // mkb_cpfoucnpj
             // 
             this.mkb_cpfoucnpj.Location = new System.Drawing.Point(444, 169);
             this.mkb_cpfoucnpj.Name = "mkb_cpfoucnpj";
             this.mkb_cpfoucnpj.Size = new System.Drawing.Size(171, 20);
-            this.mkb_cpfoucnpj.TabIndex = 162;
+            this.mkb_cpfoucnpj.TabIndex = 8;
             this.mkb_cpfoucnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mkt_cep
@@ -544,7 +544,7 @@ namespace Book_Manager
             this.mkt_cep.Mask = "00000-000";
             this.mkt_cep.Name = "mkt_cep";
             this.mkt_cep.Size = new System.Drawing.Size(171, 20);
-            this.mkt_cep.TabIndex = 160;
+            this.mkt_cep.TabIndex = 11;
             this.mkt_cep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // UC_Cliente
