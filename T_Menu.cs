@@ -17,7 +17,7 @@ namespace Book_Manager
             InitializeComponent();
             //uC_Funcionarios1.Hide();
             //uC_Cliente1.Hide();
-            principal1.Show();
+            principal1.BringToFront();
             //INFORMA O USUÁRIO LOGADO NO SISTEMA 
             LB_Usuariotxt.Text = usuario_logado;
         }
