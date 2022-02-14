@@ -149,7 +149,7 @@ namespace Book_Manager
             if (char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Este campo aceita somente letras");
+                MessageBox.Show("Este campo não aceita números.","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -240,15 +240,32 @@ namespace Book_Manager
 
             if (lb_cpf.Visible)
             {
-                if ((!Txb_email.Text.Contains("@gmail.com") || (Txb_email.Text.Contains("@gmail.com") && Txb_email.TextLength < 12)) || (!Txb_email.Text.Contains("@outlook.com") || (Txb_email.Text.Contains("@outlook.com") && Txb_email.TextLength < 14)))
+                if (Txb_email.Text.Contains("@gmail.com"))
                 {
-                    MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
-                    emailvalido = false;
+                    if (Txb_email.TextLength < 12)
+                    {
+                        MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
+                        emailvalido = false;
+                    }
+                }else if(Txb_email.Text.Contains("@outlook.com"))
+                {
+                    if(Txb_email.TextLength < 14)
+                    {
+                        MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
+                        emailvalido = false;
+                    }
+                }else
+                {
+                    if (Txb_email.TextLength > 0)
+                    {
+                        MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
+                        emailvalido = false;
+                    }
                 }
             }
             else if(lb_cnpj.Visible)
             {
-                if (!Txb_email.Text.Contains("@") || (Txb_email.Text.Contains("@") && Txb_email.TextLength < 10))
+                if (!Txb_email.Text.Contains("@") || (Txb_email.Text.Contains("@") && Txb_email.TextLength < 11))
                 {
                     MessageBox.Show("E-mail inválido! Informe um e-mail que seja válido.");
                     emailvalido = false;
