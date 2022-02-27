@@ -1,34 +1,45 @@
-<h1 align="center">Book Manager</h1>
+# <p align="center" font-width="">Book Manager</p>
+
 
 <p align="center">Esse projeto é uma aplicação para gerenciamento de loja de livros.</p>
+<p align="center">Projeto desktop em desenvolvimento utilizando o DotNet junto ao SQLServer.</p>
+<br>
+<p align="center">Tela de Acesso a aplicação:</p>
+<p align="center"><img alt="Acesso_aplicação" src="./githubimg/acesso_aplicação.gif" width="1600px"/></p> 
 
----
-<h1 align="center">
-<img alt="Text-Editorimg" title="Editor de Textos-img" src="./github/Tela da aplicação.PNG" width= "600" height= "425"/>
-<img alt="Text-Editorgif" title="Editor de Textos-gif" src="./github/editor de textos.gif" height="425"/>
-</h1>
+<p align="center">Painel de Funcionários (Cadastros):</p> 
+<p align="center"><img alt="painel_func_cadastro" src="./githubimg/painel_funcionarios.gif" width="1600px"/></p> 
 
-### Recursos
+<p align="center">Painel de Funcionários (Pesquisa):</p> 
+<p align="center"><img alt="painel_func_pesquisa" src="./githubimg/painel_funcionario_pesq.gif" width="1600px"/></p> 
 
-- [x] Tela de Login para Funcioários
-- [X] Função de ocultar senha
-- [x] Função de proibição de acesso para Funcionários desabilitados
-- [x] Função de verificação de login e senha
-- [x] Tela de Funcionários
-- [x] Cadastro de Funcionário
-- [x] Pesquisa de Funcionário
-- [x] Desabilitar funcionário
-- [x] Habilitar Funcionário
-- [x] Alteração de dados de Funcionário
-- [x] Tela de Cliente  
-- [x] Função para abrir arquivo 
+<p align="center">Painel de Clientes (Formulário):</p> 
+<p align="center"><img alt="painel_func_pesquisa" src="./githubimg/Painel_Cliente.gif" width="1600px"/></p> 
 
-### Tecnologias
+## Recursos<br>
+
+- [x] Banco de dados para Clientes e Funcionários.
+- [x] Tela de Login para Funcionários.
+- [X] Função de ocultar senha.
+- [x] Proibição de acesso para Funcionários desabilitados.
+- [x] Função de verificação de login e senha.
+- [x] Tela de Funcionários.
+- [x] Formulário de dados para funcionário. 
+- [x] Cadastro de Funcionário.
+- [x] Pesquisa de Funcionário.
+- [x] Desabilitar Funcionário.
+- [x] Habilitar Funcionário.
+- [x] Alteração de dados de Funcionário.
+- [x] Tela de Cliente.  
+- [x] Formulário de dados para Cliente.  
+
+## Tecnologias
 
 - [x] C#
 - [x] Dotnet
+- [x] SQLServer 
 
-### Autor 
+## Autor 
 
-<img alt="David" title="DavidL" src="https://avatars.githubusercontent.com/u/84687305?v=4" height="100" width="100"/>
-David Lucas
+<p><img alt="David" title="DavidL" src="https://avatars.githubusercontent.com/u/84687305?v=4" height="100" width="100"/><br>
+<a href="linkedin.com/in/-david-lucas"> David Lucas </a></p>
