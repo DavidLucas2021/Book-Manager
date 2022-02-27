@@ -42,5 +42,5 @@
 ## Autor 
 
 <img alt="David" title="DavidL" src="https://avatars.githubusercontent.com/u/84687305?v=4" height="100" width="100"/><br>
-<p>David Lucas</p>
-<p>Linkedin:(https://www.linkedin.com/in/-david-lucas/)</p>
+<p>Nome: David Lucas</p>
+<p>Linkedin: (https://www.linkedin.com/in/-david-lucas/)</p>
